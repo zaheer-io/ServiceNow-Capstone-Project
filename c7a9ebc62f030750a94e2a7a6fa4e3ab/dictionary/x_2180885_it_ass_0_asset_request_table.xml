@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" audit="true" db_object_id="06f6242e2f078750a94e2a7a6fa4e30f" label="Asset Request Table" max_length="40" name="x_2180885_it_ass_0_asset_request_table" type="collection">
+        <element label="Asset" max_length="32" name="asset" reference="cmdb_ci" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,default_rows=4" label="Description" max_length="4000" name="description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="3" label="Priority" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Medium" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="High" sequence="1" value="2"/>
+            </choice>
+        </element>
+        <element label="Work Notes" max_length="40" name="work_notes" type="journal"/>
+        <element choice="1" dependent="type_of_asset" dependent_on_field="type_of_asset" label="Consumables" max_length="255" name="consumables" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="ups" inactive_on_update="false" label="Mitsubishi" sequence="14" value="mitsubishi"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Eaton" sequence="12" value="eaton"/>
+                <element dependent_value="ups" inactive_on_update="false" label="ABB" sequence="10" value="abb"/>
+                <element dependent_value="computer" inactive_on_update="false" label="Keyboard" sequence="0" value="keyboard"/>
+                <element dependent_value="computer" inactive_on_update="false" label="Speakers" sequence="2" value="speakers"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Epson" sequence="8" value="epson"/>
+                <element dependent_value="printer" inactive_on_update="false" label="HP" sequence="6" value="hp"/>
+                <element dependent_value="network_gear" inactive_on_update="false" label="Router" sequence="4" value="router"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Schneider Electric" sequence="11" value="schneider_electric"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Vertiv Group Corp" sequence="13" value="vertiv_group_corp"/>
+                <element dependent_value="computer" inactive_on_update="false" label="Mouse" sequence="1" value="mouse"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Canon" sequence="7" value="canon"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Xerox" sequence="9" value="xerox"/>
+                <element dependent_value="network_gear" inactive_on_update="false" label="Network Switch" sequence="3" value="network_switch"/>
+                <element dependent_value="network_gear" inactive_on_update="false" label="Modem" sequence="5" value="modem"/>
+            </choice>
+        </element>
+        <element dependent="assignment_group" dependent_on_field="assignment_group" label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element choice="3" label="Type of Asset" max_length="40" name="type_of_asset" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="UPS" sequence="3" value="ups"/>
+                <element inactive_on_update="false" label="Network Gear" sequence="4" value="netgear"/>
+                <element inactive="true" inactive_on_update="true" label="Network Gear" sequence="1" value="network_gear"/>
+                <element inactive_on_update="false" label="Printer" sequence="2" value="printer"/>
+                <element inactive_on_update="false" label="Computer" sequence="0" value="computer"/>
+            </choice>
+        </element>
+        <element default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Opened By" max_length="32" name="opened_by" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Comments" max_length="40" name="comments" type="journal_input"/>
+        <element label="Company" max_length="32" name="company" reference="core_company" type="reference"/>
+        <element choice="3" default="submitted" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Delivered" sequence="3" value="delivered"/>
+                <element inactive_on_update="false" label="In Progres" sequence="1" value="in_progres"/>
+                <element inactive_on_update="false" label="Closed" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="Dispatched" sequence="2" value="dispatched"/>
+                <element inactive_on_update="false" label="Submitted" sequence="0" value="submitted"/>
+            </choice>
+        </element>
+        <element label="Assignment Group" max_length="32" name="assignment_group" reference="sys_user_group" type="reference"/>
+        <element label="Short Description" max_length="40" name="short_description" type="string"/>
+        <element display="true" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="asset"/>
+        </index>
+        <index name="index2">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index3">
+            <element name="assignment_group"/>
+        </index>
+        <index name="index4">
+            <element name="company"/>
+        </index>
+        <index name="index5">
+            <element name="opened_by"/>
+        </index>
+        <index name="index6">
+            <element name="requestor"/>
+        </index>
+    </element>
+</database>

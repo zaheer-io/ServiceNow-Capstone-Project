@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>false</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Allow write for assignment_group in x_2180885_it_ass_0_asset_request_table, for users with roles (x_2180885_it_ass_0.it.asset.managers, x_2180885_it_ass_0.it.asset.users).</description>
+        <local_or_existing>Existing</local_or_existing>
+        <name>x_2180885_it_ass_0_asset_request_table.assignment_group</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-03 16:56:07</sys_created_on>
+        <sys_id>68d495e22f8b8750a94e2a7a6fa4e396</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_2180885_it_ass_0_asset_request_table.assignment_group</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_security_acl_68d495e22f8b8750a94e2a7a6fa4e396</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 06:39:16</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>sys_security_acl_68d495e22f8b8750a94e2a7a6fa4e396</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>false</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow write for assignment_group in x_2180885_it_ass_0_asset_request_table, for users with roles (x_2180885_it_ass_0.it.asset.managers, x_2180885_it_ass_0.it.asset.users).</description><local_or_existing>Existing</local_or_existing><name>x_2180885_it_ass_0_asset_request_table.assignment_group</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-03 16:56:07</sys_created_on><sys_id>68d495e22f8b8750a94e2a7a6fa4e396</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_2180885_it_ass_0_asset_request_table.assignment_group</sys_name><sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>sys_security_acl_68d495e22f8b8750a94e2a7a6fa4e396</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-04 06:39:16</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>1200097570</payload_hash>
+        <record_name>x_2180885_it_ass_0_asset_request_table.assignment_group</record_name>
+        <reverted_from/>
+        <source>32a6456a2f0b8750a94e2a7a6fa4e33b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 06:39:16</sys_created_on>
+        <sys_id>1b319c7a2fcfc750a94e2a7a6fa4e377</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a06b249cf80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 06:39:16</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>17319c7aebcfc750d26d11678b39d776</update_guid>
+        <update_guid_history>17319c7aebcfc750d26d11678b39d776:1200097570,39159166cc8b875005db7657214353a7:-297929623,69d45926c68b875012f1d06b6855f966:801871354</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 06:41:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>39adf71bae9d47a097c4b28eca548400</sys_id>
+        <sys_metadata>68d495e22f8b8750a94e2a7a6fa4e396</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2180885_it_ass_0_asset_request_table.assignment_group</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_parent display_value="Assignment Group">d65ae8a22f478750a94e2a7a6fa4e309</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>sys_security_acl_68d495e22f8b8750a94e2a7a6fa4e396</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_68d495e22f8b8750a94e2a7a6fa4e396">1b319c7a2fcfc750a94e2a7a6fa4e377</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 06:41:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

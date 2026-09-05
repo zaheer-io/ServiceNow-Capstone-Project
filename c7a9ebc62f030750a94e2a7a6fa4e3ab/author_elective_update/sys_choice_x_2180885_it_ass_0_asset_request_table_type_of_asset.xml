@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type_of_asset" table="x_2180885_it_ass_0_asset_request_table" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type_of_asset</element>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-03 13:51:33</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type_of_asset</sys_name>
+            <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+            <sys_update_name>sys_choice_x_2180885_it_ass_0_asset_request_table_type_of_asset</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-03 13:51:33</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type_of_asset</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Computer</label>
+            <language>en</language>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-03 13:51:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-03 13:51:33</sys_updated_on>
+            <value>computer</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type_of_asset</element>
+            <hint/>
+            <inactive>true</inactive>
+            <label>Network Gear</label>
+            <language>en</language>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-03 13:51:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-04 13:31:08</sys_updated_on>
+            <value>network_gear</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type_of_asset</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Printer</label>
+            <language>en</language>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-03 13:51:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-03 13:51:34</sys_updated_on>
+            <value>printer</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type_of_asset</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>UPS</label>
+            <language>en</language>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-03 13:51:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-03 13:51:34</sys_updated_on>
+            <value>ups</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type_of_asset</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Network Gear</label>
+            <language>en</language>
+            <name>x_2180885_it_ass_0_asset_request_table</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-04 13:31:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-04 13:31:09</sys_updated_on>
+            <value>netgear</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

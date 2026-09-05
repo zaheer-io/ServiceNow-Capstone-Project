@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>If the Requestor is VIP the automaticity is set to P1 and highlights the requestor field with red background color</description>
+        <field>requestor</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>State based on 'Requestor' VIP Status</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+
+   var gaRequestor = new GlideAjax('assetRequestAjaxUtils');
+   
+   gaRequestor.addParam('sysparm_name', 'getUserVIPStatus');
+   gaRequestor.addParam('sysparm_requestor_id', newValue);
+
+   gaRequestor.getXMLAnswer(function (response) {
+
+	var requestorField = g_form.getDisplayBox('requestor');
+
+	if (response == '1') {
+		if (requestorField) {
+			requestorField.style.backgroundColor = 'tomato';
+		}
+		g_form.setValue('priority', '1');
+
+	} else {
+		if (requestorField) {
+			requestorField.style.backgroundColor = '';
+		}
+		g_form.setValue('priority', '3');
+	}
+   });
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-04 08:38:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b8aca07e2f830b50a94e2a7a6fa4e3d7</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>State based on 'Requestor' VIP Status</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_script_client_b8aca07e2f830b50a94e2a7a6fa4e3d7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-04 10:09:04</sys_updated_on>
+        <table>x_2180885_it_ass_0_asset_request_table</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

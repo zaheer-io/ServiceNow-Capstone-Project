@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Users</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>WHENBRsf6QuphPZ34NEoa8hVJB3ZjdhCkT1Sg5g4gxY=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2180885_it_ass_0.it.asset.users</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>it.asset.users</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-02 14:29:29</sys_created_on>
+        <sys_id>bfa92fc62f030750a94e2a7a6fa4e361</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2180885_it_ass_0.it.asset.users</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_user_role_bfa92fc62f030750a94e2a7a6fa4e361</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-02 14:29:29</sys_updated_on>
+    </sys_user_role>
+</record_update>

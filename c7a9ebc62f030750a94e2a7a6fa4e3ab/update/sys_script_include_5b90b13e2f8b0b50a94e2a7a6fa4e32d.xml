@@ -14,24 +14,94 @@ assetRequestUtils.prototype = {
     initialize: function() {
     },
 
-	createConfRecord : function (current) {
+	// Return Consumable Model Category sys_id
 
-		// Create record in CMDB CI Tables based on Asset Type
+	getConsumableCategorySysId: function() {
 
-		var cmdbTable = 'cmdb_ci_'+current.getValue('asset_type');
+        var grCat = new GlideRecord('cmdb_model_category');
 
-		gs.info('IT Asset : ' + cmdbTable);
+        if (grCat.get('name', 'Consumable')) {
+            return grCat.getUniqueValue();
+        }
 
-		var grConf = new GlideRecord(cmdbTable);
-		grConf.initialize();
+        return '';
+    },
 
-		grConf.company = current.requestor.company;
-		grConf.manufacturer = current.requestor.company;
-		grConf.assigned_to = current.requestor;
-		grConf.department = current.department;
+	// Create record in CMDB Model Tables
 
-		grConf.insert();
+	createConfModelRecord : function (current) {
+		var grConfModel = new GlideRecord('cmdb_model');
+
+		grConfModel.initialize();
+
+		grConfModel.manufacturer = current.requestor.company;
+		grConfModel.name = current.consumables;
+		grConfModel.cmdb_model_category = this.getConsumableCategorySysId();
+
+		var result = grConfModel.insert();
+		return result;
+	},
+
+	// Create record in CMDB CI Tables based on Asset Type
+
+	createConfItemRecord : function (current, cmdb_model) {
+
+		gs.info('IT Asset Call Create confirm item record fn');
+
+		var cmdbTable = 'cmdb_ci_'+current.getValue('type_of_asset');
+
+		var grConfItem = new GlideRecord(cmdbTable);
+		grConfItem.initialize();
+
+		grConfItem.name = current.number + '-' + current.consumables;
+		grConfItem.company = current.requestor.company;
+		grConfItem.manufacturer = current.requestor.company;
+		grConfItem.assigned_to = current.requestor;
+		grConfItem.department = current.requestor.department;
+		// grConfItem.model_id = cmdb_model;
+
+		var result = grConfItem.insert();
+
+		return result;
 		
+	},
+
+	// Create record in ALM Hardware Tables
+
+	createHardwareRecord : function (current, cmdb_model, cmdb_asset) {
+		var grHardware = new GlideRecord('alm_hardware');
+
+		grHardware.initialize();
+
+		grHardware.model_category = this.getConsumableCategorySysId();
+		grHardware.department = current.requestor.department;
+		grHardware.assigned_to = current.requestor;
+		grHardware.location = current.requestor.location;
+		grHardware.company = current.requestor.company;	
+		grHardware.model = cmdb_model;
+		grHardware.ci = cmdb_asset;
+		grHardware.install_status = '2';
+
+		var result = grHardware.insert();
+		return result;
+	},
+
+	// Create record in ALM Consumable Tables
+
+	createConsumableRecord : function (current, cmdb_model, alm_hardware) {
+		var grConsumable = new GlideRecord('alm_consumable');
+
+		grConsumable.initialize();
+
+		grConsumable.model_category = this.getConsumableCategorySysId();
+		grConsumable.model = cmdb_model;
+		grConsumable.location = current.requestor.location;
+		grConsumable.parent = alm_hardware;
+		grConsumable.assigned_to = current.requestor;
+		grConsumable.install_status = '2';
+
+		var result = grConsumable.insert();
+		return result;
 	},
 
     type: 'assetRequestUtils'
@@ -40,13 +110,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-05 05:10:25</sys_updated_on>
+        <sys_updated_on>2026-09-06 04:02:30</sys_updated_on>
     </sys_script_include>
 </record_update>

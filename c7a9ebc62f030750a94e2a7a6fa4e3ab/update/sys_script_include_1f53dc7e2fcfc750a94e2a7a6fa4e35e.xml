@@ -51,19 +51,31 @@ assetRequestAjaxUtils.prototype = Object.extendsObject(global.AbstractAjaxProces
 		}
 	},
 
+	// Get Requestors Company using sys_id
+
+	getRequestorCompany : function () {
+		var user_id = this.getParameter('sysparm_requestor_id');
+
+		var grUser = new GlideRecord('sys_user');
+
+		if (grUser.get('sys_id', user_id)) {
+			return grUser.getValue('company');
+		}
+	},
+
     type: 'assetRequestAjaxUtils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 06:57:58</sys_created_on>
         <sys_id>1f53dc7e2fcfc750a94e2a7a6fa4e35e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>assetRequestAjaxUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_1f53dc7e2fcfc750a94e2a7a6fa4e35e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-04 13:33:22</sys_updated_on>
+        <sys_updated_on>2026-09-06 14:32:51</sys_updated_on>
     </sys_script_include>
 </record_update>

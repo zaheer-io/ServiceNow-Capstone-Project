@@ -104,19 +104,56 @@ assetRequestUtils.prototype = {
 		return result;
 	},
 
+	updateAssetStatus : function (current) {
+		var hwStatus = '';
+		var consStatus = '';
+
+		var reqStatus = current.getValue('status');
+
+		if (reqStatus == 'dispatched') {
+			hwStatus = '9';
+			consStatus = '9';
+		} else if (reqStatus == 'delivered') {
+			hwStatus = '1';
+			consStatus = '10';
+		}
+
+		// update state of Hardware record
+
+		var hwSysId = '';
+
+		var grHw = new GlideRecord('alm_hardware');
+
+		if (grHw.get('ci', current.asset)) {
+			hwSysId = grHw.getUniqueValue();
+			grHw.install_status = hwStatus;
+			grHw.update();
+		}
+
+		// update state of Consumable record
+
+		var grCons = new GlideRecord('alm_consumable');
+
+		if (grCons.get('parent', hwSysId)) {
+			grCons.install_status = consStatus;
+			grCons.update();
+		}
+
+	},
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-06 04:02:30</sys_updated_on>
+        <sys_updated_on>2026-09-06 16:51:04</sys_updated_on>
     </sys_script_include>
 </record_update>

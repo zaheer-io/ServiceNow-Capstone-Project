@@ -3,39 +3,46 @@
         <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description>Make fields read only</description>
-        <field/>
+        <description/>
+        <field>requestor</field>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Set Form Field States</name>
+        <name>Auto pupulate requestor's company</name>
         <order/>
-        <script><![CDATA[function onLoad() {
-  g_form.setReadOnly('number', true);
-  g_form.setReadOnly('opened_by', true);
-  g_form.setReadOnly('assignment_group', true);
-  g_form.setReadOnly('company', true);
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
 
-  g_form.setMandatory('type_of_asset', true);
+   var gaCompany = new GlideAjax('assetRequestAjaxUtils');
 
+   gaCompany.addParam('sysparm_name', 'getRequestorCompany');
+
+   gaCompany.addParam('sysparm_requestor_id', g_form.getValue('requestor'));
+
+   gaCompany.getXMLAnswer(function (response) {
+	g_form.setValue('company', response);
+   });
+   
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-03 15:38:03</sys_created_on>
+        <sys_created_on>2026-09-06 14:17:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>506201622f0b8750a94e2a7a6fa4e32a</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Set Form Field States</sys_name>
+        <sys_id>860d44632f474f50a94e2a7a6fa4e379</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Auto pupulate requestor's company</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>sys_script_client_506201622f0b8750a94e2a7a6fa4e32a</sys_update_name>
+        <sys_update_name>sys_script_client_860d44632f474f50a94e2a7a6fa4e379</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-06 14:39:02</sys_updated_on>
+        <sys_updated_on>2026-09-06 14:31:11</sys_updated_on>
         <table>x_2180885_it_ass_0_asset_request_table</table>
-        <type>onLoad</type>
+        <type>onChange</type>
         <ui_type>0</ui_type>
         <view/>
     </sys_script_client>

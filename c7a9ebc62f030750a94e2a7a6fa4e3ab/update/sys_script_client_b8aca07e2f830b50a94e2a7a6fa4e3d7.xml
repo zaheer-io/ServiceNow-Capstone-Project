@@ -3,12 +3,12 @@
         <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description>If the Requestor is VIP the automaticity is set to P1 and highlights the requestor field with red background color</description>
+        <description>If the Requestor is VIP the automaticity is set to P1 and highlights the requestor field with red background color and Automatically set the Requestors company in 'company' field</description>
         <field>requestor</field>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Priority Based on Requestor VIP Status</name>
+        <name>Set Requestor Details</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
    if (isLoading || newValue === '') {
@@ -17,14 +17,16 @@
 
    var gaRequestor = new GlideAjax('assetRequestAjaxUtils');
    
-   gaRequestor.addParam('sysparm_name', 'getUserVIPStatus');
+   gaRequestor.addParam('sysparm_name', 'getRequestorDetails');
    gaRequestor.addParam('sysparm_requestor_id', newValue);
 
    gaRequestor.getXMLAnswer(function (response) {
 
+	var reqData = JSON.parse(response);
+
 	var requestorField = g_form.getDisplayBox('requestor');
 
-	if (response == '1') {
+	if (reqData.vipStatus == '1') {
 		if (requestorField) {
 			requestorField.style.backgroundColor = 'tomato';
 		}
@@ -36,6 +38,13 @@
 		}
 		g_form.setValue('priority', '3');
 	}
+
+	if (reqData.company) {
+		g_form.setValue('company', reqData.company);
+	} else {
+		g_form.clearValue('company');
+	}
+	
    });
    
 }]]></script>
@@ -45,15 +54,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b8aca07e2f830b50a94e2a7a6fa4e3d7</sys_id>
-        <sys_mod_count>20</sys_mod_count>
-        <sys_name>Priority Based on Requestor VIP Status</sys_name>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Set Requestor Details</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_client_b8aca07e2f830b50a94e2a7a6fa4e3d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-06 04:25:16</sys_updated_on>
+        <sys_updated_on>2026-09-07 04:26:39</sys_updated_on>
         <table>x_2180885_it_ass_0_asset_request_table</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

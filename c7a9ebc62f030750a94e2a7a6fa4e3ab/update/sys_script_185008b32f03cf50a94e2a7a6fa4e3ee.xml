@@ -5,8 +5,8 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
-        <active>true</active>
+        <action_update>true</action_update>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Create Asset and CI Records</name>
+        <name>Send email's </name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,52 +29,51 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	
-	var utils = new assetRequestUtils();
-	current.asset = utils.createAssetAndCI(current);
+	gs.info('email br called');
 
-	
-	// createConfModelRecord - cmdb model
+	if (current.status == 'dispatched') {
+		gs.info('1 Asset Request : Record dispatched');
+		gs.eventQueue('asset.request.dispatched', current, current.requestor, '');
+		gs.info('2 Asset Request : Record dispatched');
+	}
 
-	// createConfItemRecord - cmdb ci *
+	// if (current.status == 'submitted') { 
+	// 	gs.info('1 Asset Request : Record submitted');
+	// 	gs.eventQueue('asset.request.submitted', current, current.assignment_group, '');
+	// 	gs.info('2 Asset Request : Record submitted');
+	// }
 
-	// createHardwareRecord - alm hardware
+	// if (current.assigned_to.changes() && !current.assigned_to.nil()) {
+	// 	gs.info('1 Asset Request : Record assigned to  changes');
+	// 	gs.eventQueue('asset.request.assigned', current, current.assigned_to, '');
+	// 	gs.info('2 Asset Request : Record assigned to  changes');
+	// }
 
-	// createConsumableRecord - alm consumable
-
-	// var utils = new assetRequestUtils();
-
-	// var confModelResponse = utils.createConfModelRecord(current);
-
-	// var confItemResponse = utils.createConfItemRecord(current, confModelResponse);
-	
-	// var almHardwareResponse = utils.createHardwareRecord(current, confModelResponse, confItemResponse);
-
-	// var almConsumableResponse = utils.createConsumableRecord(current, confModelResponse, almHardwareResponse);
-
-	// current.asset = confItemResponse;
-
-	// Call the master function
+	// if (current.status.changesTo('dispatched')) {
+	// 	gs.info('1 Asset Request : Record dispatched');
+	// 	gs.eventQueue('asset.request.dispatched', current, current.requestor, '');
+	// 	gs.info('2 Asset Request : Record dispatched');
+	// }
 
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-04 13:26:08</sys_created_on>
+        <sys_created_on>2026-09-07 07:59:16</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>d4fd293a2f8b0b50a94e2a7a6fa4e39e</sys_id>
-        <sys_mod_count>24</sys_mod_count>
-        <sys_name>Create Asset and CI Records</sys_name>
+        <sys_id>185008b32f03cf50a94e2a7a6fa4e3ee</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Send email's </sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>sys_script_d4fd293a2f8b0b50a94e2a7a6fa4e39e</sys_update_name>
+        <sys_update_name>sys_script_185008b32f03cf50a94e2a7a6fa4e3ee</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-07 11:43:11</sys_updated_on>
+        <sys_updated_on>2026-09-07 09:21:44</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>async_always</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=d4fd293a2f8b0b50a94e2a7a6fa4e39e"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=185008b32f03cf50a94e2a7a6fa4e3ee"/>
 </record_update>

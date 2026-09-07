@@ -11,12 +11,51 @@
         <name>Set Form Field States</name>
         <order/>
         <script><![CDATA[function onLoad() {
-  g_form.setReadOnly('number', true);
-  g_form.setReadOnly('opened_by', true);
-  g_form.setReadOnly('assignment_group', true);
-  g_form.setReadOnly('company', true);
+	// set number field read only
+	g_form.setReadOnly('number', true);
 
-  g_form.setMandatory('type_of_asset', true);
+	// set opened by field read only
+	g_form.setReadOnly('opened_by', true);
+
+	// set assignment group read only
+	g_form.setReadOnly('assignment_group', true);
+
+	// seet company field read only
+	g_form.setReadOnly('company', true);
+
+	// set asset field read only
+	g_form.setReadOnly('asset', true);
+
+	// set type of assst field mandatory
+	g_form.setMandatory('type_of_asset', true);
+
+
+	// set backgorund color of the 'requestor' if requestor is VIP
+	
+	var requestorId = g_form.getValue('requestor');
+		
+    if (requestorId === '') {
+        return;
+    }
+
+	var gaRequestor = new GlideAjax('assetRequestAjaxUtils');
+	gaRequestor.addParam('sysparm_name', 'getRequestorDetails');
+	gaRequestor.addParam('sysparm_requestor_id', requestorId);
+
+	gaRequestor.getXMLAnswer(function (response) {
+		var reqData = JSON.parse(response);
+		var requestorField = g_form.getDisplayBox('requestor');
+
+		if (reqData.vipStatus == '1') {
+			if (requestorField) {
+				requestorField.style.backgroundColor = 'tomato';
+			}
+		} else {
+			if (requestorField) {
+				requestorField.style.backgroundColor = '';
+			}
+		}
+	});
 
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -25,7 +64,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>506201622f0b8750a94e2a7a6fa4e32a</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Set Form Field States</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -33,7 +72,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_client_506201622f0b8750a94e2a7a6fa4e32a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-06 14:39:02</sys_updated_on>
+        <sys_updated_on>2026-09-07 12:23:46</sys_updated_on>
         <table>x_2180885_it_ass_0_asset_request_table</table>
         <type>onLoad</type>
         <ui_type>0</ui_type>

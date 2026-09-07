@@ -14,6 +14,24 @@ assetRequestUtils.prototype = {
     initialize: function() {
     },
 
+	// Master funciton for Record Creation
+
+	createAssetAndCI: function(current) {
+        var confModelResponse = this.createConfModelRecord(current);
+        var confItemResponse = this.createConfItemRecord(current, confModelResponse);
+        var almHardwareResponse = this.createHardwareRecord(current, confModelResponse, confItemResponse);
+        
+        this.createConsumableRecord(current, confModelResponse, almHardwareResponse);
+
+		var grCI = new GlideRecord('cmdb_ci');
+        if (grCI.get(confItemResponse)) {
+            grCI.asset = almHardwareResponse;
+            grCI.update();
+        }
+
+        return confItemResponse; 
+    },
+
 	// Return Consumable Model Category sys_id
 
 	getConsumableCategorySysId: function() {
@@ -74,8 +92,8 @@ assetRequestUtils.prototype = {
 		grHardware.initialize();
 
 		grHardware.model_category = this.getConsumableCategorySysId();
-		grHardware.department = current.requestor.department;
 		grHardware.assigned_to = current.requestor;
+		grHardware.department = current.requestor.department;
 		grHardware.location = current.requestor.location;
 		grHardware.company = current.requestor.company;	
 		grHardware.model = cmdb_model;
@@ -104,6 +122,8 @@ assetRequestUtils.prototype = {
 		return result;
 	},
 
+	// Update record in ALM Hardware and Consumable Record's
+
 	updateAssetStatus : function (current) {
 		var hwStatus = '';
 		var consStatus = '';
@@ -127,6 +147,9 @@ assetRequestUtils.prototype = {
 		if (grHw.get('ci', current.asset)) {
 			hwSysId = grHw.getUniqueValue();
 			grHw.install_status = hwStatus;
+			if (hwStatus == '1') {
+				grHw.assigned_to = current.requestor;
+			}
 			grHw.update();
 		}
 
@@ -136,6 +159,9 @@ assetRequestUtils.prototype = {
 
 		if (grCons.get('parent', hwSysId)) {
 			grCons.install_status = consStatus;
+			if (consStatus == '10') {
+				grCons.assigned_to = current.requestor;
+			}
 			grCons.update();
 		}
 
@@ -147,13 +173,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-06 16:51:04</sys_updated_on>
+        <sys_updated_on>2026-09-07 11:39:23</sys_updated_on>
     </sys_script_include>
 </record_update>

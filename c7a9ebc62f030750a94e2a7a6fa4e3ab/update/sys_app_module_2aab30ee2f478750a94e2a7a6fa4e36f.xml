@@ -16,12 +16,12 @@
         <mobile_title>Create New Asset Request</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_2180885_it_ass_0_asset_request_table</name>
-        <order>200</order>
+        <order>300</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
         <require_confirmation>true</require_confirmation>
-        <roles>x_2180885_it_ass_0.it.asset.requestors,x_2180885_it_ass_0.it.asset.managers,x_2180885_it_ass_0.it.asset.users</roles>
+        <roles>x_2180885_it_ass_0.it.asset.requestors</roles>
         <route/>
         <screen/>
         <sys_class_name>sys_app_module</sys_class_name>
@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2aab30ee2f478750a94e2a7a6fa4e36f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>My Open Asset Requests</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_app_module_2aab30ee2f478750a94e2a7a6fa4e36f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-04 08:56:39</sys_updated_on>
+        <sys_updated_on>2026-09-07 06:50:58</sys_updated_on>
         <timeline_page/>
         <title>My Open Asset Requests</title>
         <uncancelable>false</uncancelable>

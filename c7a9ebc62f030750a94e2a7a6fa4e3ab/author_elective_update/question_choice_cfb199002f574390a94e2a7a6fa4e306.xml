@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>200</order>
+        <published_ref/>
+        <question display_value="Type of Asset">df4119cc2f174390a94e2a7a6fa4e325</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:33:28</sys_created_on>
+        <sys_id>cfb199002f574390a94e2a7a6fa4e306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Printer</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>question_choice_cfb199002f574390a94e2a7a6fa4e306</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:33:28</sys_updated_on>
+        <text>Printer</text>
+        <value>printer</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=cfb199002f574390a94e2a7a6fa4e306"/>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>cfb199002f574390a94e2a7a6fa4e306</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:33:30</sys_created_on>
+        <sys_id>f3b119cc2f574390a94e2a7a6fa4e390</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:33:30</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="DELETE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>cfb199002f574390a94e2a7a6fa4e306</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:33:30</sys_created_on>
+        <sys_id>bbb119cc2f574390a94e2a7a6fa4e38f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:33:30</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>question_choice_cfb199002f574390a94e2a7a6fa4e306</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><misc>0</misc><order>200</order><published_ref/><question display_value="Type of Asset">df4119cc2f174390a94e2a7a6fa4e325</question><rec_misc>0</rec_misc><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-08 08:33:28</sys_created_on><sys_id>cfb199002f574390a94e2a7a6fa4e306</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Printer</sys_name><sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>question_choice_cfb199002f574390a94e2a7a6fa4e306</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-08 08:33:28</sys_updated_on><text>Printer</text><value>printer</value></question_choice><fx_price action="delete_multiple" query="id=cfb199002f574390a94e2a7a6fa4e306"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>misc</field><id>cfb199002f574390a94e2a7a6fa4e306</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-08 08:33:30</sys_created_on><sys_id>f3b119cc2f574390a94e2a7a6fa4e390</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-08 08:33:30</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>rec_misc</field><id>cfb199002f574390a94e2a7a6fa4e306</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-08 08:33:30</sys_created_on><sys_id>bbb119cc2f574390a94e2a7a6fa4e38f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-08 08:33:30</sys_updated_on><table>question_choice</table><type>calculated</type></fx_price></record_update>]]></payload>
+        <payload_hash>131333791</payload_hash>
+        <record_name>Printer</record_name>
+        <reverted_from/>
+        <source>32a6456a2f0b8750a94e2a7a6fa4e33b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:33:31</sys_created_on>
+        <sys_id>4cc119cc2f574390a94e2a7a6fa4e393</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a08026a62e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:33:31</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>3fb119cc9257439076d31db525237e92</update_guid>
+        <update_guid_history>3fb119cc9257439076d31db525237e92:131333791</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Printer">20139d402f974390a94e2a7a6fa4e34d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:39:19</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>41837b59edf542cf842241ffb161f5e9</sys_id>
+        <sys_metadata>cfb199002f574390a94e2a7a6fa4e306</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Printer</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_parent display_value="Type of Asset">df4119cc2f174390a94e2a7a6fa4e325</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>question_choice_cfb199002f574390a94e2a7a6fa4e306</sys_update_name>
+        <sys_update_version display_value="question_choice_cfb199002f574390a94e2a7a6fa4e306">4cc119cc2f574390a94e2a7a6fa4e393</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:39:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

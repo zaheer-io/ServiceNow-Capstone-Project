@@ -13,21 +13,21 @@
         <element label="Work Notes" max_length="40" name="work_notes" type="journal"/>
         <element choice="1" dependent="type_of_asset" dependent_on_field="type_of_asset" label="Consumables" max_length="255" name="consumables" type="choice" use_dependent_field="true">
             <choice>
-                <element dependent_value="ups" inactive_on_update="false" label="Mitsubishi" sequence="14" value="mitsubishi"/>
-                <element dependent_value="ups" inactive_on_update="false" label="Eaton" sequence="12" value="eaton"/>
-                <element dependent_value="ups" inactive_on_update="false" label="ABB" sequence="10" value="abb"/>
+                <element dependent_value="netgear" inactive_on_update="false" label="Network Switch" sequence="12" value="network_switch"/>
+                <element dependent_value="netgear" inactive_on_update="false" label="Modem" sequence="14" value="modem"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Mitsubishi" sequence="11" value="mitsubishi"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Eaton" sequence="9" value="eaton"/>
+                <element dependent_value="ups" inactive_on_update="false" label="ABB" sequence="7" value="abb"/>
                 <element dependent_value="computer" inactive_on_update="false" label="Keyboard" sequence="0" value="keyboard"/>
                 <element dependent_value="computer" inactive_on_update="false" label="Speakers" sequence="2" value="speakers"/>
-                <element dependent_value="printer" inactive_on_update="false" label="Epson" sequence="8" value="epson"/>
-                <element dependent_value="printer" inactive_on_update="false" label="HP" sequence="6" value="hp"/>
-                <element dependent_value="network_gear" inactive_on_update="false" label="Router" sequence="4" value="router"/>
-                <element dependent_value="ups" inactive_on_update="false" label="Schneider Electric" sequence="11" value="schneider_electric"/>
-                <element dependent_value="ups" inactive_on_update="false" label="Vertiv Group Corp" sequence="13" value="vertiv_group_corp"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Epson" sequence="5" value="epson"/>
+                <element dependent_value="printer" inactive_on_update="false" label="HP" sequence="3" value="hp"/>
+                <element dependent_value="netgear" inactive_on_update="false" label="Router" sequence="13" value="router"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Schneider Electric" sequence="8" value="schneider_electric"/>
+                <element dependent_value="ups" inactive_on_update="false" label="Vertiv Group Corp" sequence="10" value="vertiv_group_corp"/>
                 <element dependent_value="computer" inactive_on_update="false" label="Mouse" sequence="1" value="mouse"/>
-                <element dependent_value="printer" inactive_on_update="false" label="Canon" sequence="7" value="canon"/>
-                <element dependent_value="printer" inactive_on_update="false" label="Xerox" sequence="9" value="xerox"/>
-                <element dependent_value="network_gear" inactive_on_update="false" label="Network Switch" sequence="3" value="network_switch"/>
-                <element dependent_value="network_gear" inactive_on_update="false" label="Modem" sequence="5" value="modem"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Canon" sequence="4" value="canon"/>
+                <element dependent_value="printer" inactive_on_update="false" label="Xerox" sequence="6" value="xerox"/>
             </choice>
         </element>
         <element attributes="encode_utf8=false,readonly_clickthrough=true" dependent="assignment_group" dependent_on_field="assignment_group" label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference" use_dependent_field="true"/>

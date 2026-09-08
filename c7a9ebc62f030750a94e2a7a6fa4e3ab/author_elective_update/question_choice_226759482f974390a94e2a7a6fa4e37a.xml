@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>100</order>
+        <published_ref/>
+        <question display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:58:16</sys_created_on>
+        <sys_id>226759482f974390a94e2a7a6fa4e37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Computer</sys_name>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>question_choice_226759482f974390a94e2a7a6fa4e37a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:58:16</sys_updated_on>
+        <text>Computer</text>
+        <value>computer</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=226759482f974390a94e2a7a6fa4e37a"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>question_choice_226759482f974390a94e2a7a6fa4e37a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><misc>0</misc><order>100</order><published_ref/><question display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</question><rec_misc>0</rec_misc><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-08 08:58:16</sys_created_on><sys_id>226759482f974390a94e2a7a6fa4e37a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Computer</sys_name><sys_package/><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>question_choice_226759482f974390a94e2a7a6fa4e37a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-08 08:58:16</sys_updated_on><text>Computer</text><value>computer</value></question_choice><fx_price action="delete_multiple" query="id=226759482f974390a94e2a7a6fa4e37a"/></record_update>]]></payload>
+        <payload_hash>-1104973395</payload_hash>
+        <record_name>Computer</record_name>
+        <reverted_from/>
+        <source>a2ed29042f5b4390a94e2a7a6fa4e3e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 10:36:45</sys_created_on>
+        <sys_id>01fda9042f5b4390a94e2a7a6fa4e37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0809775d00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 10:36:45</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>b8fda904965b43902e32d4cc3b366f78</update_guid>
+        <update_guid_history>b8fda904965b43902e32d4cc3b366f78:-1104973395,f1262d043e1b439017713c654371de0d:-1202777681,b5262d04b61b4390dc8f604c76bfd909:-265759703</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Computer">230c26042f138390a94e2a7a6fa4e38c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 15:08:05</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>22d435e5e1904e499d0b6aa4db1330e9</sys_id>
+        <sys_metadata>226759482f974390a94e2a7a6fa4e37a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Computer</sys_name>
+        <sys_package/>
+        <sys_parent display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>question_choice_226759482f974390a94e2a7a6fa4e37a</sys_update_name>
+        <sys_update_version display_value="question_choice_226759482f974390a94e2a7a6fa4e37a">01fda9042f5b4390a94e2a7a6fa4e37a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 15:08:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

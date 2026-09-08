@@ -28,34 +28,9 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
 	
 	var utils = new assetRequestUtils();
 	current.asset = utils.createAssetAndCI(current);
-
-	
-	// createConfModelRecord - cmdb model
-
-	// createConfItemRecord - cmdb ci *
-
-	// createHardwareRecord - alm hardware
-
-	// createConsumableRecord - alm consumable
-
-	// var utils = new assetRequestUtils();
-
-	// var confModelResponse = utils.createConfModelRecord(current);
-
-	// var confItemResponse = utils.createConfItemRecord(current, confModelResponse);
-	
-	// var almHardwareResponse = utils.createHardwareRecord(current, confModelResponse, confItemResponse);
-
-	// var almConsumableResponse = utils.createConsumableRecord(current, confModelResponse, almHardwareResponse);
-
-	// current.asset = confItemResponse;
-
-	// Call the master function
-
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -64,7 +39,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d4fd293a2f8b0b50a94e2a7a6fa4e39e</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Create Asset and CI Records</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -72,7 +47,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_d4fd293a2f8b0b50a94e2a7a6fa4e39e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-07 11:43:11</sys_updated_on>
+        <sys_updated_on>2026-09-08 06:20:19</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

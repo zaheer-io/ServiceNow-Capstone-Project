@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>300</order>
+        <published_ref/>
+        <question display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 08:58:17</sys_created_on>
+        <sys_id>3a6759482f974390a94e2a7a6fa4e3af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UPS</sys_name>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>question_choice_3a6759482f974390a94e2a7a6fa4e3af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 08:58:17</sys_updated_on>
+        <text>UPS</text>
+        <value>ups</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=3a6759482f974390a94e2a7a6fa4e3af"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>question_choice_3a6759482f974390a94e2a7a6fa4e3af</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><misc>0</misc><order>300</order><published_ref/><question display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</question><rec_misc>0</rec_misc><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-08 08:58:17</sys_created_on><sys_id>3a6759482f974390a94e2a7a6fa4e3af</sys_id><sys_mod_count>0</sys_mod_count><sys_name>UPS</sys_name><sys_package/><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>question_choice_3a6759482f974390a94e2a7a6fa4e3af</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-08 08:58:17</sys_updated_on><text>UPS</text><value>ups</value></question_choice><fx_price action="delete_multiple" query="id=3a6759482f974390a94e2a7a6fa4e3af"/></record_update>]]></payload>
+        <payload_hash>2070986310</payload_hash>
+        <record_name>UPS</record_name>
+        <reverted_from/>
+        <source>a2ed29042f5b4390a94e2a7a6fa4e3e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 10:37:17</sys_created_on>
+        <sys_id>741eed042f5b4390a94e2a7a6fa4e355</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a08097f5830000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 10:37:17</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>301eed04225b4390a82f76d2c2ae0954</update_guid>
+        <update_guid_history>301eed04225b4390a82f76d2c2ae0954:2070986310,17262d04ff1b439016f12f4950c62aa1:-1719804668,c7262d04c51b439013bf73d43165b99d:289091327</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="UPS">981c66442f138390a94e2a7a6fa4e3d3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-08 15:08:08</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>143a9b49090b42d3bf8ff0e7fdb09a19</sys_id>
+        <sys_metadata>3a6759482f974390a94e2a7a6fa4e3af</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UPS</sys_name>
+        <sys_package/>
+        <sys_parent display_value="Type of Asset">f4f655c02f974390a94e2a7a6fa4e370</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>question_choice_3a6759482f974390a94e2a7a6fa4e3af</sys_update_name>
+        <sys_update_version display_value="question_choice_3a6759482f974390a94e2a7a6fa4e3af">741eed042f5b4390a94e2a7a6fa4e355</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-08 15:08:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

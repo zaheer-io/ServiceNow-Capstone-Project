@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new">
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
-        <attributes/>
-        <cat_item display_value="IT Asset Request Producer">1c4619c42f974390a94e2a7a6fa4e309</cat_item>
+        <attributes>ref_qual_elements=assignment_group</attributes>
+        <cat_item display_value="IT Asset Request">7c14aa442f5f4390a94e2a7a6fa4e3d0</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
         <choice_field>priority</choice_field>
@@ -10,7 +10,7 @@
         <conversational_label/>
         <create_roles/>
         <default_html_value/>
-        <default_value>3</default_value>
+        <default_value/>
         <delete_roles/>
         <delivery_plan/>
         <description/>
@@ -19,11 +19,11 @@
         <do_not_select_first>false</do_not_select_first>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <dynamic_value_dot_walk_path/>
-        <dynamic_value_field/>
+        <dynamic_value_dot_walk_path>company</dynamic_value_dot_walk_path>
+        <dynamic_value_field display_value="Requestor">d04522842fdf4390a94e2a7a6fa4e338</dynamic_value_field>
         <enable_also_request_for>false</enable_also_request_for>
         <example_text/>
-        <field>priority</field>
+        <field/>
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
@@ -43,26 +43,26 @@
         <macro/>
         <macroponent/>
         <mandatory>false</mandatory>
-        <map_to_field>true</map_to_field>
+        <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
-        <mask_use_encryption>true</mask_use_encryption>
-        <name>priority</name>
+        <mask_use_encryption>false</mask_use_encryption>
+        <name>company</name>
         <no_auto_populate_also_request_for>false</no_auto_populate_also_request_for>
         <not_available_conversation>false</not_available_conversation>
-        <order>700</order>
+        <order>800</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Priority</question_text>
-        <read_only>false</read_only>
+        <question_text>Company</question_text>
+        <read_only>true</read_only>
         <read_roles/>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
-        <record_producer_table>x_2180885_it_ass_0_asset_request_table</record_producer_table>
-        <reference/>
+        <record_producer_table/>
+        <reference>core_company</reference>
         <reference_qual/>
         <reference_qual_condition/>
         <rich_text/>
@@ -82,20 +82,20 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:41</sys_created_on>
-        <sys_id>bbfc19002fd74390a94e2a7a6fa4e384</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Priority</sys_name>
-        <sys_package/>
+        <sys_created_on>2026-09-08 15:35:00</sys_created_on>
+        <sys_id>c23232002f538390a94e2a7a6fa4e35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Company</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>item_option_new_bbfc19002fd74390a94e2a7a6fa4e384</sys_update_name>
+        <sys_update_name>item_option_new_c23232002f538390a94e2a7a6fa4e35e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 15:32:32</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:35:00</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>5</type>
+        <type>8</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -111,22 +111,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=bbfc19002fd74390a94e2a7a6fa4e384"/>
-    <fx_price action="delete_multiple" query="id=bbfc19002fd74390a94e2a7a6fa4e384"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=c23232002f538390a94e2a7a6fa4e35e"/>
+    <fx_price action="delete_multiple" query="id=c23232002f538390a94e2a7a6fa4e35e"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>bbfc19002fd74390a94e2a7a6fa4e384</id>
+        <id>c23232002f538390a94e2a7a6fa4e35e</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:42</sys_created_on>
-        <sys_id>c33d15042fd74390a94e2a7a6fa4e304</sys_id>
+        <sys_created_on>2026-09-08 15:35:02</sys_created_on>
+        <sys_id>9a32b6402f538390a94e2a7a6fa4e32c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 09:23:42</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:35:02</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -134,16 +134,33 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>bbfc19002fd74390a94e2a7a6fa4e384</id>
+        <id>c23232002f538390a94e2a7a6fa4e35e</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:42</sys_created_on>
-        <sys_id>473d15042fd74390a94e2a7a6fa4e303</sys_id>
+        <sys_created_on>2026-09-08 15:35:02</sys_created_on>
+        <sys_id>5232b6402f538390a94e2a7a6fa4e32c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 09:23:42</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:35:02</sys_updated_on>
+        <table>item_option_new</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_price_if_checked</field>
+        <id>c23232002f538390a94e2a7a6fa4e35e</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2026-09-08 15:35:02</sys_created_on>
+        <sys_id>5632b6402f538390a94e2a7a6fa4e34a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-09-08 15:35:02</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

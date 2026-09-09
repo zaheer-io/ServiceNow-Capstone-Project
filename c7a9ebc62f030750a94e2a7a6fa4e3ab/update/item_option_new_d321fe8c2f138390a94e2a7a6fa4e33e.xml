@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new">
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
-        <attributes/>
-        <cat_item display_value="IT Asset Request Producer">1c4619c42f974390a94e2a7a6fa4e309</cat_item>
+        <attributes>ref_qual_elements=assignment_group</attributes>
+        <cat_item display_value="IT Asset Request">7c14aa442f5f4390a94e2a7a6fa4e3d0</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
-        <choice_field>priority</choice_field>
+        <choice_field>status</choice_field>
         <choice_table>x_2180885_it_ass_0_asset_request_table</choice_table>
         <conversational_label/>
         <create_roles/>
         <default_html_value/>
-        <default_value>3</default_value>
+        <default_value/>
         <delete_roles/>
         <delivery_plan/>
         <description/>
@@ -23,7 +23,7 @@
         <dynamic_value_field/>
         <enable_also_request_for>false</enable_also_request_for>
         <example_text/>
-        <field>priority</field>
+        <field/>
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
@@ -43,27 +43,39 @@
         <macro/>
         <macroponent/>
         <mandatory>false</mandatory>
-        <map_to_field>true</map_to_field>
+        <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
-        <mask_use_encryption>true</mask_use_encryption>
-        <name>priority</name>
+        <mask_use_encryption>false</mask_use_encryption>
+        <name>status</name>
         <no_auto_populate_also_request_for>false</no_auto_populate_also_request_for>
         <not_available_conversation>false</not_available_conversation>
-        <order>700</order>
+        <order>600</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Priority</question_text>
-        <read_only>false</read_only>
+        <question_text>Status</question_text>
+        <read_only>true</read_only>
         <read_roles/>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
-        <record_producer_table>x_2180885_it_ass_0_asset_request_table</record_producer_table>
-        <reference/>
-        <reference_qual/>
+        <record_producer_table/>
+        <reference>sys_user</reference>
+        <reference_qual>javascript: (function() {&#13;
+    var userIds = [];&#13;
+    if (!current.variables.assignment_group) {&#13;
+        return ''; &#13;
+    }&#13;
+    var grMember = new GlideRecord('sys_user_grmember');&#13;
+    grMember.addQuery('group', current.variables.assignment_group);&#13;
+    grMember.query();&#13;
+    while (grMember.next()) {&#13;
+        userIds.push(grMember.getValue('user'));&#13;
+    }&#13;
+    return 'sys_idIN' + userIds.join(',');&#13;
+})();</reference_qual>
         <reference_qual_condition/>
         <rich_text/>
         <roles_to_use_also_request_for/>
@@ -82,16 +94,16 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:41</sys_created_on>
-        <sys_id>bbfc19002fd74390a94e2a7a6fa4e384</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Priority</sys_name>
-        <sys_package/>
+        <sys_created_on>2026-09-08 15:30:27</sys_created_on>
+        <sys_id>d321fe8c2f138390a94e2a7a6fa4e33e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Status</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>item_option_new_bbfc19002fd74390a94e2a7a6fa4e384</sys_update_name>
+        <sys_update_name>item_option_new_d321fe8c2f138390a94e2a7a6fa4e33e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 15:32:32</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:30:27</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
@@ -99,7 +111,7 @@
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>simple</use_reference_qualifier>
+        <use_reference_qualifier>advanced</use_reference_qualifier>
         <validate_regex/>
         <variable_name/>
         <variable_set/>
@@ -111,22 +123,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=bbfc19002fd74390a94e2a7a6fa4e384"/>
-    <fx_price action="delete_multiple" query="id=bbfc19002fd74390a94e2a7a6fa4e384"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=d321fe8c2f138390a94e2a7a6fa4e33e"/>
+    <fx_price action="delete_multiple" query="id=d321fe8c2f138390a94e2a7a6fa4e33e"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>bbfc19002fd74390a94e2a7a6fa4e384</id>
+        <id>d321fe8c2f138390a94e2a7a6fa4e33e</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:42</sys_created_on>
-        <sys_id>c33d15042fd74390a94e2a7a6fa4e304</sys_id>
+        <sys_created_on>2026-09-08 15:30:29</sys_created_on>
+        <sys_id>f321f6cc2f138390a94e2a7a6fa4e3c9</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 09:23:42</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:30:29</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -134,16 +146,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>bbfc19002fd74390a94e2a7a6fa4e384</id>
+        <id>d321fe8c2f138390a94e2a7a6fa4e33e</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 09:23:42</sys_created_on>
-        <sys_id>473d15042fd74390a94e2a7a6fa4e303</sys_id>
+        <sys_created_on>2026-09-08 15:30:29</sys_created_on>
+        <sys_id>bb21f6cc2f138390a94e2a7a6fa4e3c8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 09:23:42</sys_updated_on>
+        <sys_updated_on>2026-09-08 15:30:29</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

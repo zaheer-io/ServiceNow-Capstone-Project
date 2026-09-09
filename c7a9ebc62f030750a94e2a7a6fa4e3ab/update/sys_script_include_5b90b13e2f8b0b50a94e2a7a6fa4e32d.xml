@@ -66,7 +66,9 @@ assetRequestUtils.prototype = {
 
 		gs.info('IT Asset Call Create confirm item record fn');
 
-		var cmdbTable = 'cmdb_ci_'+current.getValue('type_of_asset');
+		var tableName = current.getValue('type_of_asset').toString().toLowerCase();
+
+		var cmdbTable = 'cmdb_ci_'+ tableName;
 
 		var grConfItem = new GlideRecord(cmdbTable);
 		grConfItem.initialize();
@@ -173,13 +175,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-07 11:39:23</sys_updated_on>
+        <sys_updated_on>2026-09-09 10:08:33</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>false</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKERequest Asset^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="Request Asset"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Create Asset Request from Email</name>
+        <order>100</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction(/*GlideRecord*/ current, /*GlideRecord*/ event, /*EmailWrapper*/ email, /*ScopedEmailLogger*/ logger, /*EmailClassifier*/ classifier) {
+
+	var asset = email.body.asset_type;
+
+	var groupName = '';
+	var assetType = '';
+
+	if (asset == 'Computer') {
+        groupName = 'Computers';
+		assetType = 'computer';
+    } else if (asset == 'Network Gear') {
+        groupName = 'Network Gear';
+		assetType = 'netgear';
+    } else if (asset == 'Printer') {
+        groupName = 'Printers';
+		assetType = 'printer';
+    } else if (asset == 'UPS') {
+        groupName = 'UPS';
+		assetType = 'ups';
+    }
+
+	current.type_of_asset = assetType;
+    current.consumables = email.body.consumables.toLowerCase();
+    current.priority = email.body.priority;
+
+	// assign priority to critical when the user is vip
+	var grUser = new GlideRecord('sys_user');
+
+	if (grUser.get(gs.getUserID())) {
+		if (grUser.getValue('vip') == '1') {
+			current.priority = '1';
+		}
+	}
+
+	// get group name based on asset
+
+	var grGroup = new GlideRecord('sys_user_group');
+	if (grGroup.get('name', groupName)) {
+		current.assignment_group = grGroup.getUniqueValue();
+	}
+
+})(current, event, email, logger, classifier);]]></script>
+        <stop_processing>false</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-09 09:16:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>faf0aa502fdbc390a94e2a7a6fa4e347</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Create Asset Request from Email</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sysevent_in_email_action_faf0aa502fdbc390a94e2a7a6fa4e347</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-09 12:45:47</sys_updated_on>
+        <table>x_2180885_it_ass_0_asset_request_table</table>
+        <template>companyDYNAMICd27bf240ef0321002841f7f775c0fbeb^short_descriptionDYNAMICb637bd21ef3221002841f7f775c0fbb6^descriptionDYNAMIC367bf121ef3221002841f7f775c0fbe2^requestorDYNAMIC2fd8e97bef3221002841f7f775c0fbc1^EQ</template>
+        <type>new</type>
+    </sysevent_in_email_action>
+</record_update>

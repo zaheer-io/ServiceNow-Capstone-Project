@@ -52,6 +52,7 @@
                 <element inactive_on_update="false" label="Submitted" sequence="0" value="submitted"/>
             </choice>
         </element>
+        <element label="Correlation ID" max_length="40" name="correlation_id" type="string"/>
         <element attributes="encode_utf8=false,readonly_clickthrough=true" label="Assignment Group" max_length="32" name="assignment_group" reference="sys_user_group" type="reference"/>
         <element label="Short Description" max_length="40" name="short_description" type="string"/>
         <element display="true" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>

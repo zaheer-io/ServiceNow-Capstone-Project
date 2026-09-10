@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>execute</operation>
+        <source_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>it.ass.requestor2</sys_created_by>
+        <sys_created_on>2026-09-10 09:27:57</sys_created_on>
+        <sys_id>f061b7a42f138790a94e2a7a6fa4e3e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CartJS.orderNow</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_scope_privilege_f061b7a42f138790a94e2a7a6fa4e3e7</sys_update_name>
+        <sys_updated_by>it.ass.requestor2</sys_updated_by>
+        <sys_updated_on>2026-09-10 09:27:57</sys_updated_on>
+        <target_name>CartJS.orderNow</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>scriptable</target_type>
+    </sys_scope_privilege>
+</record_update>

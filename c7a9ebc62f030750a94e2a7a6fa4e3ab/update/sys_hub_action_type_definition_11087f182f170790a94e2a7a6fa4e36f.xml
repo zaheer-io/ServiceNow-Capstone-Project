@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>11087f182f170790a94e2a7a6fa4e36f</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>Pass values for IT Asset Request</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_11087f182f170790a94e2a7a6fa4e36f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:31:21</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:02:01</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -164,10 +164,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 15:45:19</sys_created_on>
         <sys_id>362eb7d42f570790a94e2a7a6fa4e342</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:26:07</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:59:20</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=362eb7d42f570790a94e2a7a6fa4e342"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -178,9 +178,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 15:45:28</sys_created_on>
         <sys_id>4d3ef7d42f570790a94e2a7a6fa4e34f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:26:07</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:59:20</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     var body = inputs.emailbody&#13;
 &#13;
@@ -202,7 +202,7 @@
     // --- CONSUMABLE ---&#13;
     var matchConsumable = body.match(/Consumables:\s*(.+)/i);&#13;
     if (matchConsumable &amp;&amp; matchConsumable[1]) {&#13;
-        outputs.consumable = matchConsumable[1].trim().toLowerCase();&#13;
+        outputs.consumable = matchConsumable[1].trim().toLowerCase().replace(/\s+/g, '_');&#13;
     }&#13;
 &#13;
     // --- PRIORITY ---&#13;
@@ -1500,14 +1500,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 15:45:31</sys_created_on>
         <sys_id>bd3ef7d42f570790a94e2a7a6fa4e390</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:30:25</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:00:59</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1812,17 +1812,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Pass values for IT Asset Request">11087f182f170790a94e2a7a6fa4e36f</action_id>
         <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_hub_action_plan","id":"fb420cac2f570790a94e2a7a6fa4e3c9","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
-        <snapshot>463b7a602f9b4790a94e2a7a6fa4e3a5</snapshot>
+        <snapshot>51bd1ba02f9f4790a94e2a7a6fa4e34e</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 16:03:25</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>fb420cac2f570790a94e2a7a6fa4e3c9</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:31:20</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:02:00</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -1985,10 +1985,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 16:03:02</sys_created_on>
         <sys_id>5e3288ac2f570790a94e2a7a6fa4e317</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:31:11</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:01:49</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5e3288ac2f570790a94e2a7a6fa4e317"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2013,9 +2013,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 16:03:12</sys_created_on>
         <sys_id>7842c8ac2f570790a94e2a7a6fa4e36d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:31:11</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:01:49</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
     var body = inputs.emailbody&#13;
 &#13;
@@ -2037,7 +2037,7 @@
     // --- CONSUMABLE ---&#13;
     var matchConsumable = body.match(/Consumables:\s*(.+)/i);&#13;
     if (matchConsumable &amp;&amp; matchConsumable[1]) {&#13;
-        outputs.consumable = matchConsumable[1].trim().toLowerCase();&#13;
+        outputs.consumable = matchConsumable[1].trim().toLowerCase().replace(/\s+/g, '_');&#13;
     }&#13;
 &#13;
     // --- PRIORITY ---&#13;
@@ -3409,14 +3409,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 16:03:16</sys_created_on>
         <sys_id>fd42c8ac2f570790a94e2a7a6fa4e3e1</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 05:31:14</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:01:53</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

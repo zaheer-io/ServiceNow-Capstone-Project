@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>false</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKERequest Asset^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="Request Asset"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Submit Catlog Item - Inbound Action</name>
+        <order>100</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction(current, event, email, logger, classifier) {
+
+    var catalogItemSysId = '7c14aa442f5f4390a94e2a7a6fa4e3d0';
+
+    var cart = new sn_sc.CartJS();
+
+    var item = {
+        'sysparm_id': catalogItemSysId,
+        'sysparm_quantity': '1',
+        'variables': {}
+    };
+
+    var asset = email.body.asset_type;
+    var groupName = '';
+    var assetType = '';
+
+    if (asset == 'Computer') {
+        groupName = 'Computers';
+        assetType = 'computer';
+    } else if (asset == 'Network Gear') {
+        groupName = 'Network Gear';
+        assetType = 'netgear';
+    } else if (asset == 'Printer') {
+        groupName = 'Printers';
+        assetType = 'printer';
+    } else if (asset == 'UPS') {
+        groupName = 'UPS';
+        assetType = 'ups';
+    }
+
+    var assignmentGroupSysId = '';
+    var grGroup = new GlideRecord('sys_user_group');
+
+    if (grGroup.get('name', groupName)) {
+        assignmentGroupSysId = grGroup.getUniqueValue();
+    }
+
+    var openedBy = gs.getUserID();
+    var requestor = '';
+    var requestorCompany = '';
+    var grUser = new GlideRecord('sys_user');
+
+    if (grUser.get('email', email.origemail)) {
+        requestor = grUser.getUniqueValue();
+        requestorCompany = grUser.getValue('company') || '';
+    }
+
+    var priority = email.body.priority || '4';
+
+    if (requestor) {
+        if (grUser.getValue('vip') == '1') {
+            priority = '1';
+        }
+    }
+
+    var consumables = '';
+
+    if (email.body.consumables) {
+        consumables = email.body.consumables.toLowerCase().replace(/\s+/g, '_');
+    }
+
+    item.variables.requestor = requestor;
+    item.variables.type_of_asset = assetType;
+    item.variables.consumables = consumables;
+    item.variables.assignment_group = assignmentGroupSysId;
+    item.variables.opened_by = openedBy;
+    item.variables.priority = priority;
+    item.variables.description = email.body_text;
+    item.variables.short_description = email.subject;
+    item.variables.company = requestorCompany;
+    item.variables.status = 'submitted';
+
+    var cartDetails = cart.orderNow(item);
+
+    if (cartDetails && cartDetails.request_id) {
+        var emailRec = new GlideRecord('sys_email');
+
+        if (emailRec.get(sys_email.sys_id)) {
+            emailRec.target_table = 'sc_request';
+            emailRec.instance = cartDetails.request_id;
+            emailRec.update();
+        }
+
+        event.state = "stop_processing";
+    }
+
+})(current, event, email, logger, classifier);]]></script>
+        <stop_processing>false</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 09:05:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3e5aafe42fdf4790a94e2a7a6fa4e3cd</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Submit Catlog Item - Inbound Action</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sysevent_in_email_action_3e5aafe42fdf4790a94e2a7a6fa4e3cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 10:23:20</sys_updated_on>
+        <table>sc_request</table>
+        <template/>
+        <type>new</type>
+    </sysevent_in_email_action>
+</record_update>

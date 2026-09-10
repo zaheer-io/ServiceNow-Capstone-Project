@@ -5,11 +5,10 @@
         <active>false</active>
         <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
-        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4573000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>29000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
-        <compiler_build/>
         <copied_from/>
         <copied_from_name/>
         <description>Submit Record Producer Using Inbound Flow</description>
@@ -17,21 +16,20 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>submit_record_producer__inbound_flow</internal_name>
-        <label_cache>null</label_cache>
-        <latest_snapshot/>
-        <master_snapshot/>
+        <label_cache>[{"name":"Inbound Email_1.body_text","label":"Trigger - Inbound Email➛Body Text","type":"string_full_utf8","base_type":"string_full_utf8","usedInstances":{"48429373-17d1-4924-a900-eaaa335568aa":["email_body"],"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["description"]},"attributes":{"test_input_hidden":"true"}},{"name":"Inbound Email_1.user","label":"Trigger - Inbound Email➛User Record","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"48429373-17d1-4924-a900-eaaa335568aa":["sender_id"],"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["opened_by","requestor"]},"attributes":{"test_input_hidden":"true"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.asset_type","label":"1 - Pass values for IT Asset Request➛AssetType","reference_display":"AssetType","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["type_of_asset"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"cc964df8-dc87-4b54-a93f-ce1743861239"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.consumable","label":"1 - Pass values for IT Asset Request➛Consumable","reference_display":"Consumable","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["consumables"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"e9bf4052-d05a-4ee4-b4e3-d0c938d3bd72"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.assignment_group","label":"1 - Pass values for IT Asset Request➛AssignmentGroup","reference_display":"AssignmentGroup","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["assignment_group"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"69d8ee02-27ad-4eea-af9e-8e4d8fb28720"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.priority","label":"1 - Pass values for IT Asset Request➛Priority","reference_display":"Priority","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["priority"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"f00781aa-e5c7-4789-9ee2-564d94bdf6d4"}},{"name":"Inbound Email_1.user.company","label":"Trigger - Inbound Email➛User Record➛Company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"company","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["company"]}},{"name":"Inbound Email_1.subject","label":"Trigger - Inbound Email➛Subject","type":"string_full_utf8","base_type":"string_full_utf8","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["short_description"]},"attributes":{"test_input_hidden":"true"}}]</label_cache>
+        <master_snapshot>cd3167682f9f4790a94e2a7a6fa4e361</master_snapshot>
         <master_snapshot_digest/>
         <name>Submit Record Producer - Inbound Flow</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <remote_trigger_id/>
+        <remote_trigger_id>20512b682f9f4790a94e2a7a6fa4e362</remote_trigger_id>
         <run_as>user</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>draft</status>
+        <status>published</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -39,7 +37,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3322572c2f1f4790a94e2a7a6fa4e37b</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Submit Record Producer - Inbound Flow</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -47,14 +45,38 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_hub_flow_3322572c2f1f4790a94e2a7a6fa4e37b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:43:13</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:38:37</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
-        <version_record>b8999fa82f5f4790a94e2a7a6fa4e38a</version_record>
+        <version_record>0e36efa02fdf4790a94e2a7a6fa4e384</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_variable_value action="delete_multiple" query="document_key=3322572c2f1f4790a94e2a7a6fa4e37b"/>
+    <sys_flow_email_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <email_conditions table="sys_email">subjectLIKERequest Asset<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="Request Asset"/>
+        </email_conditions>
+        <event_name>email.read</event_name>
+        <name/>
+        <order/>
+        <published_version/>
+        <stop_condition_evaluation>true</stop_condition_evaluation>
+        <sys_class_name>sys_flow_email_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>20512b682f9f4790a94e2a7a6fa4e362</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:29:13</sys_updated_on>
+        <target_table/>
+        <trigger_definition display_value="Inbound Email">6f0180400b320300f4eb8bf637673ad4</trigger_definition>
+    </sys_flow_email_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=3322572c2f1f4790a94e2a7a6fa4e37b^sys_idNOT IN4432572c2f1f4790a94e2a7a6fa4e37c"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -74,7 +96,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=reference</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=reference,uiTypeLabel=Reference</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -134,14 +156,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:18</sys_created_on>
         <sys_id>250393ac2f1f4790a94e2a7a6fa4e388</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:18</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -159,7 +181,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8,uiTypeLabel=String (Full UTF-8)</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -219,14 +241,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:26</sys_created_on>
         <sys_id>270357ac2f1f4790a94e2a7a6fa4e396</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:26</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:43</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -244,7 +266,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8,uiTypeLabel=String (Full UTF-8)</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -304,14 +326,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:16</sys_created_on>
         <sys_id>8d0393ac2f1f4790a94e2a7a6fa4e34a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:16</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -329,7 +351,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -392,14 +414,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:03</sys_created_on>
         <sys_id>8ef25f6c2f1f4790a94e2a7a6fa4e3a8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:03</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:36</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -417,7 +439,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=document_id</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=document_id,uiTypeLabel=Document ID</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -477,14 +499,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:22</sys_created_on>
         <sys_id>ae0317ac2f1f4790a94e2a7a6fa4e321</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:22</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:42</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -502,7 +524,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8,uiTypeLabel=String (Full UTF-8)</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -562,14 +584,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:13</sys_created_on>
         <sys_id>dc0353ac2f1f4790a94e2a7a6fa4e3c2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:13</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:39</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -587,7 +609,7 @@
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -647,14 +669,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:15:10</sys_created_on>
         <sys_id>ebf213ac2f1f4790a94e2a7a6fa4e3ca</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:15:10</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:16:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -682,17 +704,65 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-10 07:14:55</sys_created_on>
         <sys_id>0cf21f6c2f1f4790a94e2a7a6fa4e341</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:16:00</sys_updated_on>
+        <sys_updated_on>2026-09-10 08:27:49</sys_updated_on>
         <trigger_definition display_value="Inbound Email">6f0180400b320300f4eb8bf637673ad4</trigger_definition>
-        <trigger_inputs>H4sIAAAAAAAA/+WWW0/bMBTHv4rl546lpFDo28RFQkIgUbQ9MBQ58UnjzbUz22npEN99x7k1LS0bA6RdVKlKju1z+fv8Yt/cU8likHREx07nJDc6AWuFmtAeFcqBUUxeL3LACbHWEpjCgSlTnDltFnSUMmmhR1Ojp9cwzSVz0Bq14WDoKAyCHp0xWcB4Yc84ekIXik29T4tBo0QrLpzQKgI/jflHWi/BOX185sKi78XH2oSWJBOSG1B0dHPbozkz6ND5cPdt3udCfd00Wfgcwv7u4GCY4A+fMMV0ADHrD3b32OFwP0wBV21X5heyd+uiecN57fHaFPD+1KtEV2WCOweKA281fCy1AcYvlVwaMqwXfX7KQBGHjntNrmCJxonEZUBSqedkLlxWvuELWPeuVJiU8XfKbb2z4jtmPQh8mBRQsaSWu32N6q2ozOkxc2yMURNXmHZntMDwldYcUlZId9S1VRMu81KpcoljsWxWa1lM1UUlMG0dNDvvC1xaj1fboh4sLGYJuRfSK9O06DjT86umjFOhStXrQakTJts35pwRceF8wvd0JqzA9CJUNQfjfOUTKTjsZEW843XdESrWheIRTJmQEa6dTFBRi/EixmcMw/HKte/qyhs6qSwPPWoX9kgya5dFo9rRt8JnVElQ1xJVevkliRG5+5A4MWt4e+gtWb6CHPf9ChLcW1Li+4jmUvKobOTnAj14AmjHzARcVG3okuE3QTg+7CPCg4O9sB96hCEeJgHrHwT7PAkH8V4H4U2CbM7YbZBnBV0/QC6qga4gL0D3GpEsAxKdlnyaKlHsCZ0I3AG+RFeoRE/xK4RzfElly63Ae/Dnwvv6bDY4vDpBJ15X0n7b7WOAVsaeB1D/CYCqb8iK8wYiW8RfIHGfiyAI+ZsQhez0g3Cw7VAcdojaIND2CtwGybpQHXUHuiK9AKqlT+I08b0g0gWZZyLJKmossci+IwtdmPJ8XDsDgzWQsMmqL/wWok7qsX8Aq+WdJi6wSfwqOtv9TdJqhU4FyLrVf8LeZdkAj4Dzr5Ny4Hm07T5Bm65Dvek5tR/EYbD1qjnsXjWb0tfSc+sKdOE5a63dgl94HOVGaCPcgkxwj5QnyB8+9dWG6Jn/Q4sh9d2nQqqZYP+W6+T/e1u8/QFzCYQ7+w0AAA==</trigger_inputs>
+        <trigger_inputs>H4sIAAAAAAAA/+VW72/aMBD9V6x8ZigQWhjfqq2Vqk2rRKvtQ1VFjnMhnoyd2g6UVf3fd3YSCD/Kylppm/YF4fNx7+7deyS3j4GgCYhgHJzPKBeEKZlyy5U0QSfg0oKWVNwsC8CMjbsZlSm1Si+DcUaFgU6QaTW7gVkhqIVVUOkUdDDuhWEnmFNRwvXSXKZYDEtIOnNlwQHHG8V9Jl6ZMvkOzH6+/HQ+gfsSjCVnxoDFFJZzkWqQwfj2rhMUVGMx66Aet664Q+uNwl4YDYZsGPX6URhmA0hob9A/oe+Hp1E2xIIHeHi+UbuHmfbI8GBBppCu+NilTQNNr6RYB3KkHWt+WNUkVpH7kgqeLcki5ywnvhNDjKXakqUqNcmEWnT9Wh4M/4E9DUKHryEDZIJ5Mpcm9j8MWvE45QY3tmwG98wqzuCqcNjVoixNBFRfmRLlTH6pCMFzChkthf1aLwwjpcGiULix3RyNOK5ztZg0qBdceo7qS6EYFasTtVbzpLRg/DIbGuKkxLW6XwXzfvDkZ4gdLU0jNWRcdY0J9WgXHEStOMM0L+wZs3zeSPSps7bAld/cju7dceovjhN9/4DoVQ01XxNXt9ui8jiNn4ZJFKLC92t8CC2NN4NuNWO3520P8gop3+RACs2V5nZJpsi9dJK2GMVNTxGKqLn7wIgmXCaqlGml8SbBbGl7U9nPCPqv0/KcG47ocaFVAdq6HqeCp9DNy6TrHVwPX/k0rofvGsSLaTqnCJdWpZ10qmpYpIq8xBK/MMC1VQVuSjEwhsvprhUSpQRQebQVogNWMAi6/leNwaVRv7C1PXpv4A90xWD0rD+ytj92eXhBr3abovbsr3DPt9z5RZfQaVoCQxQmegc52ZAFt7k/4QEfku88bcTj/wHjuF7X0Y+ba6sv/zdnTaDAhU2A4VKIN9OOtzzBsRfasfYaHLAXviNMwcbV+t70gZO876GhBqOTqBc5Q0EyZCHFV63TlEWD5KRlqH3j7+/P7iGjPeUrH0O+LlGZd4uu+qHGKMaR1nRtJC6ZmqH1Mcd17lWzYaXRP/oMquX6W3q++wkEcNvXLwwAAA==</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>email</trigger_type>
         <updation_source/>
     </sys_hub_trigger_instance_v2>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=3322572c2f1f4790a94e2a7a6fa4e37b"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=3322572c2f1f4790a94e2a7a6fa4e37b^sys_idNOT IN8970ebe42f9f4790a94e2a7a6fa4e303,d8ae93242f9f4790a94e2a7a6fa4e37a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pass values for IT Asset Request">013248ac2f570790a94e2a7a6fa4e35c</action_type>
+        <action_type_parent display_value="Pass values for IT Asset Request">11087f182f170790a94e2a7a6fa4e36f</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>013248ac2f570790a94e2a7a6fa4e35c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Submit Record Producer - Inbound Flow">3322572c2f1f4790a94e2a7a6fa4e37b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:13:58</sys_created_on>
+        <sys_id>8970ebe42f9f4790a94e2a7a6fa4e303</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_updated_by>it.ass.requestor2</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:37:27</sys_updated_on>
+        <ui_id>48429373-17d1-4924-a900-eaaa335568aa</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Ty27bMBD8lYBnS5BlPX1r4wYw0DZA3eYSBMJKXNkEKEqhKCeu4X/vUpLtIg0CB+ip6JHDWe7sLOd+zwRncxaGMz9IoPDLMPbi1IM0QB9iiEoIcJYnbMIUVEhMrEDILK/5jrAtyM6C+/1S5XWn+NWn/nrqWkJm8NkcDsTjom0k7O4upBcbIblGxeb3DxPWgKbWBjWb719cXapdQo6SqH27q4+D+NcGMrvGYq3RQq3H8+exeHUEa82tmOmEkWBUHElFCbLFCatAcTC13p0QjcBvlTwDG6EMvcYs+bkVP6lf4nmeZZZIkxU43J6O2ejeAJcLMEBSusJ0eqQWm1oU2A6ecCyhk+b6d2wg3DZG1GooMZDLY3Utu0p9HdxgpweOyyKka0kENnZUq30cpFxt6qdvR5U3QvWujJeyLkCeTmDIu7wzVs+edeL7C5sH5A+jUWJFHbMKmoaQrNH1VvRdSHTlriUd3FLWT6SuFWvlQmEndGkF4N4QvujhO9DCjvuFnqFi2+6HEo8dLu338SPPy3PwnBAxdoK88JwEIHAwwTzikATTkLPDhLW79lpC256Nog1lj50dc7BtNCgbPLYlhRaN+UCitjh6cZiMiYvTt35t4Z0/aGuf1RlVvRU42pG+LGsn5vtidoHgY8xWveKr5eL1Id4TMv9/yP6JkCXxLJpFUycPE3SCECMn9aLUSTHkqc+TPArxL4bs4Rcnb2PY2AYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8970ebe42f9f4790a94e2a7a6fa4e303"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Record Producer">87a397837333001098e194596bf6a7bc</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>87a397837333001098e194596bf6a7bc</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Submit Record Producer - Inbound Flow">3322572c2f1f4790a94e2a7a6fa4e37b</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:06:00</sys_created_on>
+        <sys_id>d8ae93242f9f4790a94e2a7a6fa4e37a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_updated_by>it.ass.requestor2</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:37:27</sys_updated_on>
+        <ui_id>1284287f-1fb6-4d30-ac7c-ec41aa0197c9</ui_id>
+        <updation_source/>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d8ae93242f9f4790a94e2a7a6fa4e37a"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=3322572c2f1f4790a94e2a7a6fa4e37b"/>
@@ -860,6 +930,928 @@
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_3322572c2f1f4790a94e2a7a6fa4e37b"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_3322572c2f1f4790a94e2a7a6fa4e37b"/>
-    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=3322572c2f1f4790a94e2a7a6fa4e37b"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Submit Record Producer Using Inbound Flow</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>submit_record_producer__inbound_flow</internal_name>
+        <label_cache>[{"name":"Inbound Email_1.body_text","label":"Trigger - Inbound Email➛Body Text","type":"string_full_utf8","base_type":"string_full_utf8","usedInstances":{"48429373-17d1-4924-a900-eaaa335568aa":["email_body"],"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["description"]},"attributes":{"test_input_hidden":"true"}},{"name":"Inbound Email_1.user","label":"Trigger - Inbound Email➛User Record","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"48429373-17d1-4924-a900-eaaa335568aa":["sender_id"],"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["opened_by","requestor"]},"attributes":{"test_input_hidden":"true"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.asset_type","label":"1 - Pass values for IT Asset Request➛AssetType","reference_display":"AssetType","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["type_of_asset"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"cc964df8-dc87-4b54-a93f-ce1743861239"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.consumable","label":"1 - Pass values for IT Asset Request➛Consumable","reference_display":"Consumable","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["consumables"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"e9bf4052-d05a-4ee4-b4e3-d0c938d3bd72"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.assignment_group","label":"1 - Pass values for IT Asset Request➛AssignmentGroup","reference_display":"AssignmentGroup","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["assignment_group"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"69d8ee02-27ad-4eea-af9e-8e4d8fb28720"}},{"name":"48429373-17d1-4924-a900-eaaa335568aa.priority","label":"1 - Pass values for IT Asset Request➛Priority","reference_display":"Priority","type":"string","base_type":"string","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["priority"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"f00781aa-e5c7-4789-9ee2-564d94bdf6d4"}},{"name":"Inbound Email_1.user.company","label":"Trigger - Inbound Email➛User Record➛Company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"company","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["company"]}},{"name":"Inbound Email_1.subject","label":"Trigger - Inbound Email➛Subject","type":"string_full_utf8","base_type":"string_full_utf8","usedInstances":{"1284287f-1fb6-4d30-ac7c-ec41aa0197c9":["short_description"]},"attributes":{"test_input_hidden":"true"}}]</label_cache>
+        <master>true</master>
+        <name>Submit Record Producer - Inbound Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Submit Record Producer - Inbound Flow">3322572c2f1f4790a94e2a7a6fa4e37b</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cd3167682f9f4790a94e2a7a6fa4e361</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:29:03</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_variable_value action="delete_multiple" query="document_key=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=cd3167682f9f4790a94e2a7a6fa4e361^sys_idNOT IN493167682f9f4790a94e2a7a6fa4e363"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>cd3167682f9f4790a94e2a7a6fa4e361</id>
+        <name>Submit Record Producer - Inbound Flow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:15</sys_created_on>
+        <sys_id>493167682f9f4790a94e2a7a6fa4e363</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:15</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=493167682f9f4790a94e2a7a6fa4e363"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=cd3167682f9f4790a94e2a7a6fa4e361^sys_idNOT IN5541e7682f9f4790a94e2a7a6fa4e337,753167682f9f4790a94e2a7a6fa4e3d0,8841a7682f9f4790a94e2a7a6fa4e389,9d3167682f9f4790a94e2a7a6fa4e38a,9f31a7682f9f4790a94e2a7a6fa4e34b,ac41a7682f9f4790a94e2a7a6fa4e3ec,e23167682f9f4790a94e2a7a6fa4e3f5"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>target_table_name</dependent>
+        <dependent_on_field>target_table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>target_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Target Record</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:32</sys_created_on>
+        <sys_id>5541e7682f9f4790a94e2a7a6fa4e337</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5541e7682f9f4790a94e2a7a6fa4e337"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>target_table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Target Table</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:18</sys_created_on>
+        <sys_id>753167682f9f4790a94e2a7a6fa4e3d0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:48</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=753167682f9f4790a94e2a7a6fa4e3d0"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>user</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>User</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:27</sys_created_on>
+        <sys_id>8841a7682f9f4790a94e2a7a6fa4e389</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8841a7682f9f4790a94e2a7a6fa4e389"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>body_text</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">string_full_utf8</internal_type>
+        <label>Body Text</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:16</sys_created_on>
+        <sys_id>9d3167682f9f4790a94e2a7a6fa4e38a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9d3167682f9f4790a94e2a7a6fa4e38a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>inbound_email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Inbound Email</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="sys_email">sys_email</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual>type=received^sys_created_onONLast 3 months@javascript:gs.beginningOfLast3Months()@javascript:gs.endOfLast3Months()^EQ</reference_qual>
+        <reference_qual_condition table="sys_email">type=received^sys_created_onONLast 3 months@javascript:gs.beginningOfLast3Months()@javascript:gs.endOfLast3Months()^EQ<item display_value="received" endquery="false" field="type" goto="false" newquery="false" operator="=" or="false" value="received"/>
+            <item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="ON" or="false" value="Last 3 months@javascript:gs.beginningOfLast3Months()@javascript:gs.endOfLast3Months()"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </reference_qual_condition>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:24</sys_created_on>
+        <sys_id>9f31a7682f9f4790a94e2a7a6fa4e34b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:46</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9f31a7682f9f4790a94e2a7a6fa4e34b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>from_address</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">string_full_utf8</internal_type>
+        <label>From address</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:29</sys_created_on>
+        <sys_id>ac41a7682f9f4790a94e2a7a6fa4e3ec</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:54</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ac41a7682f9f4790a94e2a7a6fa4e3ec"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=string_full_utf8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>subject</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">string_full_utf8</internal_type>
+        <label>Subject</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</model>
+        <model_id>cd3167682f9f4790a94e2a7a6fa4e361</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:21</sys_created_on>
+        <sys_id>e23167682f9f4790a94e2a7a6fa4e3f5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e23167682f9f4790a94e2a7a6fa4e3f5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=cd3167682f9f4790a94e2a7a6fa4e361^sys_idNOT IN8241e7682f9f4790a94e2a7a6fa4e3d8"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</flow>
+        <generation_source/>
+        <name>Inbound Email</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:36</sys_created_on>
+        <sys_id>8241e7682f9f4790a94e2a7a6fa4e3d8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:28:46</sys_updated_on>
+        <trigger_definition display_value="Inbound Email">6f0180400b320300f4eb8bf637673ad4</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+VW72/aMBD9V6x8ZigQWhjfqq2Vqk2rRKvtQ1VFjnMhnoyd2g6UVf3fd3YSCD/Kylppm/YF4fNx7+7deyS3j4GgCYhgHJzPKBeEKZlyy5U0QSfg0oKWVNwsC8CMjbsZlSm1Si+DcUaFgU6QaTW7gVkhqIVVUOkUdDDuhWEnmFNRwvXSXKZYDEtIOnNlwQHHG8V9Jl6ZMvkOzH6+/HQ+gfsSjCVnxoDFFJZzkWqQwfj2rhMUVGMx66Aet664Q+uNwl4YDYZsGPX6URhmA0hob9A/oe+Hp1E2xIIHeHi+UbuHmfbI8GBBppCu+NilTQNNr6RYB3KkHWt+WNUkVpH7kgqeLcki5ywnvhNDjKXakqUqNcmEWnT9Wh4M/4E9DUKHryEDZIJ5Mpcm9j8MWvE45QY3tmwG98wqzuCqcNjVoixNBFRfmRLlTH6pCMFzChkthf1aLwwjpcGiULix3RyNOK5ztZg0qBdceo7qS6EYFasTtVbzpLRg/DIbGuKkxLW6XwXzfvDkZ4gdLU0jNWRcdY0J9WgXHEStOMM0L+wZs3zeSPSps7bAld/cju7dceovjhN9/4DoVQ01XxNXt9ui8jiNn4ZJFKLC92t8CC2NN4NuNWO3520P8gop3+RACs2V5nZJpsi9dJK2GMVNTxGKqLn7wIgmXCaqlGml8SbBbGl7U9nPCPqv0/KcG47ocaFVAdq6HqeCp9DNy6TrHVwPX/k0rofvGsSLaTqnCJdWpZ10qmpYpIq8xBK/MMC1VQVuSjEwhsvprhUSpQRQebQVogNWMAi6/leNwaVRv7C1PXpv4A90xWD0rD+ytj92eXhBr3abovbsr3DPt9z5RZfQaVoCQxQmegc52ZAFt7k/4QEfku88bcTj/wHjuF7X0Y+ba6sv/zdnTaDAhU2A4VKIN9OOtzzBsRfasfYaHLAXviNMwcbV+t70gZO876GhBqOTqBc5Q0EyZCHFV63TlEWD5KRlqH3j7+/P7iGjPeUrH0O+LlGZd4uu+qHGKMaR1nRtJC6ZmqH1Mcd17lWzYaXRP/oMquX6W3q++wkEcNvXLwwAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>email</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=cd3167682f9f4790a94e2a7a6fa4e361^sys_idNOT IN0e41e7682f9f4790a94e2a7a6fa4e3d6,8241e7682f9f4790a94e2a7a6fa4e3d5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Record Producer">87a397837333001098e194596bf6a7bc</action_type>
+        <action_type_parent display_value="Record Producer">361b76037373001098e194596bf6a70f</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>87a397837333001098e194596bf6a7bc</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:35</sys_created_on>
+        <sys_id>0e41e7682f9f4790a94e2a7a6fa4e3d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:35</sys_updated_on>
+        <ui_id>1284287f-1fb6-4d30-ac7c-ec41aa0197c9</ui_id>
+        <updation_source/>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0e41e7682f9f4790a94e2a7a6fa4e3d6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pass values for IT Asset Request">013248ac2f570790a94e2a7a6fa4e35c</action_type>
+        <action_type_parent display_value="Pass values for IT Asset Request">11087f182f170790a94e2a7a6fa4e36f</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>013248ac2f570790a94e2a7a6fa4e35c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Submit Record Producer - Inbound Flow">cd3167682f9f4790a94e2a7a6fa4e361</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:35</sys_created_on>
+        <sys_id>8241e7682f9f4790a94e2a7a6fa4e3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:35</sys_updated_on>
+        <ui_id>48429373-17d1-4924-a900-eaaa335568aa</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Ty27bMBD8lYBnS5BlPX1r4wYw0DZA3eYSBMJKXNkEKEqhKCeu4X/vUpLtIg0CB+ip6JHDWe7sLOd+zwRncxaGMz9IoPDLMPbi1IM0QB9iiEoIcJYnbMIUVEhMrEDILK/5jrAtyM6C+/1S5XWn+NWn/nrqWkJm8NkcDsTjom0k7O4upBcbIblGxeb3DxPWgKbWBjWb719cXapdQo6SqH27q4+D+NcGMrvGYq3RQq3H8+exeHUEa82tmOmEkWBUHElFCbLFCatAcTC13p0QjcBvlTwDG6EMvcYs+bkVP6lf4nmeZZZIkxU43J6O2ejeAJcLMEBSusJ0eqQWm1oU2A6ecCyhk+b6d2wg3DZG1GooMZDLY3Utu0p9HdxgpweOyyKka0kENnZUq30cpFxt6qdvR5U3QvWujJeyLkCeTmDIu7wzVs+edeL7C5sH5A+jUWJFHbMKmoaQrNH1VvRdSHTlriUd3FLWT6SuFWvlQmEndGkF4N4QvujhO9DCjvuFnqFi2+6HEo8dLu338SPPy3PwnBAxdoK88JwEIHAwwTzikATTkLPDhLW79lpC256Nog1lj50dc7BtNCgbPLYlhRaN+UCitjh6cZiMiYvTt35t4Z0/aGuf1RlVvRU42pG+LGsn5vtidoHgY8xWveKr5eL1Id4TMv9/yP6JkCXxLJpFUycPE3SCECMn9aLUSTHkqc+TPArxL4bs4Rcnb2PY2AYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8241e7682f9f4790a94e2a7a6fa4e3d5"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>target_table_name</element>
+        <help/>
+        <hint/>
+        <label>Target Table</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:20</sys_created_on>
+        <sys_id>1a3167682f9f4790a94e2a7a6fa4e3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>from_address</element>
+        <help/>
+        <hint/>
+        <label>From address</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:31</sys_created_on>
+        <sys_id>8941e7682f9f4790a94e2a7a6fa4e332</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>body_text</element>
+        <help/>
+        <hint/>
+        <label>Body Text</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:17</sys_created_on>
+        <sys_id>a93167682f9f4790a94e2a7a6fa4e3cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:17</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>subject</element>
+        <help/>
+        <hint/>
+        <label>Subject</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:23</sys_created_on>
+        <sys_id>c331a7682f9f4790a94e2a7a6fa4e347</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:23</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>user</element>
+        <help/>
+        <hint/>
+        <label>User</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:28</sys_created_on>
+        <sys_id>d041a7682f9f4790a94e2a7a6fa4e3e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:28</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>target_record</element>
+        <help/>
+        <hint/>
+        <label>Target Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:33</sys_created_on>
+        <sys_id>e141e7682f9f4790a94e2a7a6fa4e364</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:33</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>inbound_email</element>
+        <help/>
+        <hint>The record representing the inbound email.</hint>
+        <label>Inbound Email</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:26</sys_created_on>
+        <sys_id>ff31a7682f9f4790a94e2a7a6fa4e384</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_cd3167682f9f4790a94e2a7a6fa4e361"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>3322572c2f1f4790a94e2a7a6fa4e37b</sys_id>
+        <latest_snapshot>cd3167682f9f4790a94e2a7a6fa4e361</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=3322572c2f1f4790a94e2a7a6fa4e37b^sys_idNOT INac512b682f9f4790a94e2a7a6fa4e362"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"ac512b682f9f4790a94e2a7a6fa4e362","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>3322572c2f1f4790a94e2a7a6fa4e37b</plan_id>
+        <snapshot>77c5a3a02fdf4790a94e2a7a6fa4e3f2</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-10 08:17:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ac512b682f9f4790a94e2a7a6fa4e362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 08:17:46</sys_updated_on>
+        <trigger display_value="">20512b682f9f4790a94e2a7a6fa4e362</trigger>
+    </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=3322572c2f1f4790a94e2a7a6fa4e37b"/>
 </record_update>

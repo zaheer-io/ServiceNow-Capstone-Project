@@ -29,7 +29,7 @@
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
-        <status>published</status>
+        <status>draft</status>
         <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -37,7 +37,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>164903182fdfc390a94e2a7a6fa4e39b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Create Asset Request Email Flow</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -45,11 +45,11 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_hub_flow_164903182fdfc390a94e2a7a6fa4e39b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:44:22</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:57:22</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
-        <version_record>bf15b3d42f170790a94e2a7a6fa4e3a4</version_record>
+        <version_record>8dac1b202f9f4790a94e2a7a6fa4e351</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=164903182fdfc390a94e2a7a6fa4e39b"/>
     <sys_variable_value action="delete_multiple" query="document_key=164903182fdfc390a94e2a7a6fa4e39b"/>
@@ -754,13 +754,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-09 11:57:38</sys_created_on>
         <sys_id>ef0a8b582fdfc390a94e2a7a6fa4e30f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_updated_by>zaheer.r.requestor</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:26:11</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-10 07:57:08</sys_updated_on>
         <ui_id>249308e3-931e-4039-9e20-ac31c8f11972</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WXXPaRhT9Kxo9QUsVCRKX4KcMqT2ZSR2PHfvFuJpFuoJtpZWyuwITRv+9dz8kwAgXp57OeKY8YOvuuZ97zxF3a5fG7sg9CcB/9z44iQbBYND3/f7wbTA9GUyDfjwgAG/dnstIBoiUZJpCqB967oKkpTI+hP1g6A+H70IqQyJE6KtvkCGHbyUIGWovdIipKFKyurV+HxTIuTIg56sFRXOaxhyYO7q777kF4ZhMAndH60dHx5aekimkCK0TtLUiV0Wr7fO2r3NhDnIeq3r8ngsPElgMWEhCUgE9NyMsJjLnK3ckeYkGDiT+wtJVg5hTJjGgq7APgn7HtENf4RLAziIwZ81jaGdmzMlHIsk1Ro5kyS00muc0AmFmEkNCylSOt20G8KWQNGfGxdyH8c7TMmMXZiRuE6C+IrSUAouAQvWpKrdtJNfzfHlVV3lGmR6JPUzziKTNE5GS02kpVT1rF1LIMFCYkaKgbBYWPF9Q7Yy1ZN4sxQcvSfMlJhV0xjwSqcI9HCvxztD+UZtvCaeqi98xDDpXPVesxDjFvdv0gkMMv5WqEtOZ7SE0Y1AuEaeF/IAJFmDLrXo1J2Lw3x9crGC6WSRNA7HFBzHPuVTl6/BY/KT0/UG8Xn9i07xksfNbRmgaBp4op39CJKvqjyPA0zxehRI3DuE4qYKw1SEoXhn3LAbRloY5fwqPOLXwYZ4Y8hpsEv9iCoMYkzJRZmroYv+w4DTnVK72TzAa3pe+8xnPy2IPsS8M/w/wuQN8pmj+827XonlGIY1Fy7LXigkZ3pyE0Cz/I9W0h86tPbTKGbyUcgYnvv68Iv00zb16+dx6U+4JqWnR2FTNjxdY2Z7ywCXjjmKrY1bdSeJQ14+DmM2QmQ2TTydMYTMio3kNVoeetnTemF8YX3ElR5OJ+Knj/dx9Q7voZfw0T2s/7XIX3KssWadrQ+uC1UxqmPrT/9V860A0cTrbgXZwY9QQvDpunrrOesIc/ByIWqNFE75yAJfAeTLHBchlzv9yzoEcmWff48hUlxw5eGw3Fvy8Zm4ur4+L3gBV4PpCZ/xcoWskg6VzrhhxBRFKT8c44KaHSrA3aorZTs1F2gDeDKRFqxU3//U2pXSb6jigkjBny++GUXxbaAHQW1QheQRZQNxoQqVko3kV/HdsGG+SttJhU9QBTngy/5wvgY+JML1NmO1/43ra1u7Oi/G10F9d74/R2w7FWKMdzL/n9E5wBnL2MiTeCVtsQ36YuTshy2JLCNp2pP4BdNR6KP5+ig8tiGY315xvZPwGbcfpwkYRak1QvloSTNoN+3ePDeeN+4LWytI2q+DRpPamFTSzUkfVlsS9CDEu7axbaVFfxGFmNLSvoS2kr6r7vwEWcA5TXxAAAA==</values>
+        <values>H4sIAAAAAAAA/+1X227bRhD9FYJPUqPSpJU4ivwUKLURwHUM314sd7Eih9K25JJZLi2rAv89sxeKlCW5imsUMFA92OLsmdk5s2eHo7ulyyJ36B5F4H/6FByF/aDfP/T9w8H7YHLUnwSHUZ9CMHF7LqcpIPKBJiUU+Ky/oKGYZUKSCIpQsFyyjI9L3+9Hy+VXPslKHjm/pZQlJPCKcvInhLKq/tgDPMmiBZHwqOBhluaUL3ZBywKEZzGIFvAdE5SZeA6POLnIgWQxoUUB0mDj6FeTGES4KS/KlE4SKDYXc8EyweRicwWjsSlPgUsyFVmZbyCwchEr8oQubv8v4AsLGM5YEgng7vDuvufmVKA0JQh3uHyytK+2EzqBBKEnDJKo2CJ2xRWfJaR4chKIEb+xn1nna7vo3NrFTEQqqaDn4jEAjzD3YUyTAnpuSnlEscQLdyhFiQYBNPrGk8UKMWNcYlBXYR8L9jduHxz5+qPQMSDJEAxi9UistIw5/kIlvcL4oSyFhYazjIVISZcngpiWiRy1bQbwTWvLuEh1htY7S8qUn5viuKsAtZLRgtpAKeeKrcrfkIuvZtn8sk7yhHFdF0s0yUKarJ6olIJNSqnSWbqQgFZCSvOc8SnJRfbAtDOmknrTBB+8OMnm6vqgbDwaqrw9rC31TtD+RZtvqWCKxO8YBp2rnlssilGCUmuoYA3J91JlYohZCkRXQZeAaFEoZ63Ez7jVA9QUjU3l/FTAyvacB4pMOOq2OkbqThwRnT8WYjrFm7m6ycdjrrApleGsBqtFT1s6B5/VRXSuUZLD8bj4peO96x6wLnoZP31Paz/tchfcq13STteG1gmrmtQw9e/wo/mrA7HY6bQDreFG2EPw6IR56jrLMXfwsyNqjS5W4SsHUATOs3ucg5xn4i/nFOie+2x67LnVhcA7uC8bC/45MjcXV/tFXwFV4PpAp+JUoWskh7lzqm7EJYTYejrGAZVOVMNuuinudmwO0gbwpiAtWkncfOs1qXRX2QnATsKdlt8NZ/i20A1Aq6hSF6Tu7ntJXyX3Ndolfp260IRWGr1B236kG7o1YeWr+ZptG2rry4aQcX9gddm2HWHw5ABbZVoDHJvlqnV+r3LpL2ytt175+iB23/oxt8nW0GN1gK1393/XvkbNplvJNEntoOPJ7CybgxjRAsXoCcBXYQidAwz27mDas+dB2qKw5JvQmv7aZPNW+rdS18v685pcwzXMv2/Ka8E5yOnrdOG1sHkb8uLWuxayzFud3K2qqlf/UgrA/7BzmoT3zfDYGhqaX0uP5DAY+IPBB8Kk0hfxjcqInbqJmbY2fiQYbVwakHNtQT85CP9z6vUgXG+wjUo9Cz+1nbV9nXOzYGdg/7Vm4MFbmn4tjTc//m4OvTrd6v4H/qWPYz8QAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ef0a8b582fdfc390a94e2a7a6fa4e30f"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=164903182fdfc390a94e2a7a6fa4e39b"/>

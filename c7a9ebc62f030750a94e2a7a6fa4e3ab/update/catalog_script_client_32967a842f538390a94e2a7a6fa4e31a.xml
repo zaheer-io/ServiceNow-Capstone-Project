@@ -22,6 +22,39 @@
     if (isLoading || newValue == '') {
         return;
     }
+
+
+	// populate consumables based on asset type
+	
+	g_form.clearOptions('consumables');
+
+
+    if (newValue === '') {
+        g_form.addOption('consumables', '', '-- None --');
+        return;
+    }
+
+    g_form.addOption('consumables', '', '-- None --');
+
+    if (newValue == 'computer') {
+        g_form.addOption('consumables', 'keyboard', 'Keyboard');
+        g_form.addOption('consumables', 'mouse', 'Mouse');
+        g_form.addOption('consumables', 'speakers', 'Speakers');
+    } else if (newValue == 'netgear') {
+        g_form.addOption('consumables', 'network_switch', 'Network Switch');
+        g_form.addOption('consumables', 'router', 'Router');
+    } else if (newValue == 'printer') {
+        g_form.addOption('consumables', 'hp', 'HP');
+        g_form.addOption('consumables', 'canon', 'Canon');
+        g_form.addOption('consumables', 'epson', 'Epson');
+        g_form.addOption('consumables', 'xerox', 'Xerox');
+    } else if (newValue == 'ups') {
+        g_form.addOption('consumables', 'abb', 'ABB');
+        g_form.addOption('consumables', 'schneider_electric', 'Schneider Electric');
+        g_form.addOption('consumables', 'eaton', 'Eaton');
+        g_form.addOption('consumables', 'vertiv_group_corp', 'Vertiv Group Corp');
+        g_form.addOption('consumables', 'mitsubishi', 'Mitsubishi');
+    }
 	
 	// Set Assignment group based on Asset Type
 
@@ -43,7 +76,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>32967a842f538390a94e2a7a6fa4e31a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Set Assigned Group based on Asset Type</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -51,7 +84,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>catalog_script_client_32967a842f538390a94e2a7a6fa4e31a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 15:55:17</sys_updated_on>
+        <sys_updated_on>2026-09-09 16:48:08</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

@@ -5,7 +5,7 @@
         <active>true</active>
         <allow_high_security_roles>false</allow_high_security_roles>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=81202000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=137630000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>29000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -16,7 +16,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>it_asset_request__manager_approval</internal_name>
-        <label_cache>[{"name":"3841a9c3-c077-4bd2-81ae-7e34ee89f362.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"4f9cf4aa-02df-41c4-be93-4c0d0a75ac71":["condition"],"04f79caf-ea01-4ff0-87f3-4dedef94a703":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.priority","label":"1 - Get Catalog Variables➛priority","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Critical","value":"1","order":100.0},{"label":"High","value":"2","order":100.0},{"label":"Medium","value":"3","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["priority"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.status","label":"1 - Get Catalog Variables➛status","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Submitted","value":"submitted","order":100.0},{"label":"In Progres","value":"in_progres","order":100.0},{"label":"Dispatched","value":"dispatched","order":100.0},{"label":"Delivered","value":"delivered","order":100.0},{"label":"Closed","value":"closed","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["status"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.company","label":"1 - Get Catalog Variables➛company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["company"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.description","label":"1 - Get Catalog Variables➛description","reference":"core_company","reference_display":"Company","type":"multi_small","base_type":"multi_small","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["description"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.short_description","label":"1 - Get Catalog Variables➛short_description","reference":"core_company","reference_display":"Company","type":"string","base_type":"string","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["short_description"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assignment_group","label":"1 - Get Catalog Variables➛assignment_group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assignment_group"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.consumables","label":"1 - Get Catalog Variables➛consumables","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Keyboard","value":"keyboard","order":100.0},{"label":"Mouse","value":"mouse","order":100.0},{"label":"Speakers","value":"speakers","order":100.0},{"label":"HP","value":"hp","order":100.0},{"label":"Canon","value":"canon","order":100.0},{"label":"Epson","value":"epson","order":100.0},{"label":"Xerox","value":"xerox","order":100.0},{"label":"ABB","value":"abb","order":100.0},{"label":"Schneider Electric","value":"schneider_electric","order":100.0},{"label":"Eaton","value":"eaton","order":100.0},{"label":"Vertiv Group Corp","value":"vertiv_group_corp","order":100.0},{"label":"Mitsubishi","value":"mitsubishi","order":100.0},{"label":"Network Switch","value":"network_switch","order":100.0},{"label":"Router","value":"router","order":100.0},{"label":"Modem","value":"modem","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["consumables"]},"attributes":{"catalogType":"18","catalogTypeLabel":"Lookup Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.type_of_asset","label":"1 - Get Catalog Variables➛type_of_asset","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Computer","value":"computer","order":100.0},{"label":"Printer","value":"printer","order":100.0},{"label":"UPS","value":"ups","order":100.0},{"label":"Network Gear","value":"netgear","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["type_of_asset"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor","label":"1 - Get Catalog Variables➛requestor","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["requestor"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assigned_to","label":"1 - Get Catalog Variables➛assigned_to","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assigned_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor.manager","label":"1 - Get Catalog Variables➛requestor➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["approval_conditions"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"5727341b-1182-4f92-9d33-604815bb093f":["requested_item"],"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["record"],"5a1f079d-3b4b-4b34-960c-39910d029127":["record"],"925711b3-2e6b-4951-b2eb-de9df390da14":["record"]},"attributes":{"default_search_field":"number"}}]</label_cache>
+        <label_cache>[{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"5727341b-1182-4f92-9d33-604815bb093f":["requested_item"],"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["record"],"5a1f079d-3b4b-4b34-960c-39910d029127":["record"],"925711b3-2e6b-4951-b2eb-de9df390da14":["record"]},"attributes":{"default_search_field":"number"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor.manager","label":"1 - Get Catalog Variables➛requestor➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["approval_conditions"]}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assigned_to","label":"1 - Get Catalog Variables➛assigned_to","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assigned_to"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor","label":"1 - Get Catalog Variables➛requestor","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["requestor"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.type_of_asset","label":"1 - Get Catalog Variables➛type_of_asset","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Computer","value":"computer","order":100.0},{"label":"Printer","value":"printer","order":100.0},{"label":"UPS","value":"ups","order":100.0},{"label":"Network Gear","value":"netgear","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["type_of_asset"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.consumables","label":"1 - Get Catalog Variables➛consumables","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["consumables"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assignment_group","label":"1 - Get Catalog Variables➛assignment_group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assignment_group"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.short_description","label":"1 - Get Catalog Variables➛short_description","reference":"core_company","reference_display":"Company","type":"string","base_type":"string","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["short_description"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.description","label":"1 - Get Catalog Variables➛description","reference":"core_company","reference_display":"Company","type":"multi_small","base_type":"multi_small","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["description"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.company","label":"1 - Get Catalog Variables➛company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["company"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.status","label":"1 - Get Catalog Variables➛status","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Submitted","value":"submitted","order":100.0},{"label":"In Progres","value":"in_progres","order":100.0},{"label":"Dispatched","value":"dispatched","order":100.0},{"label":"Delivered","value":"delivered","order":100.0},{"label":"Closed","value":"closed","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["status"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.priority","label":"1 - Get Catalog Variables➛priority","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Critical","value":"1","order":100.0},{"label":"High","value":"2","order":100.0},{"label":"Medium","value":"3","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["priority"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"3841a9c3-c077-4bd2-81ae-7e34ee89f362.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"4f9cf4aa-02df-41c4-be93-4c0d0a75ac71":["condition"],"04f79caf-ea01-4ff0-87f3-4dedef94a703":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.opened_by","label":"1 - Get Catalog Variables➛opened_by","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["opened_by"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}}]</label_cache>
         <master_snapshot>64e04b0c2f938390a94e2a7a6fa4e3ee</master_snapshot>
         <master_snapshot_digest/>
         <name>IT Asset Request - Manager Approval</name>
@@ -37,7 +37,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>390bf2402f938390a94e2a7a6fa4e3d4</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>IT Asset Request - Manager Approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -45,11 +45,11 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_hub_flow_390bf2402f938390a94e2a7a6fa4e3d4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:48:03</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:53:15</sys_updated_on>
         <type>flow</type>
         <updation_source/>
         <version>2</version>
-        <version_record>e221b7dc2fd30790a94e2a7a6fa4e3fb</version_record>
+        <version_record>0d2e0b642f1f4790a94e2a7a6fa4e320</version_record>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=390bf2402f938390a94e2a7a6fa4e3d4"/>
     <sys_variable_value action="delete_multiple" query="document_key=390bf2402f938390a94e2a7a6fa4e3d4"/>
@@ -65,11 +65,11 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>65f04f0c2f938390a94e2a7a6fa4e335</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:48:03</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:53:15</sys_updated_on>
         <trigger_definition/>
     </sys_flow_catalog_trigger>
     <sys_trigger_runner_mapping action="delete_multiple" query="identifier=390bf2402f938390a94e2a7a6fa4e3d4"/>
@@ -152,14 +152,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:14:32</sys_created_on>
         <sys_id>c14bf2802f938390a94e2a7a6fa4e3fd</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:46:41</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:27:06</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -272,12 +272,12 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:57:27</sys_created_on>
         <sys_id>bd158b042fd38390a94e2a7a6fa4e34f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:46:47</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:27:14</sys_updated_on>
         <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
-        <trigger_inputs>H4sIAAAAAAAA/61TXWvbMBT9K0FPG3hgJ2uz+G0UCoFuhabrSxlGlq4SMVlyJdltFvrfd29sJ2nnjUH3JOl+nnvP0f2OGV6CYTm7aezk0rjHydKyhGkbwVtubrc1oFNsnBaA9u5ypUNk+f2OqRU8NGDRlX/IEqbuuGkoXjkPa+8aKzFHXZ20UNRC4/kiYlnxNeXRfQUGRATJcsVNALR8C6evLzoEbde94Tn5M4qSix9/R3GMmLyToHhj4vs34vmesIpbyaPz22OQd9UtVLXhEQ5G5yV4lmdpmrCWIK+2YSm7rpZX1N83tiCshSZS2n4uvEodsNj27mgRG22kB4u8IISae6wQqf7ulSsipcXA+sVArKbG5+kiFfPpYj6fprNZmqqzUgklxPxTlp5nZwuMG5fLKNz4Sjun88JTBCtP1vj7zjxweW3N0bBBUXazVvwp6J9Y/GNKcQp8xz75Ds+i39GwHkIR9qo1/66EdkxK/SApaW+s1gttt2NfYlgFqaXvdvH/AWZvBjglgN3qruuoHUqIzYhaXhrKCdvQEe5BYEoRvV6vMRGTnGkq+3VMFz36E+02AdmCmhRBFA+fZrVxjzcDnZfa7iH1TuMEN4cXj9i5bCLtb8e4bDlmkKKjxx7Pe1UUDw1l7H/P0KvYT0QBQXhdx88i6hYOX/kXzRJ25h8FAAA=</trigger_inputs>
+        <trigger_inputs>H4sIAAAAAAAA/61T32vbMBD+V4KeNsjATtZm8dsYFALdCk3Xl1KMIp0SMVlyJdmtF/q/7y62E7fzxqB7knS/vu/uPt3tmeEbMCxj15WdXBj3OFlZNmXaRvCWm5umBHSKndMC0N5eLnWILLvbM7WGhwosurIP6ZSpW24qilfOw9a7ykrMUZcDCEUQGs8XEauCbymP7mswICJIliluAqDlexi+vuoQtN12hufpn1lsuPjxdxaniMk7CYpXJr5/I5/7KSu4lTw635yCvCtuoCgNj3A0Oi/BsyxNkimrifK6CSvZolpeEL6vbE5cc01Lqbu+8Cp1wGLN7ckidtpIDxb3ghRK7rFCpPr7Vy5NEOfJMhGL2XKxmCXzeZKos40SSojFpzQ5T8+WWHBcGKPE4iuVDDuDpwhWDgb2+3Q8cHllzcmwQ/m1XRX8KeifWPxjQnEKfLtn8h2feTeNfhDEIhz0af595/WYaLpGElLZWK0XKq7HxN+PgnTRoX35/wTTNxOcEcF2dFdl1A7Fwua0Wr4xlBOa0C7cg8CUPHq93WIiJjlTFfbbmC469gOVVgG3BSUpglbcf4/1zj1e9+u80PZAqXMaJ7g5vnhE5E0VaX57xmXNMYMUHT1iPB9UkT9UlHH4Jz1WfuiIAoLwuoyfRdQ1HD/tL0m7zRsJBQAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>service_catalog</trigger_type>
         <updation_source/>
@@ -298,10 +298,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:20:37</sys_created_on>
         <sys_id>02acf2c02f938390a94e2a7a6fa4e3fc</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:57:30</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:31:25</sys_updated_on>
         <ui_id>3841a9c3-c077-4bd2-81ae-7e34ee89f362</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1YUY/aOBD+KyjPQB1CQuBttWilre66Emz7sqwix5mAK5NQO9mWIv77TWKHpLBL4Y5Kt92+RPJ4xvlm8n1jOw8bi0fWyBr4cQ+Gwx4JbUIcQnyXEd+B0Bl4A4cyYrWthC4BPSWwVEY4fqIiLwybzRTkE2fQuqYZFek8sLsSvuSgsoBnsNxu0TniaiXo+pOJQQtbcBFJSKzRw2PbWlGJy2cgrdFmb+pUfIKGINB1UgHcB5ytV8U4Slm+hATBVca/TOTYzLRuxziDQQUc0rbgWwZJBIgjpkJB21rSJKJZKtfWKJM5GiTQ6C4R653HgieZznNJvyn+HV/s9Aq/GDAxZmqwGwamPtocj7GQU1yZZbnclSvFEitdkghimovsumnTDnerjKeJDsloKKroVOTL5IMuiLVboPE5coUgYFXkWSDXacXTRfp1UoG84UlZEZOiSBkVuxHNMsnDPCvgbCwQUJZ4SVcrnsyDlUyfeBmMUJbducBBNxbpV3yn4vOkS1mBu4tVpd0btI9L8ycqeZHE37gMBm/bllqra0GVqlPBGgZf8gKJTsykEJRV0CUo4pjkq+wK3/IEBvO2bbgfsqPcYjWV9HI19RULkOklyw85PtEagKh1q+fPY/wJqCrG3xtYeygN38thUM79SPcyrPVBTxi228fZbiw13TVPnmG7T14R201ar57uP2M69D3Hxccgdojds4kPnu+zIaHM9zy379QcQgSYAxXIb6pw7ZrzF2jmJ8CoqH1lcLQmFY4XARq6K/wwyXyP6tPKaGjeO5PmL3d123tLRM/5/V6VteWgzr9GEcXrPiYc++ptwSOvF3pD4kedKCZhp+87bocyIB3wbBfcyGOu7fwCFRH7WGeO/GdIGnMQzTNTNXEopsbMeaI6AdWBqG4MrJfgGkmVw+d2kDJ+bwe5nLR8Ql6Ttt7SkYkdJRs0NpLPaS6TIwoIFlyVzHhRCQ2P8xRxAshKEe81yn1B7IP/N3pw/ujh99dD3z1KtcbhfMdqliYRLxCrhip0ZwZ1law/Pmw27qA3cPp22LFtv9fpx8NeZxg5Tscjfd92w5AMnbi6a6eyi7Sic5Db7eOdnMBnYNl/XuhQlv9HiOf1hRM+1u5fQi5A/ezjma5Qn0hNULMz1OdYM2m6Q/9SfxdeWXN4KzcudpRr8bDmVpRjgWjW/L2wmVka9swazawkTWBmtWdW4RUU5CrN6IHgdhOlbbPV41xSE243hnVsRNeq9FRsAREys7T+YAlKKRj7Jf7knVCRSn3jHFpjXZLDIlXXvQqnrgo/2JOnxqFc6d09b+7N7sX25v4f8V3ichfsrj+48WLvu6AiH/8BXJMzmusWAAA=</values>
@@ -322,10 +322,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:36:16</sys_created_on>
         <sys_id>2b3087c82f938390a94e2a7a6fa4e3ad</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:57:31</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:31:26</sys_updated_on>
         <ui_id>925711b3-2e6b-4951-b2eb-de9df390da14</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+WUzWrjMBSFXyVobYwdp6HNbkgIFDotJEM2nWJk6zoRyLIryWkzIe8+15bsmKR0UugmjHe6P9K5x5/0vCeckQkZAQvCu3CcRmEUDYNgeDsKk3GUhEMWUYCQeETSHLBSQVoohustFVUd2O+XoLY8hcGUGiqKdRz6Cl4r0CbmBvLDAYsZ16Wgu5XrwUi64YIpkGTy/OKRkirc3oAik/1J6lJ9giYgsHTRCjwVbHZlvWZFWuUgUVwbfHCdM5cZ3M8wg021nDDwCLwbkAxQSEaFBo/kVDJqCrUjE6MqDCig7EmKXVex4dLYQXP6rvkfPHkU1HUZ4GSpM6Fbxs4gG85m6OQSd05NpTq/CvRYW08YZLQSZtqP2YKn0vBC2hZDE9F2F6LK5aN1hHQb9P5HpVEElPWctXI7VrbcFG+LVuScy8YSN6IoUiq6FTVG8aQytZw9AQGNxzktSy7XcamKLW+aUUrurwUu/EwUb3im5mvp07TW7aOr1J9jfNaEV1TxeoifuA02Hzyid3oqqNbHUdDD+LWqldjB3Ahx40JjQdyQUDenipfmBx61BSf84LkbkNx8Rlh6dwSqt+fxFug0Rugb4M9xX9jrAGxwb/Nfg/8CaS38v5pf/rFUx/9Z7KHfO3i0CUf/zbfRf3tN9Lsxrh7/f0EfDD99VnskNZzrPvCGGvhdBUHERufEn2S/xvsFqlre5xwE0x/IbGGHHGUZiK3sE+BdcrByye7J/zbqw3HQfFfE/n/z8r/8Ba+kJ6H9CAAA</values>
@@ -346,13 +346,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:16:56</sys_created_on>
         <sys_id>40dbf2c02f938390a94e2a7a6fa4e3f7</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:57:30</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:31:24</sys_updated_on>
         <ui_id>5727341b-1182-4f92-9d33-604815bb093f</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WWYsbORD+K0bPjelrfL1lJwwEdjcQh3kJQajVpbFY9RFJbcdr/N+31Jd73LZnBpKFPfCTS/Wpvjo+VX85EJmSFUmEn7CIJTwK/CDy/XARB8ksSoIwjRgAIx7JWQboqeFbBcZCSqWFDO1bpip3cDisQW8lh8k9s0wVTzSYts616/GIzqk0pWL7xxaDFr6RKtWQk9WXrx4pmcYwFjRZHc6OXstTsQQUuq6rJJMWiU4+NSxu5GD3ZWMXgPE4tKZf26s+DeyFTh073yPw3UKeAtISTBnwSMbylNlC78nK6goNGlj6MVf73mMjc9uknbHvRv6JQaPQG8RdEcMp0uuI9Se0rVzNpmU/+dA4ifdY8DWG5LbSfVkLbIVpSpeCYJWy90Nb4/CxtLLIG4hlierQhaqy/PemWqS/YNC2yiAlKF0BXEptfmK9KXZ9tR5kXteqPVQFZ2rgCkzzzYME5RqbV1mCvh5h1mqZVNbxPBBQkGEAmrGylPkTLXWxlfWlyDGbPin8MxWq2CEZI5/yKeMuoSn2gU0f0P6+Nj8yLV12v+E1dZQCu0JTXZRlm7RrGDl6xOzNvWLGnHLHFtBvlWPeVKLNmTZlcxCuZWnfYeAt9Ok1RpfC2bCh5QLgeDx6nRSTWyMugtMY43U4EhYobwV3psg5D2LG4jgUdyKOlj5bxhCyOZsJFkOU+mM9fvg8eWcM2IFk3qjPl8l3+vzcsu+ei3qazQQ1NOnaNVmDNS/n+3b1Bj9NvZbiBD0jaCheTLdtStQ0KV0S9suF+Fco3cX6u3QuDb6mWYEzU+dMh72qJY9KxUSwK47iybjBeFRXuZUZ0FpPVOa0KM1Wwu6HPxe99ue35TM/aaGbsG6uzED3qR/fhQgNRXpB99Fi5cYSk3EVpDnsPBazObB4cRmw9EeAZQDzMIz5ZQAbR+B+COHMRQiixQgA8zEgEWI2W1wBJMEIkEZhIGDBLwMiGAHigAVixq8A/As5hBH+sCni7gLgbhxhmSzDZBZfAczGSUeJCKOrgHHjxg/4/63/77T+bZv5FU9Lt5m7PfQ4eFtuPDvt+jWqMpuk4n+APVvAa3cy+aU7andweHsHt5bXLOEAO+M/38NXNuw/dYU+X5a41AR+B2HtTn3AmYC6kqSGYNCftVJftRpx6HKuKvTMsBRSY5SeqvuU6d1caQYkQNOdbiL1LqVGjN66TycF3NZJdru7qDRvdztazzXy4xb0178APo8FJykPAAA=</values>
+        <values>H4sIAAAAAAAA/+1W24obORD9FdPPxvRtfHvLThgI7G4gDvMSgpDUpbFY9SWS2o7X+N+31Df3uNueGUgWdgl+cqmq65yqOip9OXoy8dYeEz6jEWU8Cvwg8v1wGQdsHrEgTCIKQL2pl9EU0FPDtxKMhYRICynad1SV7uB43IDeSQ6Te2qpyp9IMGucK9fTCZ0TaQpFD49NDFr4VqpEQ+atv3ydegXVmMaC9tbHi6PX4lSUgULXTclSaRHo5FON4gYHeyhquwDMx6Ex/d586lPPnuvEofOnHny3kCWAsARVBqZeSrOE2lwfvLXVJRo00ORjpg6dx1Zmtqad0u9G/o1Jo3Day7v2DCcIrwXWnZCmchWaBv3kQ+0k3mPBN5iS21J3Zc2xFaYuXQKClsre9221w8fCyjyrQyxlqo3OVZlmf9bV8roP9NpWGoQEhSuAo9TwE5ttvu+q9SCzqlbNoco5VT1XoJpvHyQo19isTBn6Tj1qrZastA7n0QMFKSYgKS0KmT2RQuc7WX0UMaazJ4V/ZkLlewRj5FM2o9wRmmEf6OwB7e8r8yPV0rH7Az9TZcmxKyTReVE0pF3DvNPUMwdzr6gxZ+7YAvKtdMjrSjScSV02F8K1LOw7TLyDjl5tdBQuhg0tIwGn02naSpHdGnERnMcYP4cjYYHwRnAXilzwIKY0jkNxJ+Jo5dNVDCFd0LmgMUSJP9Tjh8+Td8aA7Unmjfp8GXyrz88N+va6qKbZTFBDk7Zdkw1Y8zLft6s3+GnqtQQn6BlAQ/DDZNdQIqamNCbslwvxv1C6y/Vv6VwavE3THGem4kz6vaokj0pFItgVB/Fs3GI+osvMyhRIpSciM5IXZidh/8Ovi077i9vyWZy10E5YO1emp/vEj+9CDA1FMqL7aLl2Y4lkXAVJBvspjekCaLwcD1j5g4BVAIswjPl4AB1m4H4I4dxlCKLlIAAWwwAmxHy+vBLAgkFAEoWBgCUfD4hgEBAHNBBzfiXAH+EQRvjDpoi7kYC7YYYVW4VsHl8JmA9JR0yE0dWAkcaJBIIlo8hhxeLFy5CGN/6vWfk1K1dn5W27/xWXV7v720332Lu9blxszYI3qjRbVvK/wF6s+I07mfzWHjVbPry95RvLa9Z8gK30n2/6Kzv8v7qkn69jXJsCX1pYu3MfcCagqqRXhWDSn7W0X7V8cegyrkr0TLEUUmOWDqp7LHVurjQ9EKDJXteZOpdCY4zeuceZAm4rku3rIC81b14PaL3UyI97Anz9BycIM1OLDwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=40dbf2c02f938390a94e2a7a6fa4e3f7"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -370,13 +370,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:25:23</sys_created_on>
         <sys_id>44cdfa842f938390a94e2a7a6fa4e3c6</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:57:30</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:31:25</sys_updated_on>
         <ui_id>a7d4a879-6b6b-4840-b074-d747835b7939</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WS0/jMBD+K5XPaZVHW9LeEIjTLkiw4sKylhNPWktOHGwH6Fb97zuOk1Je2g3aCxI5RPLMfN88nczNlghOlmQeQThbRPM8iZIkDsM4nUbZPMmimCcMYEoCUrES0NKyTAJtDwG5Z7JxwkcaR2mYpjMqLGXG0NC9wVINdw0YS1sUArgwtWSb6w537IxGl95o9KMzytdCcg0VWd7cBqRmGp1Z0GS5faH619Aly0Ciae/grVTspn5T9u0QOzr3CqW5iycMCDxaqDhgIAWTBgJSsoozq/SGLK1uUKCB8YtKbvYWa1FZJCTO9tGI3+g2DZ1dAZhZDl63P9KuZl5cnDLLrpA5t43uTPO1EjkYXxMOBWukPTmUeYOL2gpVeYjvh0cr2ZTVuS8J2RP0LUJJYzAIqF2eLvIujeJqrR4u+yjPRNWWpFNKlTO5PzFrtcga6+LZEpBQIhEtWV2LakVrre5FC8ZYyslK4mFSSPWATo1YVROWu8AnWFY2OUP5aSu+Zlq4LL4jDYJ3ATEbcyJx7p5ywSLSu8ZF4jPrcqC+DA6Sa1HbY3RwD124u6C/ExzCxbuDFWVPg9ReA3NwH7qxV/pnE4YJ325nR/FRgvBxFKXxeFos4vGCJ8l4Hk7TaJZl4SIpJnvUbvfLjR5Vhb9Gg1ieIZEpV5VpSlcpM4jnAIcsyIY1b/u20qqpB1G9BO/5gFOrPkDV4pDFrJW2bkzaNuKQDOJ6hUbGj3I9Z8E5rlm1GVjvFuOyssw2w5rlIYittVBa2GGue9Bu9/oT/TXKX6P8WUd54CLx9+99v0icCZDcvPED6LcIKPEOWaD+h/Bik+iUo+tO2W0T0f/aJqJ52D6faKfwyX36leJge3xnubj9A46p2+dyCwAA</values>
+        <values>H4sIAAAAAAAA/+1WS2/bMAz+K4HOSeBHkjq5FS162lqgHXrpNkG26ESAbLmS3DYL8t9HWbabvrC52KVYcwggkt/Hh0iLNzsiOFmRRQjBfBkusjiM4ygIomQWpos4DSMeM4AZGZOSFYCWlqUSaHMYkzsmayd8oFGYBEkyp8JSZgwN3D9YquG2BmNpg0IAF6aSbHvd4o6d0ejSG42+tUbZRkiuoSSrmx9jUjGNzixosto9U/1t6JKlING0c/BaKnZbvSr7cogdnXuF0tzFE4wJPFgoOWAgOZMGxqRgJWdW6S1ZWV2jQAPjF6Xc9hYbUVokJM72wYhf6DYJnF0OmFkGXtcfaVszL85PmWVXyJzZWrem2UaJDIyvCYec1dKeHMq8wUVlhSo9xN+HRytZF+W5LwnpCborQkltMAioXJ4u8jaN/Gqj7i+7KM9E2ZSkVUqVMdmfmLVapLV18ewISCiQiBasqkS5ppVWd6IBYyzFdC3xMM2lukenRqzLKctc4FMsK5ueofy0EV8zLVwWX5EGwfsxMVtzIrHvHnPBItLb2kXiM2tzoL4MDpJpUdljdHAHbbj7cTcTHILlm40Vpo+N1IyBOZiHtu2V/l4HQcx3u/lRdBQjfBKGSTSZ5ctosuRxPFkEsyScp2mwjPNpj9rvf7rWoyr3YzSI5QkSmTJVmrpwlTKDeA5wyIJsWPPm3tZa1dUgqufgng84teodVA0OWcxGaevapLlGbJJBXC/QyPherqcs2McVK7cD691gXFaW2XrYZXkIYistlBZ2mOsOhHiFI4LVTYcR9Kj9/uVH/nMYPofh/x2GgcvMn9+cbpk5EyC5eeUR6jYZKHAKLVD/KD3bZlrl6LpVthtN+K82mnARNL8PtNf45D78WnOwwb6x4Pz4DduOFcX2CwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=44cdfa842f938390a94e2a7a6fa4e3c6"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -394,10 +394,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:34:17</sys_created_on>
         <sys_id>52cfb6442f938390a94e2a7a6fa4e3b9</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:57:30</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:31:25</sys_updated_on>
         <ui_id>5a1f079d-3b4b-4b34-960c-39910d029127</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+WUzWrjMBSFXyVobYwdp6HNbkgIFDotJEM2nWJk6ToRyLIryWkzIe8+17bsmKR0UugmjHe6P9K5x5/0vCeCkwkZAQ/Cu3DMojCKhkEwvB2FyThKwiGPKEBIPKJoBlipgeWa43pLZVkF9vsl6K1gMJhSS2W+jkNfw2sJxsbCQnY4YDEXppB0t3I9GGEbIbkGRSbPLx4pqMbtLWgy2Z+kLtUnaQISSxetwFPBdldUa56zMgOF4trgg+ucuczgfoYZbKrkhIFH4N2C4oBCUioNeCSjilOb6x2ZWF1iQAPlT0ruuoqNULYZNKPvRvzBk0dBVZcCTsacCd0ydgY14XSGTi5xZ2ZL3fmVo8em8YRDSktpp/1YU/BUWJGrpsXSRLbduSwz9dg4QroNev+jNCgCimrOSnkzVrrc5G+LVuRcqNoSN6LMGZXdilqrRVLaSs6egITa44wWhVDruND5VtTNKCXz1xIXfirzNzzTiLXyKat0++gq9ecYn9XhFdWiGuInboPNB4+YnZlKasxxFPQwfi0rJc1gboS4dqG2IK5JqJqZFoX9gUdtwQk/eO4GJDefEcbujkD19jzeAsNihL4G/hz3RXMdgA/um/zX4L9AWgv/r/qXfyzV8X8We+j3Dh6bhKP/5tvov70m+t0YV4//v6APhp8+qz2Sas5NH3hLLfwugyDi0TnxJ9mv8X6Bqpb3uQDJzQcyW9ghQ1kW4kb2CfAuOVi5ZPfkfxv14Tiovyti/795+V/+AviWizf9CAAA</values>
@@ -423,10 +423,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:32:58</sys_created_on>
         <sys_id>437ffe482f938390a94e2a7a6fa4e36d</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:46:50</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:27:18</sys_updated_on>
         <ui_id>04f79caf-ea01-4ff0-87f3-4dedef94a703</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1VXWvbMBT9K0XPSbAtN19vZaMQaFdoSl+2Yq7l60SbInmSnDYL+e+78kdSRsPGKHvaW3Tu1znX95A9M7Wvau8ezJVzcqXZ/PPTgEkdMPq9Z6UyzzdmJcVCOw9a4HLnFgWbs5RPyhLTaVLO+JTPIpilmMAExiWkyMcFGzANG6RMYXQhvTQ6a4AB24KqQ+AWNKzQXtzjVxQeQ0khXaVg93g+Q6ylKix2TCuw1NOjZfP9LyG/qzBTkKOiRktvpV5RuQzcywjKeCZiwZMxT6IomaZxPuZ5nBQcEBLK6ws/9OQvbhrkvKowj3DXTzK2CLTiaMDwxaMuiP68BOVwwDagC/DG7o6IRSjutDoBa6k9tWMh+cXJH9Q7ubwMiSWSRoFt8PjMutW1sFgbKfCuCgRbxEOuuhphVL3Rn1odYelYQq18v3RCakf9sAqkA4uOUrlcm+f7fuC11I3ALqiMAHV8gac15LVHFz4MKtxQo2wDVUXLySprtrIpJi6b0UrRYxQujYaGKxyBCMRHtCMYXRP+sYEfwcqg4pbaUHFLMwcnRdZcLLXzliQcmrVk3+tAqBXYScnabVCCE1ZW/ormbLFjfRi877m/uvT9ntOJwUzwoYgmk2GaF8lwGgMOJ8hTxOms5ONkRLpoM6Aymu3xcPhSRxGniz5nj/dq+w88Fb/lqbeXdsZIyW+MFD79H/ooiqL/RnptJOmy1hCdtmb4X/voKRx+O8G1d1OgkI6IPARs0f+7hMCODiC47QQ9G/stSDhhh5+9WvXipwYAAA==</values>
@@ -450,10 +450,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:24:12</sys_created_on>
         <sys_id>7e7d7a042f938390a94e2a7a6fa4e314</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:46:49</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:27:17</sys_updated_on>
         <ui_id>4f9cf4aa-02df-41c4-be93-4c0d0a75ac71</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1VwW7bMAz9lULnJLAtJ45zKzYUKNCuwFr0shUGLdGJMEXyJLltFuTfR9lOW2wtNgw97mY9UuQj9R68Z7YLbRf8jT31Xq0NW325mzBlIkbfe9Zo+3Bh10qcGx/ACLze+XPJVqzAQhaQ5FlT8iUvEyhzzKCARQM58jRnE2Zgi5QprJEqKGuqHpiwe9BdDFyCgTW6k9O2dfYePYWk8q2G3e3bGWKjtHQ4Mm3BUc2Ajq32v4TCrsVKQ42aCl0Hp8yarqvIvUmgSUuRCp4teJYk2TJP6wWv00xyQOCUd7z44Uj+5KJH3p4q9iPcHztZJyOtNJkwfAxoJFLrBrTHCduCkRCs2z0hDkFeGf0MbJQJVI7F5EevflDtbD6PiQ3SjAKH4NOxGlc3wGJjlcCrNhIckAC1Hu8Iq7ut+TTMEZeODXQ6HJdOSOepHraRdGQxUmquN/bh87HhmTL9gGNQWwH66QSB1lB3gZ6MHgY1bqlQtYW2peVU8TFVf5m4bGdrTYdZVBo1jSqcgYjEZ7QjmJ0R/rGHb8GpOMUllaHLA80avBJVr1gqFxyNcOjXUn3vIqFhwHGUatgGJXjhVBtOqc89jqwPk/eV+wul7/ecJAal4FORFMU0r2U2XaaA0wJ5jrgsG77IZtDLHHRFvQMeDl+7JOFyQEk9v9njvcq+h6dKmDfzNJm/7ql88ZqnXl/aG0bK/mCk+PR/6aMkSf4b6aWRlK8GQ4yz9c3/2Ud3UfhDBz/oRqJQnojcROz8+HeJgR0JILrtGXqw7lsc4Rk7/ASkPr7ypwYAAA==</values>
@@ -524,7 +524,7 @@
         <description>IT Asset Request - Manager Approval Flow</description>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>it_asset_request__manager_approval</internal_name>
-        <label_cache>[{"name":"3841a9c3-c077-4bd2-81ae-7e34ee89f362.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"4f9cf4aa-02df-41c4-be93-4c0d0a75ac71":["condition"],"04f79caf-ea01-4ff0-87f3-4dedef94a703":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.priority","label":"1 - Get Catalog Variables➛priority","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Critical","value":"1","order":100.0},{"label":"High","value":"2","order":100.0},{"label":"Medium","value":"3","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["priority"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.status","label":"1 - Get Catalog Variables➛status","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Submitted","value":"submitted","order":100.0},{"label":"In Progres","value":"in_progres","order":100.0},{"label":"Dispatched","value":"dispatched","order":100.0},{"label":"Delivered","value":"delivered","order":100.0},{"label":"Closed","value":"closed","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["status"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.company","label":"1 - Get Catalog Variables➛company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["company"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.description","label":"1 - Get Catalog Variables➛description","reference":"core_company","reference_display":"Company","type":"multi_small","base_type":"multi_small","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["description"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.short_description","label":"1 - Get Catalog Variables➛short_description","reference":"core_company","reference_display":"Company","type":"string","base_type":"string","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["short_description"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assignment_group","label":"1 - Get Catalog Variables➛assignment_group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assignment_group"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.consumables","label":"1 - Get Catalog Variables➛consumables","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Keyboard","value":"keyboard","order":100.0},{"label":"Mouse","value":"mouse","order":100.0},{"label":"Speakers","value":"speakers","order":100.0},{"label":"HP","value":"hp","order":100.0},{"label":"Canon","value":"canon","order":100.0},{"label":"Epson","value":"epson","order":100.0},{"label":"Xerox","value":"xerox","order":100.0},{"label":"ABB","value":"abb","order":100.0},{"label":"Schneider Electric","value":"schneider_electric","order":100.0},{"label":"Eaton","value":"eaton","order":100.0},{"label":"Vertiv Group Corp","value":"vertiv_group_corp","order":100.0},{"label":"Mitsubishi","value":"mitsubishi","order":100.0},{"label":"Network Switch","value":"network_switch","order":100.0},{"label":"Router","value":"router","order":100.0},{"label":"Modem","value":"modem","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["consumables"]},"attributes":{"catalogType":"18","catalogTypeLabel":"Lookup Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.type_of_asset","label":"1 - Get Catalog Variables➛type_of_asset","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Computer","value":"computer","order":100.0},{"label":"Printer","value":"printer","order":100.0},{"label":"UPS","value":"ups","order":100.0},{"label":"Network Gear","value":"netgear","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["type_of_asset"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor","label":"1 - Get Catalog Variables➛requestor","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["requestor"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assigned_to","label":"1 - Get Catalog Variables➛assigned_to","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assigned_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor.manager","label":"1 - Get Catalog Variables➛requestor➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["approval_conditions"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"5727341b-1182-4f92-9d33-604815bb093f":["requested_item"],"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["record"],"5a1f079d-3b4b-4b34-960c-39910d029127":["record"],"925711b3-2e6b-4951-b2eb-de9df390da14":["record"]},"attributes":{"default_search_field":"number"}}]</label_cache>
+        <label_cache>[{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"5727341b-1182-4f92-9d33-604815bb093f":["requested_item"],"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["record"],"5a1f079d-3b4b-4b34-960c-39910d029127":["record"],"925711b3-2e6b-4951-b2eb-de9df390da14":["record"]},"attributes":{"default_search_field":"number"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor.manager","label":"1 - Get Catalog Variables➛requestor➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"3841a9c3-c077-4bd2-81ae-7e34ee89f362":["approval_conditions"]}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assigned_to","label":"1 - Get Catalog Variables➛assigned_to","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assigned_to"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.requestor","label":"1 - Get Catalog Variables➛requestor","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["requestor"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.type_of_asset","label":"1 - Get Catalog Variables➛type_of_asset","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Computer","value":"computer","order":100.0},{"label":"Printer","value":"printer","order":100.0},{"label":"UPS","value":"ups","order":100.0},{"label":"Network Gear","value":"netgear","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["type_of_asset"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.consumables","label":"1 - Get Catalog Variables➛consumables","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["consumables"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.assignment_group","label":"1 - Get Catalog Variables➛assignment_group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["assignment_group"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.short_description","label":"1 - Get Catalog Variables➛short_description","reference":"core_company","reference_display":"Company","type":"string","base_type":"string","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["short_description"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.description","label":"1 - Get Catalog Variables➛description","reference":"core_company","reference_display":"Company","type":"multi_small","base_type":"multi_small","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["description"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.company","label":"1 - Get Catalog Variables➛company","reference":"core_company","reference_display":"Company","type":"reference","base_type":"reference","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["company"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.status","label":"1 - Get Catalog Variables➛status","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Submitted","value":"submitted","order":100.0},{"label":"In Progres","value":"in_progres","order":100.0},{"label":"Dispatched","value":"dispatched","order":100.0},{"label":"Delivered","value":"delivered","order":100.0},{"label":"Closed","value":"closed","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["status"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.priority","label":"1 - Get Catalog Variables➛priority","reference":"sys_user","reference_display":"User","type":"choice","base_type":"choice","choices":[{"label":"Critical","value":"1","order":100.0},{"label":"High","value":"2","order":100.0},{"label":"Medium","value":"3","order":100.0}],"usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["priority"],"c5c6a77a-ec14-42c4-9619-2fbe41033778":["values"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"3841a9c3-c077-4bd2-81ae-7e34ee89f362.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"4f9cf4aa-02df-41c4-be93-4c0d0a75ac71":["condition"],"04f79caf-ea01-4ff0-87f3-4dedef94a703":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5727341b-1182-4f92-9d33-604815bb093f.opened_by","label":"1 - Get Catalog Variables➛opened_by","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","usedInstances":{"a7d4a879-6b6b-4840-b074-d747835b7939":["opened_by"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}}]</label_cache>
         <master>true</master>
         <name>IT Asset Request - Manager Approval</name>
         <natlang/>
@@ -541,7 +541,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>64e04b0c2f938390a94e2a7a6fa4e3ee</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -549,7 +549,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:44</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:16</sys_updated_on>
         <type>flow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -634,14 +634,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:09</sys_created_on>
         <sys_id>65e08b0c2f938390a94e2a7a6fa4e3bc</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:35</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:05</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -719,14 +719,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:05</sys_created_on>
         <sys_id>a0e08b0c2f938390a94e2a7a6fa4e33c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:36</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:08</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -754,12 +754,12 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:15</sys_created_on>
         <sys_id>1fe0cb0c2f938390a94e2a7a6fa4e3d3</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:32</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:02</sys_updated_on>
         <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
-        <trigger_inputs>H4sIAAAAAAAA/61TXWvbMBT9K0FPG3hgJ2uz+G0UCoFuhabrSxlGlq4SMVlyJdltFvrfd29sJ2nnjUH3JOl+nnvP0f2OGV6CYTm7aezk0rjHydKyhGkbwVtubrc1oFNsnBaA9u5ypUNk+f2OqRU8NGDRlX/IEqbuuGkoXjkPa+8aKzFHXZ20UNRC4/kiYlnxNeXRfQUGRATJcsVNALR8C6evLzoEbde94Tn5M4qSix9/R3GMmLyToHhj4vs34vmesIpbyaPz22OQd9UtVLXhEQ5G5yV4lmdpmrCWIK+2YSm7rpZX1N83tiCshSZS2n4uvEodsNj27mgRG22kB4u8IISae6wQqf7ulSsipcXA+sVArKbG5+kiFfPpYj6fprNZmqqzUgklxPxTlp5nZwuMG5fLKNz4Sjun88JTBCtP1vj7zjxweW3N0bBBUXazVvwp6J9Y/GNKcQp8xz75Ds+i39GwHkIR9qo1/66EdkxK/SApaW+s1gttt2NfYlgFqaXvdvH/AWZvBjglgN3qruuoHUqIzYhaXhrKCdvQEe5BYEoRvV6vMRGTnGkq+3VMFz36E+02AdmCmhRBFA+fZrVxjzcDnZfa7iH1TuMEN4cXj9i5bCLtb8e4bDlmkKKjxx7Pe1UUDw1l7H/P0KvYT0QBQXhdx88i6hYOX/kXzRJ25h8FAAA=</trigger_inputs>
+        <trigger_inputs>H4sIAAAAAAAA/61T32vbMBD+V4KeNsjATtZm8dsYFALdCk3Xl1KMIp0SMVlyJdmtF/q/7y62E7fzxqB7knS/vu/uPt3tmeEbMCxj15WdXBj3OFlZNmXaRvCWm5umBHSKndMC0N5eLnWILLvbM7WGhwosurIP6ZSpW24qilfOw9a7ykrMUZcDCEUQGs8XEauCbymP7mswICJIliluAqDlexi+vuoQtN12hufpn1lsuPjxdxaniMk7CYpXJr5/I5/7KSu4lTw635yCvCtuoCgNj3A0Oi/BsyxNkimrifK6CSvZolpeEL6vbE5cc01Lqbu+8Cp1wGLN7ckidtpIDxb3ghRK7rFCpPr7Vy5NEOfJMhGL2XKxmCXzeZKos40SSojFpzQ5T8+WWHBcGKPE4iuVDDuDpwhWDgb2+3Q8cHllzcmwQ/m1XRX8KeifWPxjQnEKfLtn8h2feTeNfhDEIhz0af595/WYaLpGElLZWK0XKq7HxN+PgnTRoX35/wTTNxOcEcF2dFdl1A7Fwua0Wr4xlBOa0C7cg8CUPHq93WIiJjlTFfbbmC469gOVVgG3BSUpglbcf4/1zj1e9+u80PZAqXMaJ7g5vnhE5E0VaX57xmXNMYMUHT1iPB9UkT9UlHH4Jz1WfuiIAoLwuoyfRdQ1HD/tL0m7zRsJBQAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>service_catalog</trigger_type>
         <updation_source/>
@@ -780,13 +780,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:14</sys_created_on>
         <sys_id>0be0cb0c2f938390a94e2a7a6fa4e3cd</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 16:39:14</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:13</sys_updated_on>
         <ui_id>5727341b-1182-4f92-9d33-604815bb093f</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WWYsbORD+K0bPjelrfL1lJwwEdjcQh3kJQajVpbFY9RFJbcdr/N+31Jd73LZnBpKFPfCTS/Wpvjo+VX85EJmSFUmEn7CIJTwK/CDy/XARB8ksSoIwjRgAIx7JWQboqeFbBcZCSqWFDO1bpip3cDisQW8lh8k9s0wVTzSYts616/GIzqk0pWL7xxaDFr6RKtWQk9WXrx4pmcYwFjRZHc6OXstTsQQUuq6rJJMWiU4+NSxu5GD3ZWMXgPE4tKZf26s+DeyFTh073yPw3UKeAtISTBnwSMbylNlC78nK6goNGlj6MVf73mMjc9uknbHvRv6JQaPQG8RdEcMp0uuI9Se0rVzNpmU/+dA4ifdY8DWG5LbSfVkLbIVpSpeCYJWy90Nb4/CxtLLIG4hlierQhaqy/PemWqS/YNC2yiAlKF0BXEptfmK9KXZ9tR5kXteqPVQFZ2rgCkzzzYME5RqbV1mCvh5h1mqZVNbxPBBQkGEAmrGylPkTLXWxlfWlyDGbPin8MxWq2CEZI5/yKeMuoSn2gU0f0P6+Nj8yLV12v+E1dZQCu0JTXZRlm7RrGDl6xOzNvWLGnHLHFtBvlWPeVKLNmTZlcxCuZWnfYeAt9Ok1RpfC2bCh5QLgeDx6nRSTWyMugtMY43U4EhYobwV3psg5D2LG4jgUdyKOlj5bxhCyOZsJFkOU+mM9fvg8eWcM2IFk3qjPl8l3+vzcsu+ei3qazQQ1NOnaNVmDNS/n+3b1Bj9NvZbiBD0jaCheTLdtStQ0KV0S9suF+Fco3cX6u3QuDb6mWYEzU+dMh72qJY9KxUSwK47iybjBeFRXuZUZ0FpPVOa0KM1Wwu6HPxe99ue35TM/aaGbsG6uzED3qR/fhQgNRXpB99Fi5cYSk3EVpDnsPBazObB4cRmw9EeAZQDzMIz5ZQAbR+B+COHMRQiixQgA8zEgEWI2W1wBJMEIkEZhIGDBLwMiGAHigAVixq8A/As5hBH+sCni7gLgbhxhmSzDZBZfAczGSUeJCKOrgHHjxg/4/63/77T+bZv5FU9Lt5m7PfQ4eFtuPDvt+jWqMpuk4n+APVvAa3cy+aU7andweHsHt5bXLOEAO+M/38NXNuw/dYU+X5a41AR+B2HtTn3AmYC6kqSGYNCftVJftRpx6HKuKvTMsBRSY5SeqvuU6d1caQYkQNOdbiL1LqVGjN66TycF3NZJdru7qDRvdztazzXy4xb0178APo8FJykPAAA=</values>
+        <values>H4sIAAAAAAAA/+1W24obORD9FdPPxvRtfHvLThgI7G4gDvMSgpDUpbFY9SWS2o7X+N+31Df3uNueGUgWdgl+cqmq65yqOip9OXoy8dYeEz6jEWU8Cvwg8v1wGQdsHrEgTCIKQL2pl9EU0FPDtxKMhYRICynad1SV7uB43IDeSQ6Te2qpyp9IMGucK9fTCZ0TaQpFD49NDFr4VqpEQ+atv3ydegXVmMaC9tbHi6PX4lSUgULXTclSaRHo5FON4gYHeyhquwDMx6Ex/d586lPPnuvEofOnHny3kCWAsARVBqZeSrOE2lwfvLXVJRo00ORjpg6dx1Zmtqad0u9G/o1Jo3Day7v2DCcIrwXWnZCmchWaBv3kQ+0k3mPBN5iS21J3Zc2xFaYuXQKClsre9221w8fCyjyrQyxlqo3OVZlmf9bV8roP9NpWGoQEhSuAo9TwE5ttvu+q9SCzqlbNoco5VT1XoJpvHyQo19isTBn6Tj1qrZastA7n0QMFKSYgKS0KmT2RQuc7WX0UMaazJ4V/ZkLlewRj5FM2o9wRmmEf6OwB7e8r8yPV0rH7Az9TZcmxKyTReVE0pF3DvNPUMwdzr6gxZ+7YAvKtdMjrSjScSV02F8K1LOw7TLyDjl5tdBQuhg0tIwGn02naSpHdGnERnMcYP4cjYYHwRnAXilzwIKY0jkNxJ+Jo5dNVDCFd0LmgMUSJP9Tjh8+Td8aA7Unmjfp8GXyrz88N+va6qKbZTFBDk7Zdkw1Y8zLft6s3+GnqtQQn6BlAQ/DDZNdQIqamNCbslwvxv1C6y/Vv6VwavE3THGem4kz6vaokj0pFItgVB/Fs3GI+osvMyhRIpSciM5IXZidh/8Ovi077i9vyWZy10E5YO1emp/vEj+9CDA1FMqL7aLl2Y4lkXAVJBvspjekCaLwcD1j5g4BVAIswjPl4AB1m4H4I4dxlCKLlIAAWwwAmxHy+vBLAgkFAEoWBgCUfD4hgEBAHNBBzfiXAH+EQRvjDpoi7kYC7YYYVW4VsHl8JmA9JR0yE0dWAkcaJBIIlo8hhxeLFy5CGN/6vWfk1K1dn5W27/xWXV7v720332Lu9blxszYI3qjRbVvK/wF6s+I07mfzWHjVbPry95RvLa9Z8gK30n2/6Kzv8v7qkn69jXJsCX1pYu3MfcCagqqRXhWDSn7W0X7V8cegyrkr0TLEUUmOWDqp7LHVurjQ9EKDJXteZOpdCY4zeuceZAm4rku3rIC81b14PaL3UyI97Anz9BycIM1OLDwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=0be0cb0c2f938390a94e2a7a6fa4e3cd"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -852,13 +852,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:15</sys_created_on>
         <sys_id>87e0cb0c2f938390a94e2a7a6fa4e3d0</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 16:39:15</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:14</sys_updated_on>
         <ui_id>a7d4a879-6b6b-4840-b074-d747835b7939</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1WS0/jMBD+K5XPaZVHW9LeEIjTLkiw4sKylhNPWktOHGwH6Fb97zuOk1Je2g3aCxI5RPLMfN88nczNlghOlmQeQThbRPM8iZIkDsM4nUbZPMmimCcMYEoCUrES0NKyTAJtDwG5Z7JxwkcaR2mYpjMqLGXG0NC9wVINdw0YS1sUArgwtWSb6w537IxGl95o9KMzytdCcg0VWd7cBqRmGp1Z0GS5faH619Aly0Ciae/grVTspn5T9u0QOzr3CqW5iycMCDxaqDhgIAWTBgJSsoozq/SGLK1uUKCB8YtKbvYWa1FZJCTO9tGI3+g2DZ1dAZhZDl63P9KuZl5cnDLLrpA5t43uTPO1EjkYXxMOBWukPTmUeYOL2gpVeYjvh0cr2ZTVuS8J2RP0LUJJYzAIqF2eLvIujeJqrR4u+yjPRNWWpFNKlTO5PzFrtcga6+LZEpBQIhEtWV2LakVrre5FC8ZYyslK4mFSSPWATo1YVROWu8AnWFY2OUP5aSu+Zlq4LL4jDYJ3ATEbcyJx7p5ywSLSu8ZF4jPrcqC+DA6Sa1HbY3RwD124u6C/ExzCxbuDFWVPg9ReA3NwH7qxV/pnE4YJ325nR/FRgvBxFKXxeFos4vGCJ8l4Hk7TaJZl4SIpJnvUbvfLjR5Vhb9Gg1ieIZEpV5VpSlcpM4jnAIcsyIY1b/u20qqpB1G9BO/5gFOrPkDV4pDFrJW2bkzaNuKQDOJ6hUbGj3I9Z8E5rlm1GVjvFuOyssw2w5rlIYittVBa2GGue9Bu9/oT/TXKX6P8WUd54CLx9+99v0icCZDcvPED6LcIKPEOWaD+h/Bik+iUo+tO2W0T0f/aJqJ52D6faKfwyX36leJge3xnubj9A46p2+dyCwAA</values>
+        <values>H4sIAAAAAAAA/+1WS2/bMAz+K4HOSeBHkjq5FS162lqgHXrpNkG26ESAbLmS3DYL8t9HWbabvrC52KVYcwggkt/Hh0iLNzsiOFmRRQjBfBkusjiM4ygIomQWpos4DSMeM4AZGZOSFYCWlqUSaHMYkzsmayd8oFGYBEkyp8JSZgwN3D9YquG2BmNpg0IAF6aSbHvd4o6d0ejSG42+tUbZRkiuoSSrmx9jUjGNzixosto9U/1t6JKlING0c/BaKnZbvSr7cogdnXuF0tzFE4wJPFgoOWAgOZMGxqRgJWdW6S1ZWV2jQAPjF6Xc9hYbUVokJM72wYhf6DYJnF0OmFkGXtcfaVszL85PmWVXyJzZWrem2UaJDIyvCYec1dKeHMq8wUVlhSo9xN+HRytZF+W5LwnpCborQkltMAioXJ4u8jaN/Gqj7i+7KM9E2ZSkVUqVMdmfmLVapLV18ewISCiQiBasqkS5ppVWd6IBYyzFdC3xMM2lukenRqzLKctc4FMsK5ueofy0EV8zLVwWX5EGwfsxMVtzIrHvHnPBItLb2kXiM2tzoL4MDpJpUdljdHAHbbj7cTcTHILlm40Vpo+N1IyBOZiHtu2V/l4HQcx3u/lRdBQjfBKGSTSZ5ctosuRxPFkEsyScp2mwjPNpj9rvf7rWoyr3YzSI5QkSmTJVmrpwlTKDeA5wyIJsWPPm3tZa1dUgqufgng84teodVA0OWcxGaevapLlGbJJBXC/QyPherqcs2McVK7cD691gXFaW2XrYZXkIYistlBZ2mOsOhHiFI4LVTYcR9Kj9/uVH/nMYPofh/x2GgcvMn9+cbpk5EyC5eeUR6jYZKHAKLVD/KD3bZlrl6LpVthtN+K82mnARNL8PtNf45D78WnOwwb6x4Pz4DduOFcX2CwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=87e0cb0c2f938390a94e2a7a6fa4e3d0"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -905,10 +905,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:13</sys_created_on>
         <sys_id>3ae0cb0c2f938390a94e2a7a6fa4e3ca</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:43</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:15</sys_updated_on>
         <ui_id>04f79caf-ea01-4ff0-87f3-4dedef94a703</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBn2dArft0CBwEMJA2QBLm0gbCiljZbmlRJKolr+N+7lGQ7KBK0RX3szRzuY2bEgbfMNL5uvHswF87JpWazz08Rkzpg9HvLhDIv12Yp+UI7D5rj/cYtKjZjeTYWAvNJKqbZJJvGMM0xhTGMBOSYjSoWMQ1rpEpudCW9NLpogYg9g2rCxQ1oWKI9u8OvyD2Glkq6WsHm8eMKvpKqstgzrcHSTI+Wzba/XMnAUsQgkilPeJaOsjSO00melKOsTNIqA4SUBiooUVHpfE/z7LpFPubvN3XAnbdSL/vzdT/lfg8aWwVWSRwxfPWoK2I/E6AcRmwNugJv7OaAWITqVqsjsJLa0zgWil+d/EEL0/PzUCiQJHLsLg/Honeug8UleCAqDfeN7Uv5ykiOrjOnQgGN8vO3WFdwWwepXYuHUu27jWrW+lPnCDsM2H8oQhpHJLAOSgP1Xoe4X5mXuz3LK6lbV/pLZTiowwk8eVc2PvDZMlS4pkHFGuqaHC1qa55l20xc1sOlosMwvE5aGl7uEHggPiRjYXhF+GULP4KVQcUNjaHmjmYJTvKifeU0jmxCtouY27i5AueOIsnd4nsTKHaSe3FF509o4VbW/oI2P2OvYxedNjRv8rLdZvR8YcqzAY/H40FeVulgkgAOxpjliJOpyEbpkJSSV6AK2u1xt/vSxHFGufgoZKcae9JkJu8l8317/iaO6W/iGN7CH6YxjuP/cfznOEpXdCHqtbXLT5jGpxCfbufBay4dUXsI2GL/TxcuNvS4QmaP0Iux34KoI7b7CYjtuzwzBwAA</values>
@@ -932,10 +932,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:13</sys_created_on>
         <sys_id>6ee08b0c2f938390a94e2a7a6fa4e3f4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:47:42</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:14</sys_updated_on>
         <ui_id>4f9cf4aa-02df-41c4-be93-4c0d0a75ac71</ui_id>
         <updation_source/>
         <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBn2aAetizfggQBDCQN0AS5tIGwolY2UZpURSqJa/jfu5RkO2gTtEF97M2cfc2OduAtM62rW2fvzbm1cqnZ/MtjwKT2GP3eskqZ52uzlGKhrQMt8G5jFyWbsxTTMgWeRFUWz+KMQ5ZgBClMK0gwDhMWMA1rpExhdCmdNDrvgIA9gWp94AY0LLE5O6/rxjyhpVApba1g8/B+hlhJVTY4MK2hoZ4OGzbf/hKSnmXFoQozEYo4msYR59EsCYtpXIRRGQNCTA0VFKgo9WJP8+y6Q97n7za1x61rpF4O7+uhy90eNE3pWYU8YPjiUJdIfCpQFgO2Bl2CM83mgDQI5a1WR2AltaN2zCe/WPmDBkaTiU+skFYU2AcPz3xQroerS3BAVFrh2mZIFSsjBdpenBIraJW7eI31Cbe1X7UvcVCofbVR7Vp/6hVhhwb7D0VIa4kE1n5TT33Yo7pbmefPe5ZXUneqDEFlBKjDCxxpV7TO89kyVLimRvka6poUzf0ByK6YuKzHS0WPsb9OGuovdwzCEx+TsDC+Ivyygx+gkX6LG2pDxT3NAqwUeXfl1I5kQrYLmN3YCwXWHpckdfPvrafYrzwsl/f6+BLRyNqd0+QnHPbYBac1zSu/bLcxnS9kIh4JnqajpCij0SwEHKUYJ4izrIqn0Rg6s4DKabbD3e5ry3lc9igd4W8mO1Xbjzkzg0k1CfnkbWcm07ec+bY8H7Fj9Ac7+lv4Szdyzv/b8Z/tKG3em2jYrRt+Qjc+evv0Mw9aC2mJ2r3HFvt/Oh/Y0HF5zx6hZ9N880sdsd1PTkt4XjMHAAA=</values>
@@ -1002,17 +1002,17 @@
         <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
         <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"f1f04f0c2f938390a94e2a7a6fa4e336","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
         <plan_id>390bf2402f938390a94e2a7a6fa4e3d4</plan_id>
-        <snapshot>c13377d02f170790a94e2a7a6fa4e3b6</snapshot>
+        <snapshot>b8f80fe82fdb4790a94e2a7a6fa4e32c</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 16:39:26</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f1f04f0c2f938390a94e2a7a6fa4e336</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 14:48:03</sys_updated_on>
+        <sys_updated_on>2026-09-10 06:28:36</sys_updated_on>
         <trigger display_value="">65f04f0c2f938390a94e2a7a6fa4e335</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=390bf2402f938390a94e2a7a6fa4e3d4"/>

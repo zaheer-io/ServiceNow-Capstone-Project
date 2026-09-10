@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
     <question_choice action="INSERT_OR_UPDATE">
-        <inactive>false</inactive>
+        <inactive>true</inactive>
         <order>300</order>
         <published_ref/>
         <question display_value="Consumables">517759c42f974390a94e2a7a6fa4e37e</question>
@@ -8,14 +8,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-08 09:04:36</sys_created_on>
         <sys_id>8fd8150c2f974390a94e2a7a6fa4e326</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Speakers</sys_name>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>question_choice_8fd8150c2f974390a94e2a7a6fa4e326</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 09:04:36</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:27:55</sys_updated_on>
         <text>Speakers</text>
         <value>speakers</value>
     </question_choice>

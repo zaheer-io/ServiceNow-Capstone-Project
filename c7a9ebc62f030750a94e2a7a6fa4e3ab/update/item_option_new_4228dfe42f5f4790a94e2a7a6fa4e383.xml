@@ -5,12 +5,12 @@
         <cat_item display_value="IT Asset Request Producer">1c4619c42f974390a94e2a7a6fa4e309</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
-        <choice_field>type_of_asset</choice_field>
-        <choice_table>x_2180885_it_ass_0_asset_request_table</choice_table>
+        <choice_field/>
+        <choice_table/>
         <conversational_label/>
         <create_roles/>
         <default_html_value/>
-        <default_value/>
+        <default_value>javascript:gs.getUserID()</default_value>
         <delete_roles/>
         <delivery_plan/>
         <description/>
@@ -23,13 +23,13 @@
         <dynamic_value_field/>
         <enable_also_request_for>false</enable_also_request_for>
         <example_text/>
-        <field>type_of_asset</field>
+        <field>opened_by</field>
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
         <hidden>false</hidden>
         <hide_on_grid>false</hide_on_grid>
-        <include_none>true</include_none>
+        <include_none>false</include_none>
         <instructions/>
         <layout>normal</layout>
         <list_table/>
@@ -37,32 +37,32 @@
         <lookup_label/>
         <lookup_price/>
         <lookup_source/>
-        <lookup_table>x_2180885_it_ass_0_asset_request_table</lookup_table>
+        <lookup_table/>
         <lookup_unique>false</lookup_unique>
-        <lookup_value>type_of_asset</lookup_value>
+        <lookup_value/>
         <macro/>
         <macroponent/>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <map_to_field>true</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
-        <mask_use_encryption>true</mask_use_encryption>
-        <name>type_of_asset</name>
+        <mask_use_encryption>false</mask_use_encryption>
+        <name>opened_by</name>
         <no_auto_populate_also_request_for>false</no_auto_populate_also_request_for>
         <not_available_conversation>false</not_available_conversation>
-        <order>200</order>
+        <order>50</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Type of Asset</question_text>
-        <read_only>false</read_only>
+        <question_text>Opened By</question_text>
+        <read_only>true</read_only>
         <read_roles/>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
         <record_producer_table>x_2180885_it_ass_0_asset_request_table</record_producer_table>
-        <reference/>
+        <reference>sys_user</reference>
         <reference_qual/>
         <reference_qual_condition/>
         <rich_text/>
@@ -82,24 +82,24 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 08:58:15</sys_created_on>
-        <sys_id>f4f655c02f974390a94e2a7a6fa4e370</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Type of Asset</sys_name>
-        <sys_package/>
+        <sys_created_on>2026-09-10 07:39:06</sys_created_on>
+        <sys_id>4228dfe42f5f4790a94e2a7a6fa4e383</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Opened By</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>item_option_new_f4f655c02f974390a94e2a7a6fa4e370</sys_update_name>
+        <sys_update_name>item_option_new_4228dfe42f5f4790a94e2a7a6fa4e383</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-10 07:23:09</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:39:06</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>5</type>
+        <type>8</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>advanced</use_reference_qualifier>
+        <use_reference_qualifier>simple</use_reference_qualifier>
         <validate_regex/>
         <variable_name/>
         <variable_set/>
@@ -111,22 +111,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=f4f655c02f974390a94e2a7a6fa4e370"/>
-    <fx_price action="delete_multiple" query="id=f4f655c02f974390a94e2a7a6fa4e370"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=4228dfe42f5f4790a94e2a7a6fa4e383"/>
+    <fx_price action="delete_multiple" query="id=4228dfe42f5f4790a94e2a7a6fa4e383"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>f4f655c02f974390a94e2a7a6fa4e370</id>
+        <id>4228dfe42f5f4790a94e2a7a6fa4e383</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 08:58:16</sys_created_on>
-        <sys_id>aa6759482f974390a94e2a7a6fa4e374</sys_id>
+        <sys_created_on>2026-09-10 07:39:08</sys_created_on>
+        <sys_id>f6789b282f5f4790a94e2a7a6fa4e3fd</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 08:58:16</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:39:08</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -134,16 +134,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>f4f655c02f974390a94e2a7a6fa4e370</id>
+        <id>4228dfe42f5f4790a94e2a7a6fa4e383</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-08 08:58:16</sys_created_on>
-        <sys_id>1e6759482f974390a94e2a7a6fa4e373</sys_id>
+        <sys_created_on>2026-09-10 07:39:08</sys_created_on>
+        <sys_id>7a789b282f5f4790a94e2a7a6fa4e3fb</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-08 08:58:16</sys_updated_on>
+        <sys_updated_on>2026-09-10 07:39:08</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

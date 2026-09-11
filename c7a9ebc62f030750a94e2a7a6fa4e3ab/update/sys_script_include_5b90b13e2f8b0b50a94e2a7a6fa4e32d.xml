@@ -169,19 +169,112 @@ assetRequestUtils.prototype = {
 
 	},
 
+	// Create Asset Request though Table API
+
+	createAssetRequest : function(currentRecord) {
+
+        var r = new sn_ws.RESTMessageV2(
+            'Instance-a Outbound Action',
+            'Create Record'
+        );
+
+        var payload = {
+            "correlation_id": currentRecord.getValue('number'),
+            "requestor": currentRecord.getDisplayValue('requestor'), 
+            "assignment_group": currentRecord.getDisplayValue('assignment_group'),
+            "opened_by": currentRecord.getDisplayValue('opened_by'),
+            "company": currentRecord.getDisplayValue('company'),
+            "type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
+            "consumables": currentRecord.getDisplayValue('consumables'),
+            "short_description": currentRecord.getValue('short_description'),
+            "description": currentRecord.getValue('description'),
+            "status": currentRecord.getDisplayValue('status'),
+            "priority": currentRecord.getDisplayValue('priority')
+        };
+
+        r.setRequestHeader("Accept", "application/json");
+        r.setRequestHeader("Content-Type", "application/json");
+
+        r.setRequestBody(JSON.stringify(payload));
+
+        var response = r.execute();
+
+        var responseBody = response.getBody();
+        var parsedResponse = JSON.parse(responseBody);
+
+        return parsedResponse.result.number;
+    },
+
+	// Update Asset Request though Table API
+
+	updateAssetRequest: function(currentRecord) {
+
+		var targetNumber = currentRecord.getValue('correlation_id');
+
+		// Retrieve the target record from Instance B
+		var getReq = new sn_ws.RESTMessageV2(
+			'Instance-a Outbound Action',
+			'Retrive Record by Number'
+		);
+
+		getReq.setStringParameter(
+			'target_number',
+			targetNumber
+		);
+
+		getReq.setRequestHeader("Accept", "application/json");
+
+		var getResponse = getReq.execute();
+
+		var result = JSON.parse(getResponse.getBody());
+
+		var targetSysId = result.result[0].sys_id;
+
+
+		// Update the target record in Instance B
+		var updateReq = new sn_ws.RESTMessageV2(
+			'Instance-a Outbound Action',
+			'Update Record'
+		);
+
+		updateReq.setStringParameter(
+			'target_sys_id',
+			targetSysId
+		);
+
+		var payload = {
+			"short_description": currentRecord.getValue('short_description'),
+			"description": currentRecord.getValue('description'),
+			"assigned_to": currentRecord.getDisplayValue('assigned_to'),
+			"status": currentRecord.getDisplayValue('status'),
+			"priority": currentRecord.getDisplayValue('priority')
+		};
+
+		updateReq.setRequestHeader("Accept", "application/json");
+		updateReq.setRequestHeader("Content-Type", "application/json");
+		updateReq.setQueryParameter(
+			"sysparm_input_display_value",
+			"true"
+		);
+
+		updateReq.setRequestBody(JSON.stringify(payload));
+
+		updateReq.execute();
+	},
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>57</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-09 10:08:33</sys_updated_on>
+        <sys_updated_on>2026-09-11 08:49:27</sys_updated_on>
     </sys_script_include>
 </record_update>

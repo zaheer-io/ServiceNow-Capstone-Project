@@ -331,19 +331,62 @@ assetRequestUtils.prototype = {
         return parsedResponse["result"][0]["display_value"];
     },
 
+	// Create Asset Requst Record using Scripted REST API
+
+	createScriptedAssetRequest: function(currentRecord) {
+		var payloadObject = {};
+
+		payloadObject.correlation_id = currentRecord.getValue('number');
+		payloadObject.short_description = currentRecord.getValue('short_description') || '';
+		payloadObject.description = currentRecord.getValue('description') || '';
+
+		payloadObject.requestor = currentRecord.getValue('requestor') || '';
+		payloadObject.assignment_group = currentRecord.getValue('assignment_group') || '';
+		payloadObject.assigned_to = currentRecord.getValue('assigned_to') || '';
+		payloadObject.company = currentRecord.getValue('company') || '';
+
+		payloadObject.status = currentRecord.getValue('status') || '';
+		payloadObject.priority = currentRecord.getValue('priority') || '';
+		payloadObject.type_of_asset = currentRecord.getValue('type_of_asset') || '';
+		payloadObject.consumables = currentRecord.getValue('consumables') || '';
+
+		var jsonBody = JSON.stringify(payloadObject);
+		gs.info("INTEGRATION OUTBOUND (Payload): " + jsonBody);
+
+		var r = new sn_ws.RESTMessageV2(
+			'Instance-a Outbound Action',
+			'Create Scripted Asset Request'
+		);
+
+		r.setRequestHeader("Accept", "application/json");
+		r.setRequestHeader("Content-Type", "application/json");
+		r.setRequestBody(jsonBody);
+
+		var response = r.execute();
+		var httpStatus = response.getStatusCode();
+		var responseBody = response.getBody();
+
+		if (httpStatus == 201) {
+			var parsedResponse = JSON.parse(responseBody);
+			return parsedResponse.result.number;
+		}
+
+		return null;
+	},
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-11 17:00:24</sys_updated_on>
+        <sys_updated_on>2026-09-12 08:50:51</sys_updated_on>
     </sys_script_include>
 </record_update>

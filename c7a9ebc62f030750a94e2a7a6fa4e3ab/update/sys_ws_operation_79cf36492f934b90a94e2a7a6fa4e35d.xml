@@ -9,10 +9,20 @@
         <name>CreateOrUpdateAssetRequest</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
+    // var allowedUser = 'instanceB.integration.user';
+
+    // if (gs.getUserName() != allowedUser) {
+    //     response.setStatus(403);
+    //     response.setBody({
+    //         "error": "You do not have permission to trigger this integration."
+    //     });
+    //     return;
+    // }
+
     var requestBody = request.body.data;
     var responseMessage = {};
 
-    if (requestBody.correlation_id == undefined || requestBody.correlation_id == '') {
+    if (!requestBody || requestBody.correlation_id == undefined || requestBody.correlation_id == '') {
         response.setStatus(400);
         responseMessage.error = "Please provide a correlation_id";
         response.setBody(responseMessage);
@@ -20,46 +30,24 @@
     }
 
     var assetRecord = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
-
     assetRecord.addQuery('correlation_id', requestBody.correlation_id);
     assetRecord.setLimit(1);
     assetRecord.query();
 
     if (assetRecord.next()) {
 
-        if (requestBody.short_description != undefined) {
-            assetRecord.short_description = requestBody.short_description;
-        }
-        if (requestBody.description != undefined) {
-            assetRecord.description = requestBody.description;
-        }
-        if (requestBody.status != undefined) {
-            assetRecord.status = requestBody.status;
-        }
-        if (requestBody.priority != undefined) {
-            assetRecord.priority = requestBody.priority;
-        }
-        if (requestBody.requestor != undefined) {
-            assetRecord.requestor = requestBody.requestor;
-        }
-        if (requestBody.type_of_asset != undefined) {
-            assetRecord.type_of_asset = requestBody.type_of_asset;
-        }
-        if (requestBody.consumables != undefined) {
-            assetRecord.consumables = requestBody.consumables;
-        }
-        if (requestBody.assignment_group != undefined) {
-            assetRecord.assignment_group = requestBody.assignment_group;
-        }
-        if (requestBody.assigned_to != undefined) {
-            assetRecord.assigned_to = requestBody.assigned_to;
-        }
-        if (requestBody.company != undefined) {
-            assetRecord.company = requestBody.company;
-        }
-        if (requestBody.asset != undefined) {
-            assetRecord.asset = requestBody.asset;
-        }
+        if (requestBody.short_description != undefined) assetRecord.short_description = requestBody.short_description;
+        if (requestBody.description != undefined) assetRecord.description = requestBody.description;
+
+        if (requestBody.status != undefined) assetRecord.status = requestBody.status;
+        if (requestBody.priority != undefined) assetRecord.priority = requestBody.priority;
+        if (requestBody.type_of_asset != undefined) assetRecord.type_of_asset = requestBody.type_of_asset;
+        if (requestBody.consumables != undefined) assetRecord.consumables = requestBody.consumables;
+
+        if (requestBody.requestor != undefined) assetRecord.requestor = requestBody.requestor;
+        if (requestBody.assignment_group != undefined) assetRecord.assignment_group = requestBody.assignment_group;
+        if (requestBody.assigned_to != undefined) assetRecord.assigned_to = requestBody.assigned_to;
+        if (requestBody.company != undefined) assetRecord.company = requestBody.company;
 
         assetRecord.update();
 
@@ -74,39 +62,18 @@
         assetRecord.initialize();
         assetRecord.correlation_id = requestBody.correlation_id;
 
-        if (requestBody.short_description != undefined) {
-            assetRecord.short_description = requestBody.short_description;
-        }
-        if (requestBody.description != undefined) {
-            assetRecord.description = requestBody.description;
-        }
-        if (requestBody.status != undefined) {
-            assetRecord.status = requestBody.status;
-        }
-        if (requestBody.priority != undefined) {
-            assetRecord.priority = requestBody.priority;
-        }
-        if (requestBody.requestor != undefined) {
-            assetRecord.requestor = requestBody.requestor;
-        }
-        if (requestBody.type_of_asset != undefined) {
-            assetRecord.type_of_asset = requestBody.type_of_asset;
-        }
-        if (requestBody.consumables != undefined) {
-            assetRecord.consumables = requestBody.consumables;
-        }
-        if (requestBody.assignment_group != undefined) {
-            assetRecord.assignment_group = requestBody.assignment_group;
-        }
-        if (requestBody.assigned_to != undefined) {
-            assetRecord.assigned_to = requestBody.assigned_to;
-        }
-        if (requestBody.company != undefined) {
-            assetRecord.company = requestBody.company;
-        }
-        if (requestBody.asset != undefined) {
-            assetRecord.asset = requestBody.asset;
-        }
+        if (requestBody.short_description != undefined) assetRecord.short_description = requestBody.short_description;
+        if (requestBody.description != undefined) assetRecord.description = requestBody.description;
+
+        if (requestBody.status != undefined) assetRecord.status = requestBody.status;
+        if (requestBody.priority != undefined) assetRecord.priority = requestBody.priority;
+        if (requestBody.type_of_asset != undefined) assetRecord.type_of_asset = requestBody.type_of_asset;
+        if (requestBody.consumables != undefined) assetRecord.consumables = requestBody.consumables;
+
+        if (requestBody.requestor != undefined) assetRecord.requestor = requestBody.requestor;
+        if (requestBody.assignment_group != undefined) assetRecord.assignment_group = requestBody.assignment_group;
+        if (requestBody.assigned_to != undefined) assetRecord.assigned_to = requestBody.assigned_to;
+        if (requestBody.company != undefined) assetRecord.company = requestBody.company;
 
         var newSysId = assetRecord.insert();
 
@@ -134,14 +101,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-11 19:08:50</sys_created_on>
         <sys_id>79cf36492f934b90a94e2a7a6fa4e35d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>CreateOrUpdateAssetRequest</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_ws_operation_79cf36492f934b90a94e2a7a6fa4e35d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-11 19:08:50</sys_updated_on>
+        <sys_updated_on>2026-09-12 08:31:30</sys_updated_on>
         <web_service_definition display_value="Asset Request Inbound API">f54eb6852f934b90a94e2a7a6fa4e37e</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

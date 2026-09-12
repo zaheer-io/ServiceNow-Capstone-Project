@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_2180885_it_ass_0.asset.deleted</event_name>
+        <name>Execute Outbound Asset Delete</name>
+        <order>100</order>
+        <script><![CDATA[var targetNumber = event.parm1;
+
+gs.info('Target number : ' +targetNumber);
+
+if (targetNumber) {
+    var utils = new assetRequestUtils(); 
+    utils.deleteAssetRequest(targetNumber);
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-11 11:36:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>353815052fd70b90a94e2a7a6fa4e3c5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Execute Outbound Asset Delete</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sysevent_script_action_353815052fd70b90a94e2a7a6fa4e3c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-11 13:12:37</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="202c31812fdb0b90a94e2a7a6fa4e398" extends="sys_import_set_row" label="Asset Request Import" max_length="40" name="x_2180885_it_ass_0_asset_request_import" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_assigned_to" label="Assigned to" max_length="40" name="u_assigned_to" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_comments" label="Comments" max_length="40" name="u_comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_status" label="Status" max_length="40" name="u_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_number" label="Number" max_length="40" name="u_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_priority" label="Priority" max_length="40" name="u_priority" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_consumables" label="Consumables" max_length="40" name="u_consumables" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_short_description" label="Short description" max_length="40" name="u_short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_assignment_group" label="Assignment group" max_length="40" name="u_assignment_group" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_asset" label="Asset" max_length="40" name="u_asset" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_description" label="Description" max_length="40" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_type_of_asset" label="Type of asset" max_length="40" name="u_type_of_asset" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_opened_by" label="Opened by" max_length="40" name="u_opened_by" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_requestor" label="Requestor" max_length="40" name="u_requestor" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_company" label="Company" max_length="40" name="u_company" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_correlation_id" label="Correlation ID" max_length="40" name="u_correlation_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=u_work_notes" label="Work notes" max_length="40" name="u_work_notes" type="string"/>
+    </element>
+</database>

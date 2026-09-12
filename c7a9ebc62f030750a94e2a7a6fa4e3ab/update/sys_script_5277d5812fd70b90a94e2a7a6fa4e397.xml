@@ -2,8 +2,8 @@
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
-        <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
+        <action_delete>true</action_delete>
+        <action_insert>false</action_insert>
         <action_query>false</action_query>
         <action_update>false</action_update>
         <active>false</active>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Asset Request Async Insert</name>
+        <name>Asset Request Before Delete</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -28,40 +28,35 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	if (gs.getUserName() == 'instanceB.integration.user') {
+		return;
+	}
 
-    if (!current.correlation_id.nil()) {
-        return; 
-    }
+    var targetNumber = current.getValue('correlation_id');
     
-    var integration = new assetRequestUtils();
-    var correlationNumber = integration.createAssetRequest(current);
+	if (targetNumber) {
+		gs.eventQueue('x_2180885_it_ass_0.asset.deleted', null, targetNumber, '');
+	}
     
-    if (correlationNumber) {
-        current.setValue('correlation_id', correlationNumber);
-
-		current.setWorkflow(false);
-
-		current.update();
-    }
-
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-11 06:46:50</sys_created_on>
+        <sys_created_on>2026-09-11 11:32:27</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>22161c012f130b90a94e2a7a6fa4e38f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Asset Request Async Insert</sys_name>
+        <sys_id>5277d5812fd70b90a94e2a7a6fa4e397</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Asset Request Before Delete</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>sys_script_22161c012f130b90a94e2a7a6fa4e38f</sys_update_name>
+        <sys_update_name>sys_script_5277d5812fd70b90a94e2a7a6fa4e397</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-11 17:03:32</sys_updated_on>
+        <sys_updated_on>2026-09-11 17:03:27</sys_updated_on>
         <template/>
-        <when>async_always</when>
+        <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=22161c012f130b90a94e2a7a6fa4e38f"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=5277d5812fd70b90a94e2a7a6fa4e397"/>
 </record_update>

@@ -5,7 +5,7 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
+        <action_update>true</action_update>
         <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Asset Request Async Insert</name>
+        <name>Import Set Async Insert</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,39 +29,37 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-    if (!current.correlation_id.nil()) {
+	if (!current.isNewRecord() && current.correlation_id.changes() && !current.short_description.changes() && !current.description.changes() && !current.priority.changes() && !current.status.changes()) {
         return; 
     }
-    
-    var integration = new assetRequestUtils();
-    var correlationNumber = integration.createAssetRequest(current);
-    
-    if (correlationNumber) {
-        current.setValue('correlation_id', correlationNumber);
 
-		current.setWorkflow(false);
-
-		current.update();
+    var utils = new assetRequestUtils();
+    var responseNumber = utils.createImportSetRecord(current);
+    
+    if (responseNumber) {
+        current.correlation_id = responseNumber;
+        current.setWorkflow(false); 
+        current.update();
     }
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-11 06:46:50</sys_created_on>
+        <sys_created_on>2026-09-11 17:01:05</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>22161c012f130b90a94e2a7a6fa4e38f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Asset Request Async Insert</sys_name>
+        <sys_id>08b2e2852fdf0b90a94e2a7a6fa4e3d7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Import Set Async Insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>sys_script_22161c012f130b90a94e2a7a6fa4e38f</sys_update_name>
+        <sys_update_name>sys_script_08b2e2852fdf0b90a94e2a7a6fa4e3d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-11 17:03:32</sys_updated_on>
+        <sys_updated_on>2026-09-11 17:54:20</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=22161c012f130b90a94e2a7a6fa4e38f"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=08b2e2852fdf0b90a94e2a7a6fa4e3d7"/>
 </record_update>

@@ -2,7 +2,7 @@
     <element attributes="enforce_dot_walk_cross_scope_access=true" audit="true" db_object_id="06f6242e2f078750a94e2a7a6fa4e30f" label="Asset Request Table" max_length="40" name="x_2180885_it_ass_0_asset_request_table" type="collection">
         <element attributes="encode_utf8=false,readonly_clickthrough=true" label="Asset" max_length="32" name="asset" reference="cmdb_ci" type="reference"/>
         <element attributes="edge_encryption_enabled=true,default_rows=4" label="Description" max_length="4000" name="description" type="string"/>
-        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
         <element choice="3" default="3" label="Priority" max_length="40" name="priority" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Critical" sequence="0" value="1"/>
@@ -55,7 +55,7 @@
         <element label="Correlation ID" max_length="40" name="correlation_id" type="string"/>
         <element attributes="encode_utf8=false,readonly_clickthrough=true" label="Assignment Group" max_length="32" name="assignment_group" reference="sys_user_group" type="reference"/>
         <element label="Short Description" max_length="40" name="short_description" type="string"/>
-        <element display="true" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
+        <element label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="asset"/>
         </index>

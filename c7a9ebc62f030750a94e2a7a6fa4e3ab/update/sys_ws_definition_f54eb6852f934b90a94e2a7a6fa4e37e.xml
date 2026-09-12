@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_2180885_it_ass_0/asset_request_inbound_api</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>dbfef2c52f934b90a94e2a7a6fa4e3d3</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>Asset Request Inbound API</name>
+        <namespace>x_2180885_it_ass_0</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>asset_request_inbound_api</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-11 19:06:17</sys_created_on>
+        <sys_id>f54eb6852f934b90a94e2a7a6fa4e37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Asset Request Inbound API</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_ws_definition_f54eb6852f934b90a94e2a7a6fa4e37e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-11 19:06:17</sys_updated_on>
+    </sys_ws_definition>
+</record_update>

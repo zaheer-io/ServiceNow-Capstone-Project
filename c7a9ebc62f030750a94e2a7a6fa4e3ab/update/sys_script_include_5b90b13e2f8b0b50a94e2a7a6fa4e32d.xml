@@ -211,7 +211,7 @@ assetRequestUtils.prototype = {
 
 		var targetNumber = currentRecord.getValue('correlation_id');
 
-		// Retrieve the target record from Instance B
+		// Retrieve the target record
 		var getReq = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
 			'Retrive Record by Number'
@@ -231,7 +231,7 @@ assetRequestUtils.prototype = {
 		var targetSysId = result.result[0].sys_id;
 
 
-		// Update the target record in Instance B
+		// Update the target record
 		var updateReq = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
 			'Update Record'
@@ -262,19 +262,88 @@ assetRequestUtils.prototype = {
 		updateReq.execute();
 	},
 
+	// Delete Asset Request through Table API
+	
+    deleteAssetRequest: function(targetNumber) {
+
+        var getReq = new sn_ws.RESTMessageV2(
+            'Instance-a Outbound Action',
+            'Retrive Record by Number'
+        );
+
+        getReq.setStringParameter(
+            'target_number',
+            targetNumber
+        );
+
+        var getResponse = getReq.execute();
+
+        var result = JSON.parse(getResponse.getBody());
+
+        var targetSysId = result.result[0].sys_id;
+
+
+        var deleteReq = new sn_ws.RESTMessageV2(
+            'Instance-a Outbound Action',
+            'Delete Record'
+        );
+
+        deleteReq.setStringParameter(
+            'target_sys_id',
+            targetSysId
+        );
+
+        deleteReq.execute();
+    },
+
+	// Create Import Set Record using Import Set API
+
+	createImportSetRecord: function(currentRecord) {
+        var r = new sn_ws.RESTMessageV2(
+            'Instance-a Outbound Action',
+            'Create Import Set Record'
+        );
+
+        var payload = {
+            "u_correlation_id": currentRecord.getValue('number'),
+            "u_requestor": currentRecord.getDisplayValue('requestor'),
+            "u_assignment_group": currentRecord.getDisplayValue('assignment_group'),
+            "u_company": currentRecord.getDisplayValue('company'),
+            "u_type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
+            "u_consumables": currentRecord.getDisplayValue('consumables'),
+            "u_short_description": currentRecord.getValue('short_description'),
+            "u_description": currentRecord.getValue('description'),
+            "u_status": currentRecord.getDisplayValue('status'),
+            "u_priority": currentRecord.getDisplayValue('priority')
+        };
+
+        r.setRequestHeader("Accept", "application/json");
+        r.setRequestHeader("Content-Type", "application/json");
+        r.setRequestBody(JSON.stringify(payload));
+
+        var response = r.execute();
+        var parsedResponse = JSON.parse(response.getBody());
+
+		gs.info('IMP : ' + JSON.parse(response.getBody()));
+
+		gs.info('IMP: ' + parsedResponse["result"][0]["display_value"]);
+
+        return parsedResponse["result"][0]["display_value"];
+    },
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-11 08:49:27</sys_updated_on>
+        <sys_updated_on>2026-09-11 17:00:24</sys_updated_on>
     </sys_script_include>
 </record_update>

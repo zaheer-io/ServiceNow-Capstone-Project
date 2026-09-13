@@ -40,7 +40,7 @@
                 <element inactive_on_update="false" label="Computer" sequence="0" value="computer"/>
             </choice>
         </element>
-        <element default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Opened By" max_length="32" name="opened_by" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="encode_utf8=false,readonly_clickthrough=true" default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Opened By" max_length="32" name="opened_by" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Comments" max_length="40" name="comments" type="journal_input"/>
         <element attributes="encode_utf8=false,readonly_clickthrough=true" label="Company" max_length="32" name="company" reference="core_company" type="reference"/>
         <element choice="3" default="submitted" label="Status" max_length="40" name="status" type="choice">

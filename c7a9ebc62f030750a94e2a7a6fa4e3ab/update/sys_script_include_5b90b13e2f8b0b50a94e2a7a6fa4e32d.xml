@@ -374,19 +374,59 @@ assetRequestUtils.prototype = {
 		return null;
 	},
 
+	// Send attachment using Attachment API
+
+	sendAttachment: function(attachmentGr) {
+		var parentRecord = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+		if (!parentRecord.get(attachmentGr.table_sys_id)) {
+			return;
+		}
+
+		var targetNumber = parentRecord.getValue('correlation_id');
+		if (!targetNumber) {
+			return;
+		}
+
+		var getReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Retrive Record by Number');
+		getReq.setStringParameter('target_number', targetNumber);
+		getReq.setRequestHeader("Accept", "application/json");
+
+		var getResponse = getReq.execute();
+		var result = JSON.parse(getResponse.getBody());
+
+		if (!result.result || result.result.length === 0) {
+			return;
+		}
+
+		var targetSysId = result.result[0].sys_id;
+
+        var sendReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Send Attachment');
+
+
+        sendReq.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
+        sendReq.setRequestHeader("Accept", "application/json");
+
+        sendReq.setStringParameter('target_sys_id', targetSysId);
+        sendReq.setStringParameter('file_name', attachmentGr.getValue('file_name'));
+
+        sendReq.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
+
+        sendReq.execute();
+    },
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>67</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-12 08:50:51</sys_updated_on>
+        <sys_updated_on>2026-09-13 11:49:08</sys_updated_on>
     </sys_script_include>
 </record_update>

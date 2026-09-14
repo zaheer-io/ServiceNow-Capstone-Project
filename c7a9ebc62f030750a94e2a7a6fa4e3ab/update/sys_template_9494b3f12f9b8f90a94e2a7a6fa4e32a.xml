@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_template">
+    <sys_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <global>false</global>
+        <group/>
+        <groups/>
+        <link_element/>
+        <name>Asset req 1</name>
+        <next/>
+        <next_child/>
+        <roles/>
+        <short_description>Test form instance A</short_description>
+        <show_on_template_bar>true</show_on_template_bar>
+        <stand_alone>false</stand_alone>
+        <sys_class_name>sys_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-14 06:57:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9494b3f12f9b8f90a94e2a7a6fa4e32a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Asset req 1</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_template_9494b3f12f9b8f90a94e2a7a6fa4e32a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-14 06:57:13</sys_updated_on>
+        <table>x_2180885_it_ass_0_asset_request_table</table>
+        <template>priority=3^status=submitted^requestor=ce826bf03710200044e0bfc8bcbe5d82^type_of_asset=computer^consumables=speakers^EQ</template>
+        <template_condition/>
+        <template_v2/>
+        <user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user>
+        <v2>false</v2>
+        <view/>
+    </sys_template>
+</record_update>

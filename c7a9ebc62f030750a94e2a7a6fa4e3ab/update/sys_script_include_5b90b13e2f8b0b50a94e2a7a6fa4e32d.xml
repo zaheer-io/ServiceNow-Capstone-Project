@@ -182,7 +182,6 @@ assetRequestUtils.prototype = {
             "correlation_id": currentRecord.getValue('number'),
             "requestor": currentRecord.getDisplayValue('requestor'), 
             "assignment_group": currentRecord.getDisplayValue('assignment_group'),
-            "opened_by": currentRecord.getDisplayValue('opened_by'),
             "company": currentRecord.getDisplayValue('company'),
             "type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
             "consumables": currentRecord.getDisplayValue('consumables'),
@@ -245,7 +244,6 @@ assetRequestUtils.prototype = {
 		var payload = {
 			"short_description": currentRecord.getValue('short_description'),
 			"description": currentRecord.getValue('description'),
-			"assigned_to": currentRecord.getDisplayValue('assigned_to'),
 			"status": currentRecord.getDisplayValue('status'),
 			"priority": currentRecord.getDisplayValue('priority')
 		};
@@ -414,19 +412,99 @@ assetRequestUtils.prototype = {
         sendReq.execute();
     },
 
+	// Order catalog item using Catalog API
+
+	orderCatalogItem: function(currentRitm, catalogItemSysId) {
+		var r = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Order Catalog Item');
+
+		r.setStringParameter('catalog_item_sys_id', catalogItemSysId);
+
+		r.setRequestHeader("Accept", "application/json");
+        r.setRequestHeader("Content-Type", "application/json");
+
+		var payload = {
+			"sysparm_quantity": "1",
+			"variables": {
+				"opened_by": currentRitm.variables.opened_by.toString(),
+				"requestor": currentRitm.variables.requestor.toString(),
+				"type_of_asset": currentRitm.variables.type_of_asset.toString(),
+				"consumables": currentRitm.variables.consumables.toString(),
+				"assignment_group": currentRitm.variables.assignment_group.toString(),
+				"assigned_to": currentRitm.variables.assigned_to.toString(),
+				"status": currentRitm.variables.status.toString(),
+				"priority": currentRitm.variables.priority.toString(),
+				"company": currentRitm.variables.company.toString(),
+				"short_description": currentRitm.variables.short_description.toString(),
+				"description": currentRitm.variables.description.toString()
+			}
+		};
+
+		r.setRequestHeader("Accept", "application/json");
+		r.setRequestHeader("Content-Type", "application/json");
+		r.setRequestBody(JSON.stringify(payload));
+
+		var response = r.execute();
+		var parsedResponse = JSON.parse(response.getBody());
+
+		if (response.getStatusCode() == 200 && parsedResponse.result) {
+			return parsedResponse.result.request_number;
+		}
+
+		return null;
+	},
+
+	// Submit Record Producer using Catalog API
+
+	submitRecordProducer: function(currentRecord, producerSysId) {
+		var r = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Submit Record Producer');
+		
+		r.setStringParameterNoEscape('record_producer_sys_id', producerSysId);
+		
+		r.setRequestHeader("Accept", "application/json");
+		r.setRequestHeader("Content-Type", "application/json");
+
+		var payload = {
+			"variables": {
+				"correlation_id": currentRecord.getValue('number') || '',
+				"opened_by": currentRecord.getValue('opened_by') || '',
+				"requestor": currentRecord.getValue('requestor') || '',
+				"type_of_asset": currentRecord.getValue('type_of_asset') || '',
+				"consumables": currentRecord.getValue('consumables') || '',
+				"assignment_group": currentRecord.getValue('assignment_group') || '',
+				"assigned_to": currentRecord.getValue('assigned_to') || '',
+				"status": currentRecord.getValue('status') || '',
+				"priority": currentRecord.getValue('priority') || '',
+				"company": currentRecord.getValue('company') || '',
+				"short_description": currentRecord.getValue('short_description') || '',
+				"description": currentRecord.getValue('description') || ''
+			}
+		};
+
+		r.setRequestBody(JSON.stringify(payload));
+
+		var response = r.execute();
+		var parsedResponse = JSON.parse(response.getBody());
+		
+		if (response.getStatusCode() == 200 && parsedResponse.result) {
+			return parsedResponse.result.number;
+		}
+
+		return null;
+	},
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>72</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-13 11:49:08</sys_updated_on>
+        <sys_updated_on>2026-09-14 06:53:26</sys_updated_on>
     </sys_script_include>
 </record_update>

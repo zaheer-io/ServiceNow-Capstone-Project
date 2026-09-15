@@ -171,16 +171,16 @@ assetRequestUtils.prototype = {
 
 	// Create Asset Request though Table API
 
-	createAssetRequest : function(currentRecord) {
+	createAssetRequest: function(currentRecord) {
 
         var r = new sn_ws.RESTMessageV2(
-            'Instance-a Outbound Action',
-            'Create Record'
-        );
+			'Instance-a Outbound Action',
+			'Create Record'
+		);
 
         var payload = {
             "correlation_id": currentRecord.getValue('number'),
-            "requestor": currentRecord.getDisplayValue('requestor'), 
+            "requestor": currentRecord.getDisplayValue('requestor'),
             "assignment_group": currentRecord.getDisplayValue('assignment_group'),
             "company": currentRecord.getDisplayValue('company'),
             "type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
@@ -193,72 +193,67 @@ assetRequestUtils.prototype = {
 
         r.setRequestHeader("Accept", "application/json");
         r.setRequestHeader("Content-Type", "application/json");
-
         r.setRequestBody(JSON.stringify(payload));
 
         var response = r.execute();
-
         var responseBody = response.getBody();
         var parsedResponse = JSON.parse(responseBody);
 
-        return parsedResponse.result.number;
+        var remoteSysId = parsedResponse.result.sys_id;
+        var remoteNumber = parsedResponse.result.number;
+
+        if (remoteSysId) {
+            var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
+            grMap.initialize();
+            grMap.setValue('local_sys_id', currentRecord.getUniqueValue());
+            grMap.setValue('remote_sys_id', remoteSysId);
+            grMap.setValue('target', 'Instance B');
+            grMap.insert();
+        }
+
+        return remoteNumber;
     },
 
 	// Update Asset Request though Table API
 
 	updateAssetRequest: function(currentRecord) {
+        var targetSysId = '';
+        var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
+        grMap.addQuery('local_sys_id', currentRecord.getUniqueValue());
+        grMap.addQuery('target', 'Instance B');
+        grMap.setLimit(1);
+        grMap.query();
 
-		var targetNumber = currentRecord.getValue('correlation_id');
+        if (grMap.next()) {
+            targetSysId = grMap.getValue('remote_sys_id');
+        }
 
-		// Retrieve the target record
-		var getReq = new sn_ws.RESTMessageV2(
-			'Instance-a Outbound Action',
-			'Retrive Record by Number'
-		);
+		if (!targetSysId) {
+			return;
+		}
 
-		getReq.setStringParameter(
-			'target_number',
-			targetNumber
-		);
-
-		getReq.setRequestHeader("Accept", "application/json");
-
-		var getResponse = getReq.execute();
-
-		var result = JSON.parse(getResponse.getBody());
-
-		var targetSysId = result.result[0].sys_id;
-
-
-		// Update the target record
-		var updateReq = new sn_ws.RESTMessageV2(
+        var r = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
 			'Update Record'
 		);
 
-		updateReq.setStringParameter(
-			'target_sys_id',
-			targetSysId
-		);
+        r.setStringParameter('target_sys_id', targetSysId);
 
-		var payload = {
-			"short_description": currentRecord.getValue('short_description'),
-			"description": currentRecord.getValue('description'),
-			"status": currentRecord.getDisplayValue('status'),
-			"priority": currentRecord.getDisplayValue('priority')
-		};
+        var payload = {
+            "short_description": currentRecord.getValue('short_description'),
+            "description": currentRecord.getValue('description'),
+            "assigned_to": currentRecord.getDisplayValue('assigned_to'),
+            "status": currentRecord.getDisplayValue('status'),
+            "priority": currentRecord.getDisplayValue('priority')
+        };
 
-		updateReq.setRequestHeader("Accept", "application/json");
-		updateReq.setRequestHeader("Content-Type", "application/json");
-		updateReq.setQueryParameter(
-			"sysparm_input_display_value",
-			"true"
-		);
+        r.setRequestHeader("Accept", "application/json");
+        r.setRequestHeader("Content-Type", "application/json");
+        r.setQueryParameter("sysparm_input_display_value", "true");
+        r.setRequestBody(JSON.stringify(payload));
 
-		updateReq.setRequestBody(JSON.stringify(payload));
-
-		updateReq.execute();
-	},
+        r.execute();
+    },
 
 	// Delete Asset Request through Table API
 	
@@ -303,17 +298,18 @@ assetRequestUtils.prototype = {
         );
 
         var payload = {
-            "u_correlation_id": currentRecord.getValue('number'),
-            "u_requestor": currentRecord.getDisplayValue('requestor'),
-            "u_assignment_group": currentRecord.getDisplayValue('assignment_group'),
-            "u_company": currentRecord.getDisplayValue('company'),
-            "u_type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
-            "u_consumables": currentRecord.getDisplayValue('consumables'),
-            "u_short_description": currentRecord.getValue('short_description'),
-            "u_description": currentRecord.getValue('description'),
-            "u_status": currentRecord.getDisplayValue('status'),
-            "u_priority": currentRecord.getDisplayValue('priority')
-        };
+			"u_correlation_id": currentRecord.getValue('number'),
+			"u_requestor": currentRecord.getValue('requestor'),
+			"u_assignment_group": currentRecord.getValue('assignment_group'),
+			"u_assigned_to": currentRecord.getValue('assigned_to'),
+			"u_company": currentRecord.getValue('company'),
+			"u_type_of_asset": currentRecord.getValue('type_of_asset'),
+			"u_consumables": currentRecord.getValue('consumables'),
+			"u_short_description": currentRecord.getValue('short_description'),
+			"u_description": currentRecord.getValue('description'),
+			"u_status": currentRecord.getValue('status'),
+			"u_priority": currentRecord.getValue('priority')
+		};
 
         r.setRequestHeader("Accept", "application/json");
         r.setRequestHeader("Content-Type", "application/json");
@@ -466,7 +462,6 @@ assetRequestUtils.prototype = {
 		var payload = {
 			"variables": {
 				"correlation_id": currentRecord.getValue('number') || '',
-				"opened_by": currentRecord.getValue('opened_by') || '',
 				"requestor": currentRecord.getValue('requestor') || '',
 				"type_of_asset": currentRecord.getValue('type_of_asset') || '',
 				"consumables": currentRecord.getValue('consumables') || '',
@@ -498,13 +493,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-14 06:53:26</sys_updated_on>
+        <sys_updated_on>2026-09-15 12:43:41</sys_updated_on>
     </sys_script_include>
 </record_update>

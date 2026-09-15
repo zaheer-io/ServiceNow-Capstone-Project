@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="5c2df1d22f1743d0a94e2a7a6fa4e3b8" label="Integration Map" max_length="40" name="x_2180885_it_ass_0_integration_map" type="collection">
+        <element label="Remote sys ID" max_length="40" name="remote_sys_id" type="string"/>
+        <element label="Local sys ID" max_length="40" name="local_sys_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Target" max_length="40" name="target" type="string"/>
+    </element>
+</database>

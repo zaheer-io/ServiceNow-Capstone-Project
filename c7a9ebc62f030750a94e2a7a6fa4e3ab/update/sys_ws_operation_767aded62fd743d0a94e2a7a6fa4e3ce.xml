@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>CreateRecordProducer</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var requestBody = request.body.data;
+    var producerSysId = '1c4619c42f974390a94e2a7a6fa4e309';
+
+    var cart = new sn_sc.CartJS();
+
+    var item = {
+        sysparm_id: producerSysId,
+        sysparm_quantity: "1",
+        variables: {
+            correlation_id: requestBody.correlation_id || '',
+            opened_by: requestBody.opened_by || '',
+            requestor: requestBody.requestor || '',
+            type_of_asset: requestBody.type_of_asset || '',
+            consumables: requestBody.consumables || '',
+            assignment_group: requestBody.assignment_group || '',
+            assigned_to: requestBody.assigned_to || '',
+            status: requestBody.status || '',
+            priority: requestBody.priority || '',
+            company: requestBody.company || '',
+            short_description: requestBody.short_description || '',
+            description: requestBody.description || ''
+        }
+    };
+
+    cart.addToCart(item);
+
+    var result = cart.checkoutCart();
+
+    gs.info('IT Asset - Cart Result: ' + JSON.stringify(result));
+    gs.info('IT Asset - Request Body: ' + JSON.stringify(requestBody));
+
+    var gr = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+    gr.addQuery('correlation_id', requestBody.correlation_id);
+    gr.query();
+    if (gr.next()) {
+
+        var responseBody = {
+            success: true,
+            message: "Record Producer submitted successfully",
+            correlation_id: requestBody.correlation_id,
+            number: gr.getValue('number')
+        };
+
+        response.setStatus(201);
+        response.setBody(responseBody);
+
+        gs.info('IT Asset - Response Body: ' + JSON.stringify(responseBody));
+    }
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2180885_it_ass_0/asset_request_inbound_api/rp_submit</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/rp_submit</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-15 13:41:54</sys_created_on>
+        <sys_id>767aded62fd743d0a94e2a7a6fa4e3ce</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>CreateRecordProducer</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_ws_operation_767aded62fd743d0a94e2a7a6fa4e3ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-15 15:33:20</sys_updated_on>
+        <web_service_definition display_value="Asset Request Inbound API">f54eb6852f934b90a94e2a7a6fa4e37e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

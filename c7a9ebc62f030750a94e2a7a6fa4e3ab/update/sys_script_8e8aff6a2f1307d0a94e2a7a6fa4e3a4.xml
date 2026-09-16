@@ -33,15 +33,19 @@
     var attachmentSysId = current.getValue('sys_id');
     var parentSysId = current.getValue('table_sys_id');
     
-    var parentGr = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+    // var parentGr = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
     
-    if (parentGr.get(parentSysId)) {
-        gs.info("1. IT Asset Requst Event Event trigger: " + attachmentSysId);
+    // if (parentGr.get(parentSysId)) {
+    //     gs.info("1. IT Asset Requst Event Event trigger: " + attachmentSysId);
         
-        gs.eventQueue('x_2180885_it_ass_0.attachment.delete', parentGr, attachmentSysId, '');
+    //     gs.eventQueue('x_2180885_it_ass_0.attachment.delete', parentGr, attachmentSysId, '');
 
-		gs.info('2. IT Asset Request : Br ends');
-    }
+	// 	gs.info('2. IT Asset Request : Br ends');
+    // }
+
+	var utils = new assetRequestUtils();
+	utils.deleteAttachment(attachmentSysId);
+	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -49,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8e8aff6a2f1307d0a94e2a7a6fa4e3a4</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Asset Request Delete Attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -57,7 +61,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_8e8aff6a2f1307d0a94e2a7a6fa4e3a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 15:21:35</sys_updated_on>
+        <sys_updated_on>2026-09-16 15:38:07</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

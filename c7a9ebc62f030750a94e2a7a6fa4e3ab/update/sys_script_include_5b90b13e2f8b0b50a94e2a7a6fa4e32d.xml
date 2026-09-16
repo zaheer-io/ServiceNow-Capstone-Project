@@ -629,6 +629,37 @@ assetRequestUtils.prototype = {
 		}
     },
 
+	// Delete Attachment using Attachment API
+
+	deleteAttachment: function(localAttachmentSysId) {
+
+		var mapGr = new GlideRecord('x_2180885_it_ass_0_integration_map');
+		mapGr.addQuery('local_sys_id', localAttachmentSysId);
+		mapGr.addQuery('target', 'Attachment');
+		mapGr.setLimit(1);
+		mapGr.query();
+
+		if (mapGr.next()) {
+
+			var remoteAttachmentSysId = mapGr.getValue('remote_sys_id');
+
+			var r = new sn_ws.RESTMessageV2(
+				'Instance-a Outbound Action',
+				'Delete Attachment'
+			);
+
+			r.setStringParameterNoEscape('sys_id', remoteAttachmentSysId);
+
+			var response = r.execute();
+			var httpstatus = response.getStatusCode();
+
+			if (httpstatus == 200 || httpstatus == 204) {
+				mapGr.deleteRecord();
+			} 
+
+		}
+	},
+
 	// Order catalog item using Catalog API
 
 	orderCatalogItem: function(currentRitm, catalogItemSysId) {
@@ -720,13 +751,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>103</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 12:54:43</sys_updated_on>
+        <sys_updated_on>2026-09-16 15:16:57</sys_updated_on>
     </sys_script_include>
 </record_update>

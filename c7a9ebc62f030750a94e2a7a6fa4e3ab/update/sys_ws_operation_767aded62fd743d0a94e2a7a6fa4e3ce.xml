@@ -10,51 +10,13 @@
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
     var requestBody = request.body.data;
-    var producerSysId = '1c4619c42f974390a94e2a7a6fa4e309';
 
-    var cart = new sn_sc.CartJS();
+    var utils = new assetRequestUtils();
 
-    var item = {
-		sysparm_id: producerSysId,
-		sysparm_quantity: "1",
-		variables: {
-			correlation_id: requestBody.correlation_id,
-			opened_by: requestBody.opened_by,
-			requestor: requestBody.requestor,
-			type_of_asset: requestBody.type_of_asset,
-			consumables: requestBody.consumables,
-			assignment_group: requestBody.assignment_group,
-			assigned_to: requestBody.assigned_to,
-			status: requestBody.status,
-			priority: requestBody.priority,
-			company: requestBody.company,
-			short_description: requestBody.short_description,
-			description: requestBody.description
-		}
-	};
+    var result = utils.scriptedRecordProducer(requestBody);
 
-    cart.addToCart(item);
-
-    var result = cart.checkoutCart();
-
-    gs.info('IT Asset - Cart Result: ' + JSON.stringify(result));
-    gs.info('IT Asset - Request Body: ' + JSON.stringify(requestBody));
-
-    var gr = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
-    gr.addQuery('correlation_id', requestBody.correlation_id);
-    gr.query();
-    if (gr.next()) {
-        var responseBody = {
-            success: true,
-            message: "Record Producer submitted successfully",
-            number: gr.getValue('number').toString()
-        };
-
-        response.setStatus(201);
-        response.setBody(responseBody);
-
-        gs.info('IT Asset - Response Body: ' + JSON.stringify(responseBody));
-    }
+    response.setStatus(result.status_code);
+    response.setBody(result);
 
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_2180885_it_ass_0/asset_request_inbound_api/rp_submit</operation_uri>
@@ -71,14 +33,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-15 13:41:54</sys_created_on>
         <sys_id>767aded62fd743d0a94e2a7a6fa4e3ce</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>CreateRecordProducer</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_ws_operation_767aded62fd743d0a94e2a7a6fa4e3ce</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 09:41:11</sys_updated_on>
+        <sys_updated_on>2026-09-16 10:38:24</sys_updated_on>
         <web_service_definition display_value="Asset Request Inbound API">f54eb6852f934b90a94e2a7a6fa4e37e</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

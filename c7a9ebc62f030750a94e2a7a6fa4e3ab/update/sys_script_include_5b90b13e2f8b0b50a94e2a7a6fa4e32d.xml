@@ -394,6 +394,68 @@ assetRequestUtils.prototype = {
 		return null;
 	},
 
+	// scripted rest api 'CreateOrUpdateAssetRequest'
+
+	scriptedCreateUpdateAsset: function(requestBody) {
+
+        var result = {};
+
+        var assetRecord = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+        assetRecord.addQuery('correlation_id', requestBody.correlation_id);
+        assetRecord.setLimit(1);
+        assetRecord.query();
+
+        if (assetRecord.next()) {
+
+            assetRecord.short_description = requestBody.short_description;
+            assetRecord.description = requestBody.description;
+
+            assetRecord.status = requestBody.status;
+            assetRecord.priority = requestBody.priority;
+            assetRecord.type_of_asset = requestBody.type_of_asset;
+            assetRecord.consumables = requestBody.consumables;
+
+            assetRecord.requestor = requestBody.requestor;
+            assetRecord.assignment_group = requestBody.assignment_group;
+            assetRecord.assigned_to = requestBody.assigned_to;
+            assetRecord.company = requestBody.company;
+
+            assetRecord.update();
+
+            result.message = "Record updated successfully";
+            result.number = assetRecord.getValue('number');
+            result.sys_id = assetRecord.getUniqueValue();
+            result.status_code = 200;
+
+        } else {
+
+            assetRecord.initialize();
+
+            assetRecord.correlation_id = requestBody.correlation_id;
+            assetRecord.short_description = requestBody.short_description;
+            assetRecord.description = requestBody.description;
+
+            assetRecord.status = requestBody.status;
+            assetRecord.priority = requestBody.priority;
+            assetRecord.type_of_asset = requestBody.type_of_asset;
+            assetRecord.consumables = requestBody.consumables;
+
+            assetRecord.requestor = requestBody.requestor;
+            assetRecord.assignment_group = requestBody.assignment_group;
+            assetRecord.assigned_to = requestBody.assigned_to;
+            assetRecord.company = requestBody.company;
+
+            var newSysId = assetRecord.insert();
+
+            result.message = "Record created successfully";
+            result.number = assetRecord.getValue('number');
+            result.sys_id = newSysId;
+            result.status_code = 201;
+        }
+
+        return result;
+    },
+
 	// Create Record Producer using Scripted REST API
 
 	createScriptedRPRequest: function(currentRecord) {
@@ -437,6 +499,61 @@ assetRequestUtils.prototype = {
 		return null;
 	},
 
+	// Scritped Rest API 'CreateRecordProducer'
+
+	scriptedRecordProducer: function(requestBody) {
+
+        var producerSysId = '1c4619c42f974390a94e2a7a6fa4e309';
+
+        var cart = new sn_sc.CartJS();
+
+        var item = {
+            sysparm_id: producerSysId,
+            sysparm_quantity: "1",
+            variables: {
+                correlation_id: requestBody.correlation_id,
+                opened_by: requestBody.opened_by,
+                requestor: requestBody.requestor,
+                type_of_asset: requestBody.type_of_asset,
+                consumables: requestBody.consumables,
+                assignment_group: requestBody.assignment_group,
+                assigned_to: requestBody.assigned_to,
+                status: requestBody.status,
+                priority: requestBody.priority,
+                company: requestBody.company,
+                short_description: requestBody.short_description,
+                description: requestBody.description
+            }
+        };
+
+        cart.addToCart(item);
+
+        var cartResult = cart.checkoutCart();
+
+        gs.info('IT Asset - Cart Result: ' + JSON.stringify(cartResult));
+        gs.info('IT Asset - Request Body: ' + JSON.stringify(requestBody));
+
+        var gr = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+        gr.addQuery('correlation_id', requestBody.correlation_id);
+        gr.setLimit(1);
+        gr.query();
+
+        if (gr.next()) {
+
+            var responseBody = {
+                success: true,
+                message: "Record Producer submitted successfully",
+                number: gr.getValue('number')
+            };
+
+            responseBody.status_code = 201;
+
+            gs.info('IT Asset - Response Body: ' + JSON.stringify(responseBody));
+
+            return responseBody;
+        }
+    },
+
 	// Send attachment using Attachment API
 
     sendAttachment: function(attachmentGr) {
@@ -457,24 +574,68 @@ assetRequestUtils.prototype = {
         }
 		
         if (targetSysId) {
-            var sendReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Send Attachment');
-            
-            sendReq.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
-            sendReq.setRequestHeader("Accept", "application/json");
-            
-            sendReq.setStringParameter('target_sys_id', targetSysId);
-            sendReq.setStringParameter('file_name', attachmentGr.getValue('file_name'));
-            
-            sendReq.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
-            
-            sendReq.execute();
-        }
+			var r = new sn_ws.RESTMessageV2(
+				'Instance-a Outbound Action', 
+				'Send Attachment'
+			);
+			
+			r.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
+			r.setRequestHeader("Accept", "application/json");
+			
+			r.setStringParameter('target_sys_id', targetSysId);
+			r.setStringParameter('file_name', attachmentGr.getValue('file_name'));
+			
+			r.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			var parsedData = JSON.parse(responseBody);
+
+			var remoteAttachmentSysId = parsedData.result.sys_id;
+
+			if (remoteAttachmentSysId) {
+				
+				var localAttachmentSysId = attachmentGr.getUniqueValue();
+
+				var mapGr = new GlideRecord('x_2180885_it_ass_0_integration_map');
+				mapGr.initialize();
+				mapGr.setValue('local_sys_id', localAttachmentSysId);
+				mapGr.setValue('remote_sys_id', remoteAttachmentSysId);
+				mapGr.setValue('target', 'Attachment'); 
+				mapGr.insert();
+
+				// create mapping record on instnace B
+
+				var mapRest = new sn_ws.RESTMessageV2(
+					'Instance-a Outbound Action',
+					'Create Integration Map Record'
+				);
+
+				var mapPayload = {
+					"local_sys_id": remoteAttachmentSysId, 
+					"remote_sys_id": attachmentGr.getUniqueValue(),
+					"target": "Attachment"
+				};
+
+				mapRest.setRequestHeader("Accept", "application/json");
+				mapRest.setRequestHeader("Content-Type", "application/json");
+				mapRest.setRequestBody(JSON.stringify(mapPayload));
+
+				mapRest.execute();
+			}
+
+			gs.info("status: " + httpStatus + "\nResponse Body: " + responseBody);
+		}
     },
 
 	// Order catalog item using Catalog API
 
 	orderCatalogItem: function(currentRitm, catalogItemSysId) {
-		var r = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Order Catalog Item');
+		var r = new sn_ws.RESTMessageV2(
+			'Instance-a Outbound Action', 
+			'Order Catalog Item'
+		);
 
 		r.setStringParameter('catalog_item_sys_id', catalogItemSysId);
 
@@ -515,7 +676,10 @@ assetRequestUtils.prototype = {
 	// Submit Record Producer using Catalog API
 
 	submitRecordProducer: function(currentRecord, producerSysId) {
-		var r = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Submit Record Producer');
+		var r = new sn_ws.RESTMessageV2(
+			'Instance-a Outbound Action', 
+			'Submit Record Producer'
+		);
 		
 		r.setStringParameter('record_producer_sys_id', producerSysId);
 		
@@ -556,13 +720,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>92</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 09:18:44</sys_updated_on>
+        <sys_updated_on>2026-09-16 12:54:43</sys_updated_on>
     </sys_script_include>
 </record_update>

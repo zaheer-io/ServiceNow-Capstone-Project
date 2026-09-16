@@ -10,64 +10,13 @@
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
     var requestBody = request.body.data;
-    var responseMessage = {};
 
-    var assetRecord = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
-    assetRecord.addQuery('correlation_id', requestBody.correlation_id);
-    assetRecord.setLimit(1);
-    assetRecord.query();
+    var utils = new assetRequestUtils();
 
-    if (assetRecord.next()) {
+    var result = utils.scriptedCreateUpdateAsset(requestBody);
 
-        assetRecord.short_description = requestBody.short_description;
-        assetRecord.description = requestBody.description;
-
-        assetRecord.status = requestBody.status;
-        assetRecord.priority = requestBody.priority;
-        assetRecord.type_of_asset = requestBody.type_of_asset;
-        assetRecord.consumables = requestBody.consumables;
-
-        assetRecord.requestor = requestBody.requestor;
-        assetRecord.assignment_group = requestBody.assignment_group;
-        assetRecord.assigned_to = requestBody.assigned_to;
-        assetRecord.company = requestBody.company;
-
-        assetRecord.update();
-
-        responseMessage.message = "Record updated successfully";
-        responseMessage.number = assetRecord.number.toString();
-        responseMessage.sys_id = assetRecord.sys_id.toString();
-
-        response.setStatus(200);
-
-    } else {
-
-        assetRecord.initialize();
-        assetRecord.correlation_id = requestBody.correlation_id;
-
-        assetRecord.short_description = requestBody.short_description;
-        assetRecord.description = requestBody.description;
-
-        assetRecord.status = requestBody.status;
-        assetRecord.priority = requestBody.priority;
-        assetRecord.type_of_asset = requestBody.type_of_asset;
-        assetRecord.consumables = requestBody.consumables;
-
-        assetRecord.requestor = requestBody.requestor;
-        assetRecord.assignment_group = requestBody.assignment_group;
-        assetRecord.assigned_to = requestBody.assigned_to;
-        assetRecord.company = requestBody.company;
-
-        var newSysId = assetRecord.insert();
-
-        responseMessage.message = "Record created successfully";
-        responseMessage.number = assetRecord.number.toString();
-        responseMessage.sys_id = newSysId;
-
-        response.setStatus(201);
-    }
-
-    response.setBody(responseMessage);
+    response.setStatus(result.status_code);
+    response.setBody(result);
 
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_2180885_it_ass_0/asset_request_inbound_api/process</operation_uri>
@@ -84,14 +33,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-11 19:08:50</sys_created_on>
         <sys_id>79cf36492f934b90a94e2a7a6fa4e35d</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>CreateOrUpdateAssetRequest</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_ws_operation_79cf36492f934b90a94e2a7a6fa4e35d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 09:36:47</sys_updated_on>
+        <sys_updated_on>2026-09-16 10:24:55</sys_updated_on>
         <web_service_definition display_value="Asset Request Inbound API">f54eb6852f934b90a94e2a7a6fa4e37e</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

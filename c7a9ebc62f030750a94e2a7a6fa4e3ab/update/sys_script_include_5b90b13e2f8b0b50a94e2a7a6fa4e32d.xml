@@ -179,17 +179,17 @@ assetRequestUtils.prototype = {
 		);
 
         var payload = {
-            "correlation_id": currentRecord.getValue('number'),
-            "requestor": currentRecord.getDisplayValue('requestor'),
-            "assignment_group": currentRecord.getDisplayValue('assignment_group'),
-            "company": currentRecord.getDisplayValue('company'),
-            "type_of_asset": currentRecord.getDisplayValue('type_of_asset'),
-            "consumables": currentRecord.getDisplayValue('consumables'),
-            "short_description": currentRecord.getValue('short_description'),
-            "description": currentRecord.getValue('description'),
-            "status": currentRecord.getDisplayValue('status'),
-            "priority": currentRecord.getDisplayValue('priority')
-        };
+			"correlation_id": currentRecord.getValue('number'),
+			"requestor": currentRecord.getValue('requestor'),
+			"assignment_group": currentRecord.getValue('assignment_group'),
+			"company": currentRecord.getValue('company'),
+			"type_of_asset": currentRecord.getValue('type_of_asset'),
+			"consumables": currentRecord.getValue('consumables'),
+			"short_description": currentRecord.getValue('short_description'),
+			"description": currentRecord.getValue('description'),
+			"status": currentRecord.getValue('status'),
+			"priority": currentRecord.getValue('priority')
+		};
 
         r.setRequestHeader("Accept", "application/json");
         r.setRequestHeader("Content-Type", "application/json");
@@ -203,12 +203,44 @@ assetRequestUtils.prototype = {
         var remoteNumber = parsedResponse.result.number;
 
         if (remoteSysId) {
+
+			// create mapping record in instnace A
+
             var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
             grMap.initialize();
             grMap.setValue('local_sys_id', currentRecord.getUniqueValue());
             grMap.setValue('remote_sys_id', remoteSysId);
             grMap.setValue('target', 'Instance B');
             grMap.insert();
+
+			// create mapping record on instnace B
+
+			var mapRest = new sn_ws.RESTMessageV2(
+				'Instance-a Outbound Action',
+				'Create Integration Map Record'
+			);
+
+			var mapPayload = {
+				"local_sys_id": remoteSysId, 
+				"remote_sys_id": currentRecord.getUniqueValue(),
+				"target": "Instance A"
+			};
+
+			mapRest.setRequestHeader("Accept", "application/json");
+			mapRest.setRequestHeader("Content-Type", "application/json");
+			mapRest.setRequestBody(JSON.stringify(mapPayload));
+
+			mapRest.execute();
+
+			// call attachment
+			var attGr = new GlideRecord('sys_attachment');
+			attGr.addQuery('table_name', currentRecord.getTableName());
+			attGr.addQuery('table_sys_id', currentRecord.getUniqueValue());
+			attGr.query();
+			
+			while (attGr.next()) {
+				this.sendAttachment(attGr);
+			}
         }
 
         return remoteNumber;
@@ -228,10 +260,6 @@ assetRequestUtils.prototype = {
             targetSysId = grMap.getValue('remote_sys_id');
         }
 
-		if (!targetSysId) {
-			return;
-		}
-
         var r = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
 			'Update Record'
@@ -240,12 +268,12 @@ assetRequestUtils.prototype = {
         r.setStringParameter('target_sys_id', targetSysId);
 
         var payload = {
-            "short_description": currentRecord.getValue('short_description'),
-            "description": currentRecord.getValue('description'),
-            "assigned_to": currentRecord.getDisplayValue('assigned_to'),
-            "status": currentRecord.getDisplayValue('status'),
-            "priority": currentRecord.getDisplayValue('priority')
-        };
+			"short_description": currentRecord.getValue('short_description'),
+			"description": currentRecord.getValue('description'),
+			"assigned_to": currentRecord.getValue('assigned_to'),
+			"status": currentRecord.getValue('status'),
+			"priority": currentRecord.getValue('priority')
+		};
 
         r.setRequestHeader("Accept", "application/json");
         r.setRequestHeader("Content-Type", "application/json");
@@ -328,24 +356,22 @@ assetRequestUtils.prototype = {
 	// Create Asset Requst Record using Scripted REST API
 
 	createScriptedAssetRequest: function(currentRecord) {
-		var payloadObject = {};
 
-		payloadObject.correlation_id = currentRecord.getValue('number');
-		payloadObject.short_description = currentRecord.getValue('short_description') || '';
-		payloadObject.description = currentRecord.getValue('description') || '';
+		var payload = {
+			"correlation_id": currentRecord.getValue('number'),
+			"short_description": currentRecord.getValue('short_description'),
+			"description": currentRecord.getValue('description'),
+			"requestor": currentRecord.getValue('requestor'),
+			"assignment_group": currentRecord.getValue('assignment_group'),
+			"assigned_to": currentRecord.getValue('assigned_to'),
+			"company": currentRecord.getValue('company'),
+			"status": currentRecord.getValue('status'),
+			"priority": currentRecord.getValue('priority'),
+			"type_of_asset": currentRecord.getValue('type_of_asset'),
+			"consumables": currentRecord.getValue('consumables')
+		};
 
-		payloadObject.requestor = currentRecord.getValue('requestor') || '';
-		payloadObject.assignment_group = currentRecord.getValue('assignment_group') || '';
-		payloadObject.assigned_to = currentRecord.getValue('assigned_to') || '';
-		payloadObject.company = currentRecord.getValue('company') || '';
-
-		payloadObject.status = currentRecord.getValue('status') || '';
-		payloadObject.priority = currentRecord.getValue('priority') || '';
-		payloadObject.type_of_asset = currentRecord.getValue('type_of_asset') || '';
-		payloadObject.consumables = currentRecord.getValue('consumables') || '';
-
-		var jsonBody = JSON.stringify(payloadObject);
-		gs.info("INTEGRATION OUTBOUND (Payload): " + jsonBody);
+		var jsonBody = JSON.stringify(payload);
 
 		var r = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
@@ -371,23 +397,22 @@ assetRequestUtils.prototype = {
 	// Create Record Producer using Scripted REST API
 
 	createScriptedRPRequest: function(currentRecord) {
-		var payloadObject = {};
 
-		payloadObject.correlation_id = currentRecord.getValue('number') || '';
-		payloadObject.short_description = currentRecord.getValue('short_description') || '';
-		payloadObject.description = currentRecord.getValue('description') || '';
+		var payload = {
+			"correlation_id": currentRecord.getValue('number'),
+			"short_description": currentRecord.getValue('short_description'),
+			"description": currentRecord.getValue('description'),
+			"requestor": currentRecord.getValue('requestor'),
+			"assignment_group": currentRecord.getValue('assignment_group'),
+			"assigned_to": currentRecord.getValue('assigned_to'),
+			"company": currentRecord.getValue('company'),
+			"status": currentRecord.getValue('status'),
+			"priority": currentRecord.getValue('priority'),
+			"type_of_asset": currentRecord.getValue('type_of_asset'),
+			"consumables": currentRecord.getValue('consumables')
+		};
 
-		payloadObject.requestor = currentRecord.getValue('requestor') || '';
-		payloadObject.assignment_group = currentRecord.getValue('assignment_group') || '';
-		payloadObject.assigned_to = currentRecord.getValue('assigned_to') || '';
-		payloadObject.company = currentRecord.getValue('company') || '';
-
-		payloadObject.status = currentRecord.getValue('status') || '';
-		payloadObject.priority = currentRecord.getValue('priority') || '';
-		payloadObject.type_of_asset = currentRecord.getValue('type_of_asset') || '';
-		payloadObject.consumables = currentRecord.getValue('consumables') || '';
-
-		var jsonBody = JSON.stringify(payloadObject);
+		var jsonBody = JSON.stringify(payload);
 
 		var r = new sn_ws.RESTMessageV2(
 			'Instance-a Outbound Action',
@@ -414,42 +439,36 @@ assetRequestUtils.prototype = {
 
 	// Send attachment using Attachment API
 
-	sendAttachment: function(attachmentGr) {
-		var parentRecord = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
-		if (!parentRecord.get(attachmentGr.table_sys_id)) {
-			return;
-		}
+    sendAttachment: function(attachmentGr) {
+        var parentGR = new GlideRecord('x_2180885_it_ass_0_asset_request_table');
+        if (!parentGR.get(attachmentGr.table_sys_id)) {
+            return;
+        }
 
-		var targetNumber = parentRecord.getValue('correlation_id');
-		if (!targetNumber) {
-			return;
-		}
+        var targetSysId = '';
+        var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
+        grMap.addQuery('local_sys_id', parentGR.getUniqueValue());
+        grMap.addQuery('target', 'Instance B');
+        grMap.setLimit(1);
+        grMap.query();
 
-		var getReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Retrive Record by Number');
-		getReq.setStringParameter('target_number', targetNumber);
-		getReq.setRequestHeader("Accept", "application/json");
-
-		var getResponse = getReq.execute();
-		var result = JSON.parse(getResponse.getBody());
-
-		if (!result.result || result.result.length === 0) {
-			return;
-		}
-
-		var targetSysId = result.result[0].sys_id;
-
-        var sendReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Send Attachment');
-
-
-        sendReq.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
-        sendReq.setRequestHeader("Accept", "application/json");
-
-        sendReq.setStringParameter('target_sys_id', targetSysId);
-        sendReq.setStringParameter('file_name', attachmentGr.getValue('file_name'));
-
-        sendReq.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
-
-        sendReq.execute();
+        if (grMap.next()) {
+            targetSysId = grMap.getValue('remote_sys_id');
+        }
+		
+        if (targetSysId) {
+            var sendReq = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Send Attachment');
+            
+            sendReq.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
+            sendReq.setRequestHeader("Accept", "application/json");
+            
+            sendReq.setStringParameter('target_sys_id', targetSysId);
+            sendReq.setStringParameter('file_name', attachmentGr.getValue('file_name'));
+            
+            sendReq.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
+            
+            sendReq.execute();
+        }
     },
 
 	// Order catalog item using Catalog API
@@ -498,24 +517,24 @@ assetRequestUtils.prototype = {
 	submitRecordProducer: function(currentRecord, producerSysId) {
 		var r = new sn_ws.RESTMessageV2('Instance-a Outbound Action', 'Submit Record Producer');
 		
-		r.setStringParameterNoEscape('record_producer_sys_id', producerSysId);
+		r.setStringParameter('record_producer_sys_id', producerSysId);
 		
 		r.setRequestHeader("Accept", "application/json");
 		r.setRequestHeader("Content-Type", "application/json");
 
 		var payload = {
 			"variables": {
-				"correlation_id": currentRecord.getValue('number') || '',
-				"requestor": currentRecord.getValue('requestor') || '',
-				"type_of_asset": currentRecord.getValue('type_of_asset') || '',
-				"consumables": currentRecord.getValue('consumables') || '',
-				"assignment_group": currentRecord.getValue('assignment_group') || '',
-				"assigned_to": currentRecord.getValue('assigned_to') || '',
-				"status": currentRecord.getValue('status') || '',
-				"priority": currentRecord.getValue('priority') || '',
-				"company": currentRecord.getValue('company') || '',
-				"short_description": currentRecord.getValue('short_description') || '',
-				"description": currentRecord.getValue('description') || ''
+				"correlation_id": currentRecord.getValue('number'),
+				"requestor": currentRecord.getValue('requestor'),
+				"type_of_asset": currentRecord.getValue('type_of_asset'),
+				"consumables": currentRecord.getValue('consumables'),
+				"assignment_group": currentRecord.getValue('assignment_group'),
+				"assigned_to": currentRecord.getValue('assigned_to'),
+				"status": currentRecord.getValue('status'),
+				"priority": currentRecord.getValue('priority'),
+				"company": currentRecord.getValue('company'),
+				"short_description": currentRecord.getValue('short_description'),
+				"description": currentRecord.getValue('description')
 			}
 		};
 
@@ -537,13 +556,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>92</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 05:54:56</sys_updated_on>
+        <sys_updated_on>2026-09-16 09:18:44</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -195,12 +195,20 @@ assetRequestUtils.prototype = {
         r.setRequestHeader("Content-Type", "application/json");
         r.setRequestBody(JSON.stringify(payload));
 
-        var response = r.execute();
+        var response = r.executeAsync();
         var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
         var parsedResponse = JSON.parse(responseBody);
 
+		var notes = httpStatus + ' ' + responseBody;
+
+		gs.info('Asset Request Work notes : ' + notes);
+		
+		currentRecord.setValue('correlation_id', parsedResponse.result.number);
+		currentRecord.work_notes = notes;
+
         var remoteSysId = parsedResponse.result.sys_id;
-        var remoteNumber = parsedResponse.result.number;
 
         if (remoteSysId) {
 
@@ -242,8 +250,6 @@ assetRequestUtils.prototype = {
 				this.sendAttachment(attGr);
 			}
         }
-
-        return remoteNumber;
     },
 
 	// Update Asset Request though Table API
@@ -280,7 +286,13 @@ assetRequestUtils.prototype = {
         r.setQueryParameter("sysparm_input_display_value", "true");
         r.setRequestBody(JSON.stringify(payload));
 
-        r.execute();
+        var response = r.executeAsync();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+
+		var notes = httpStatus + ' ' + responseBody;
+		
+		currentRecord.work_notes = notes;
     },
 
 	// Delete Asset Request through Table API
@@ -343,17 +355,23 @@ assetRequestUtils.prototype = {
         r.setRequestHeader("Content-Type", "application/json");
         r.setRequestBody(JSON.stringify(payload));
 
-        var response = r.execute();
-        var parsedResponse = JSON.parse(response.getBody());
+        var response = r.executeAsync();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
 
-		gs.info('IMP : ' + JSON.parse(response.getBody()));
+        var parsedResponse = JSON.parse(responseBody);
 
-		gs.info('IMP: ' + parsedResponse["result"][0]["display_value"]);
+		var notes = httpStatus + ' ' + responseBody;
 
-        return parsedResponse["result"][0]["display_value"];
+		currentRecord.work_notes = notes;
+
+        var correlationId = parsedResponse["result"][0]["display_value"];
+
+		currentRecord.setValue('correlation_id', correlationId);
+
     },
 
-	// Create Asset Requst Record using Scripted REST API
+	// Create Asset Requst Record using Scripted REST API - 'CreateOrUpdateAssetRequest'
 
 	createScriptedAssetRequest: function(currentRecord) {
 
@@ -382,16 +400,19 @@ assetRequestUtils.prototype = {
 		r.setRequestHeader("Content-Type", "application/json");
 		r.setRequestBody(jsonBody);
 
-		var response = r.execute();
+		var response = r.executeAsync();
 		var httpStatus = response.getStatusCode();
 		var responseBody = response.getBody();
 
-		if (httpStatus == 201) {
+		if (httpStatus == 201 || httpStatus == 200) {
 			var parsedResponse = JSON.parse(responseBody);
-			return parsedResponse.result.number;
-		}
+			var notes = httpStatus + ' ' + responseBody;
+			
+			currentRecord.work_notes = notes;
 
-		return null;
+			var correlationId = parsedResponse.result.number;
+			currentRecord.setValue('correlation_id', correlationId);
+		}
 	},
 
 	// scripted rest api 'CreateOrUpdateAssetRequest'
@@ -456,7 +477,7 @@ assetRequestUtils.prototype = {
         return result;
     },
 
-	// Create Record Producer using Scripted REST API
+	// Create Record Producer using Scripted REST API - 'CreateRecordProducer
 
 	createScriptedRPRequest: function(currentRecord) {
 
@@ -485,18 +506,22 @@ assetRequestUtils.prototype = {
 		r.setRequestHeader("Content-Type", "application/json");
 		r.setRequestBody(jsonBody);
 
-		var response = r.execute();
+		var response = r.executeAsync();
 		var httpStatus = response.getStatusCode();
 		var responseBody = response.getBody();
 
+		gs.info('Asset requst :' + responseBody);
+
 		if (httpStatus == 201) {
 			var parsedResponse = JSON.parse(responseBody);
-			gs.info('IT Asset SR : ' + parsedResponse);
-			gs.info('IT Asset SR : ' + parsedResponse.number);
-			return parsedResponse.result.number;
-		}
 
-		return null;
+			var notes = httpStatus + ' ' + responseBody;
+
+			currentRecord.work_notes = notes;
+
+			var correlationId = parsedResponse.result.number;
+			currentRecord.setValue('correlation_id', correlationId);
+		}
 	},
 
 	// Scritped Rest API 'CreateRecordProducer'
@@ -736,11 +761,16 @@ assetRequestUtils.prototype = {
 
 		r.setRequestBody(JSON.stringify(payload));
 
-		var response = r.execute();
-		var parsedResponse = JSON.parse(response.getBody());
+		var response = r.executeAsync();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+        var parsedResponse = JSON.parse(responseBody);
+
 		
-		if (response.getStatusCode() == 200 && parsedResponse.result) {
-			return parsedResponse.result.number;
+		if (httpStatus == 200) {
+			var notes = httpStatus + ' ' + responseBody;
+			currentRecord.setValue('correlation_id', parsedResponse.result.number);
+			currentRecord.work_notes = notes;
 		}
 
 		return null;
@@ -752,13 +782,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>104</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 15:39:33</sys_updated_on>
+        <sys_updated_on>2026-09-17 07:13:32</sys_updated_on>
     </sys_script_include>
 </record_update>

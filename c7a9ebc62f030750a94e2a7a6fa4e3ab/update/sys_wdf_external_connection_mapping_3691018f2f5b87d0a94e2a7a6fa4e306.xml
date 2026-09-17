@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_wdf_external_connection_mapping">
+    <sys_wdf_external_connection_mapping action="INSERT_OR_UPDATE">
+        <asset_id>73814d4f2f5b87d0a94e2a7a6fa4e3b5</asset_id>
+        <connection_name>AssetRequestPatchUpdate</connection_name>
+        <connection_type>outbound</connection_type>
+        <connector_type>7bf7f2123decf210f87762d639ed247b</connector_type>
+        <external_system/>
+        <sys_class_name>sys_wdf_external_connection_mapping</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 15:04:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>3691018f2f5b87d0a94e2a7a6fa4e306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AssetRequestPatchUpdate</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>sys_wdf_external_connection_mapping_3691018f2f5b87d0a94e2a7a6fa4e306</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 15:04:46</sys_updated_on>
+        <table_name>sys_alias</table_name>
+    </sys_wdf_external_connection_mapping>
+</record_update>

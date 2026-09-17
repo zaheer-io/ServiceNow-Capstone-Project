@@ -202,8 +202,6 @@ assetRequestUtils.prototype = {
         var parsedResponse = JSON.parse(responseBody);
 
 		var notes = httpStatus + ' ' + responseBody;
-
-		gs.info('Asset Request Work notes : ' + notes);
 		
 		currentRecord.setValue('correlation_id', parsedResponse.result.number);
 		currentRecord.work_notes = notes;
@@ -340,7 +338,7 @@ assetRequestUtils.prototype = {
         var payload = {
 			"u_correlation_id": currentRecord.getValue('number'),
 			"u_requestor": currentRecord.getValue('requestor'),
-			"u_assignment_group": currentRecord.getValue('assignment_group'),
+			"u_assignment_group": currentRecord.getDisplayValue('assignment_group'),
 			"u_assigned_to": currentRecord.getValue('assigned_to'),
 			"u_company": currentRecord.getValue('company'),
 			"u_type_of_asset": currentRecord.getValue('type_of_asset'),
@@ -477,7 +475,7 @@ assetRequestUtils.prototype = {
         return result;
     },
 
-	// Create Record Producer using Scripted REST API - 'CreateRecordProducer
+	// Create Record Producer using Scripted REST API - 'CreateRecordProducer'
 
 	createScriptedRPRequest: function(currentRecord) {
 
@@ -688,9 +686,9 @@ assetRequestUtils.prototype = {
 
 	// Order catalog item using Catalog API
 
-	orderCatalogItem: function(currentRitm, catalogItemSysId) {
+	orderCatalogItem: function(currentRecord, catalogItemSysId) {
 		var r = new sn_ws.RESTMessageV2(
-			'Instance-a Outbound Action', 
+			'Instance-a Outbound Action',
 			'Order Catalog Item'
 		);
 
@@ -702,29 +700,33 @@ assetRequestUtils.prototype = {
 		var payload = {
 			"sysparm_quantity": "1",
 			"variables": {
-				"opened_by": currentRitm.variables.opened_by.toString(),
-				"requestor": currentRitm.variables.requestor.toString(),
-				"type_of_asset": currentRitm.variables.type_of_asset.toString(),
-				"consumables": currentRitm.variables.consumables.toString(),
-				"assignment_group": currentRitm.variables.assignment_group.toString(),
-				"assigned_to": currentRitm.variables.assigned_to.toString(),
-				"status": currentRitm.variables.status.toString(),
-				"priority": currentRitm.variables.priority.toString(),
-				"company": currentRitm.variables.company.toString(),
-				"short_description": currentRitm.variables.short_description.toString(),
-				"description": currentRitm.variables.description.toString()
+				"remote_sys_id" : currentRecord.getUniqueValue(),
+				"correlation_id": currentRecord.getValue('number'),
+				"opened_by": currentRecord.getValue('opened_by'),
+				"requestor": currentRecord.getValue('requestor'),
+				"type_of_asset": currentRecord.getValue('type_of_asset'),
+				"consumables": currentRecord.getValue('consumables'),
+				"assignment_group": currentRecord.getValue('assignment_group'),
+				"assigned_to": currentRecord.getValue('assigned_to'),
+				"status": currentRecord.getValue('status'),
+				"priority": currentRecord.getValue('priority'),
+				"company": currentRecord.getValue('company'),
+				"short_description": currentRecord.getValue('short_description'),
+				"description": currentRecord.getValue('description')
 			}
 		};
 
-		r.setRequestHeader("Accept", "application/json");
-		r.setRequestHeader("Content-Type", "application/json");
 		r.setRequestBody(JSON.stringify(payload));
 
-		var response = r.execute();
-		var parsedResponse = JSON.parse(response.getBody());
+		var response = r.executeAsync();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+        var parsedResponse = JSON.parse(responseBody);
 
-		if (response.getStatusCode() == 200 && parsedResponse.result) {
-			return parsedResponse.result.request_number;
+		
+		if (httpStatus == 200) {
+			var notes = httpStatus + ' ' + responseBody;
+			currentRecord.work_notes = notes;
 		}
 
 		return null;
@@ -782,13 +784,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>120</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-17 07:13:32</sys_updated_on>
+        <sys_updated_on>2026-09-17 10:14:05</sys_updated_on>
     </sys_script_include>
 </record_update>

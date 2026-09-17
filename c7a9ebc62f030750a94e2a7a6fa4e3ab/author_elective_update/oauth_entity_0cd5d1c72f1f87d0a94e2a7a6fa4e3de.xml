@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity">
+    <oauth_entity action="DELETE">
+        <access>public</access>
+        <access_token_lifespan>1800</access_token_lifespan>
+        <active>true</active>
+        <allow_snc_user_exchange>false</allow_snc_user_exchange>
+        <auth_aig_client>false</auth_aig_client>
+        <auth_cimd_client>false</auth_cimd_client>
+        <auth_code_lifespan>0</auth_code_lifespan>
+        <auth_url/>
+        <bff_cookie_exchange_allowed>false</bff_cookie_exchange_allowed>
+        <bind_token_to_session>false</bind_token_to_session>
+        <certificate_url/>
+        <client_id>b920da23966746af9751c957a6cd54ac</client_id>
+        <client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭RMyqHRp7eTWjU_wOs6mgVQ==soPF5PfaTdA429PXPCZYez9g6dtMFdAj1ouKxGxW_GmfmmCcnnpKf7A98HgITAy7﷮﷯</client_secret>
+        <client_type/>
+        <client_uuid>c8d5d1c72f1f87d0a94e2a7a6fa4e3de</client_uuid>
+        <code_challenge_method>S256</code_challenge_method>
+        <comments/>
+        <default_grant_type>client_credentials</default_grant_type>
+        <extend_refresh_token_expiry>false</extend_refresh_token_expiry>
+        <id_token_lifespan>0</id_token_lifespan>
+        <inbound_grant_type>not_applicable</inbound_grant_type>
+        <jwt_provider/>
+        <login_url/>
+        <logo_url/>
+        <message_signature_lifespan>0</message_signature_lifespan>
+        <mobile_client>false</mobile_client>
+        <name>Instance B integration</name>
+        <oauth_api_script/>
+        <only_rest_processor>false</only_rest_processor>
+        <protocol_name/>
+        <public_client>false</public_client>
+        <redirect_url>https://dev427084.service-now.com/oauth_redirect.do</redirect_url>
+        <refresh_token_lifespan>8640000</refresh_token_lifespan>
+        <refresh_token_url/>
+        <restricted_binding>false</restricted_binding>
+        <revoke_token_url/>
+        <salt>0</salt>
+        <scope_restriction_status>unrestricted</scope_restriction_status>
+        <send_client_credentials_as>request_body_parameter</send_client_credentials_as>
+        <skip_authorize>false</skip_authorize>
+        <sub_claim>sys_id</sub_claim>
+        <sys_class_name>oauth_entity</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 16:34:43</sys_created_on>
+        <sys_id>0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Instance B integration</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>oauth_entity_0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 16:44:08</sys_updated_on>
+        <token_format>opaque</token_format>
+        <token_url>https://dev427084.service-now.com/oauth_token.do</token_url>
+        <type>oauth_provider</type>
+        <use_mutual_auth>false</use_mutual_auth>
+        <use_pkce>false</use_pkce>
+        <user/>
+    </oauth_entity>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>oauth_entity_0cd5d1c72f1f87d0a94e2a7a6fa4e3de</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity"><oauth_entity action="INSERT_OR_UPDATE"><access>public</access><access_token_lifespan>1800</access_token_lifespan><active>true</active><allow_snc_user_exchange>false</allow_snc_user_exchange><auth_aig_client>false</auth_aig_client><auth_cimd_client>false</auth_cimd_client><auth_code_lifespan>0</auth_code_lifespan><auth_url/><bff_cookie_exchange_allowed>false</bff_cookie_exchange_allowed><bind_token_to_session>false</bind_token_to_session><certificate_url/><client_id>b920da23966746af9751c957a6cd54ac</client_id><client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭RMyqHRp7eTWjU_wOs6mgVQ==soPF5PfaTdA429PXPCZYez9g6dtMFdAj1ouKxGxW_GmfmmCcnnpKf7A98HgITAy7﷮﷯</client_secret><client_type/><client_uuid>c8d5d1c72f1f87d0a94e2a7a6fa4e3de</client_uuid><code_challenge_method>S256</code_challenge_method><comments/><default_grant_type>client_credentials</default_grant_type><extend_refresh_token_expiry>false</extend_refresh_token_expiry><id_token_lifespan>0</id_token_lifespan><inbound_grant_type>not_applicable</inbound_grant_type><jwt_provider/><login_url/><logo_url/><message_signature_lifespan>0</message_signature_lifespan><mobile_client>false</mobile_client><name>Instance B integration</name><oauth_api_script/><only_rest_processor>false</only_rest_processor><protocol_name/><public_client>false</public_client><redirect_url>https://dev427084.service-now.com/oauth_redirect.do</redirect_url><refresh_token_lifespan>8640000</refresh_token_lifespan><refresh_token_url/><restricted_binding>false</restricted_binding><revoke_token_url/><salt>0</salt><scope_restriction_status>unrestricted</scope_restriction_status><send_client_credentials_as>request_body_parameter</send_client_credentials_as><skip_authorize>false</skip_authorize><sub_claim>sys_id</sub_claim><sys_class_name>oauth_entity</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-17 16:34:43</sys_created_on><sys_id>0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Instance B integration</sys_name><sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>oauth_entity_0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-17 16:44:08</sys_updated_on><token_format>opaque</token_format><token_url>https://dev427084.service-now.com/oauth_token.do</token_url><type>oauth_provider</type><use_mutual_auth>false</use_mutual_auth><use_pkce>false</use_pkce><user/></oauth_entity></record_update>]]></payload>
+        <payload_hash>-1268909432</payload_hash>
+        <record_name>Instance B integration</record_name>
+        <reverted_from/>
+        <source>32a6456a2f0b8750a94e2a7a6fa4e33b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 16:44:08</sys_created_on>
+        <sys_id>5e58d10f2f1f87d0a94e2a7a6fa4e3ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0b0410d370000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 16:44:08</sys_updated_on>
+        <type>Application Registries</type>
+        <update_guid>9a58d10f801f87d032f3b1c9fc7847eb</update_guid>
+        <update_guid_history>9a58d10f801f87d032f3b1c9fc7847eb:-1268909432,35c711cb171f87d04fa14d253bca6330:-1322224427,ac36ddc7731f87d05253f3db212aa263:-1268909432</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Instance B integration">4268550f2f1f87d0a94e2a7a6fa4e3cb</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 16:44:23</sys_created_on>
+        <sys_db_object display_value="" name="oauth_entity">oauth_entity</sys_db_object>
+        <sys_id>107e99cfe8bb4b308187401d33972840</sys_id>
+        <sys_metadata>0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Instance B integration</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>oauth_entity_0cd5d1c72f1f87d0a94e2a7a6fa4e3de</sys_update_name>
+        <sys_update_version display_value="oauth_entity_0cd5d1c72f1f87d0a94e2a7a6fa4e3de">5e58d10f2f1f87d0a94e2a7a6fa4e3ec</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 16:44:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

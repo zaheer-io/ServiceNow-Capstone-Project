@@ -3,21 +3,21 @@
         <default>true</default>
         <grant_type>password</grant_type>
         <jwt_provider/>
-        <name>Instance B integration profile</name>
-        <oauth_entity display_value="Instance B integration">34c8d14b2f1f87d0a94e2a7a6fa4e320</oauth_entity>
+        <name>Instance B Integration user</name>
+        <oauth_entity display_value="Instance B Integration">27a024932f570bd0a94e2a7a6fa4e3ee</oauth_entity>
         <oauth_resources/>
         <saml2_assertion_producer/>
         <sys_class_name>oauth_entity_profile</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-17 16:47:09</sys_created_on>
-        <sys_id>b20991c72f1f87d0a94e2a7a6fa4e319</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>Instance B integration profile</sys_name>
+        <sys_created_on>2026-09-18 07:22:50</sys_created_on>
+        <sys_id>8a7164932f570bd0a94e2a7a6fa4e31f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Instance B Integration user</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>oauth_entity_profile_b20991c72f1f87d0a94e2a7a6fa4e319</sys_update_name>
+        <sys_update_name>oauth_entity_profile_8a7164932f570bd0a94e2a7a6fa4e31f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-17 16:56:09</sys_updated_on>
+        <sys_updated_on>2026-09-18 08:13:11</sys_updated_on>
     </oauth_entity_profile>
 </record_update>

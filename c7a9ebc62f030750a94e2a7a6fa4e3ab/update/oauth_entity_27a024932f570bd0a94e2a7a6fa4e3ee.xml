@@ -11,10 +11,10 @@
         <bff_cookie_exchange_allowed>false</bff_cookie_exchange_allowed>
         <bind_token_to_session>false</bind_token_to_session>
         <certificate_url/>
-        <client_id>b920da23966746af9751c957a6cd54ac</client_id>
-        <client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭JK5yh7c3iG5I6goLokzBOA==XwGCfHa9LXPXnWP1jPKtl3s9v-io6cvLZc6tsyFes1em7vec453odOreE4vYw_V-﷮﷯</client_secret>
+        <client_id>2f586f3ed8b44e7cacd1533b3d3f1e93</client_id>
+        <client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭MKsaRddFnGWsHWTTxNcT3g==yUGehUiNjQFoK3iI2k4ayPJ3DWPPGLZubQfmAMttj8MzHxkZcWxB0Tt5dL8JUi6i﷮﷯</client_secret>
         <client_type/>
-        <client_uuid>f0c8d14b2f1f87d0a94e2a7a6fa4e320</client_uuid>
+        <client_uuid>e3a024932f570bd0a94e2a7a6fa4e3ee</client_uuid>
         <code_challenge_method>S256</code_challenge_method>
         <comments/>
         <default_grant_type>password</default_grant_type>
@@ -26,7 +26,7 @@
         <logo_url/>
         <message_signature_lifespan>0</message_signature_lifespan>
         <mobile_client>false</mobile_client>
-        <name>Instance B integration</name>
+        <name>Instance B Integration</name>
         <oauth_api_script/>
         <only_rest_processor>false</only_rest_processor>
         <protocol_name/>
@@ -43,16 +43,16 @@
         <sub_claim>sys_id</sub_claim>
         <sys_class_name>oauth_entity</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-09-17 16:47:09</sys_created_on>
-        <sys_id>34c8d14b2f1f87d0a94e2a7a6fa4e320</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Instance B integration</sys_name>
+        <sys_created_on>2026-09-18 07:22:50</sys_created_on>
+        <sys_id>27a024932f570bd0a94e2a7a6fa4e3ee</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Instance B Integration</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
-        <sys_update_name>oauth_entity_34c8d14b2f1f87d0a94e2a7a6fa4e320</sys_update_name>
+        <sys_update_name>oauth_entity_27a024932f570bd0a94e2a7a6fa4e3ee</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-17 16:47:09</sys_updated_on>
+        <sys_updated_on>2026-09-18 08:12:58</sys_updated_on>
         <token_format>opaque</token_format>
         <token_url>https://dev414274.service-now.com/oauth_token.do</token_url>
         <type>oauth_provider</type>

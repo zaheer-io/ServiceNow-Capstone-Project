@@ -178,6 +178,8 @@ assetRequestUtils.prototype = {
 			'Create Record'
 		);
 
+		// r.setAuthenticationProfile('oauth2', 'b20991c72f1f87d0a94e2a7a6fa4e319');
+
         var payload = {
 			"correlation_id": currentRecord.getValue('number'),
 			"requestor": currentRecord.getValue('requestor'),
@@ -216,7 +218,7 @@ assetRequestUtils.prototype = {
             grMap.initialize();
             grMap.setValue('local_sys_id', currentRecord.getUniqueValue());
             grMap.setValue('remote_sys_id', remoteSysId);
-            grMap.setValue('target', 'Instance B');
+            grMap.setValue('target', 'Instance');
             grMap.insert();
 
 			// create mapping record on instnace B
@@ -226,10 +228,12 @@ assetRequestUtils.prototype = {
 				'Create Integration Map Record'
 			);
 
+			// mapRest.setAuthenticationProfile('oauth2', 'b20991c72f1f87d0a94e2a7a6fa4e319');
+
 			var mapPayload = {
 				"local_sys_id": remoteSysId, 
 				"remote_sys_id": currentRecord.getUniqueValue(),
-				"target": "Instance A"
+				"target": "Instance"
 			};
 
 			mapRest.setRequestHeader("Accept", "application/json");
@@ -256,7 +260,7 @@ assetRequestUtils.prototype = {
         var targetSysId = '';
         var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
         grMap.addQuery('local_sys_id', currentRecord.getUniqueValue());
-        grMap.addQuery('target', 'Instance B');
+        grMap.addQuery('target', 'Instance');
         grMap.setLimit(1);
         grMap.query();
 
@@ -588,7 +592,7 @@ assetRequestUtils.prototype = {
         var targetSysId = '';
         var grMap = new GlideRecord('x_2180885_it_ass_0_integration_map');
         grMap.addQuery('local_sys_id', parentGR.getUniqueValue());
-        grMap.addQuery('target', 'Instance B');
+        grMap.addQuery('target', 'Instance');
         grMap.setLimit(1);
         grMap.query();
 
@@ -611,9 +615,12 @@ assetRequestUtils.prototype = {
 			r.setRequestBodyFromAttachment(attachmentGr.getUniqueValue());
 			
 			var response = r.execute();
-			var responseBody = response.getBody();
-			var httpStatus = response.getStatusCode();
-			var parsedData = JSON.parse(responseBody);
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+            
+            var notes = "Attachment Sync Status: " + httpStatus + "\nResponse: " + responseBody;
+            parentGR.work_notes = notes;
+            parentGR.update();
 
 			var remoteAttachmentSysId = parsedData.result.sys_id;
 
@@ -778,19 +785,98 @@ assetRequestUtils.prototype = {
 		return null;
 	},
 
+	inboundFlowAction: function(emailbody, senderid) {
+
+        var outputs = {};
+
+        // ASSET TYPE
+        var matchAsset = emailbody.match(/Asset Type:\s*(.+)/i);
+
+        if (matchAsset && matchAsset[1]) {
+
+            var asset = matchAsset[1].trim();
+
+            if (asset === 'Computer') {
+                outputs.asset_type = 'Computer';
+            } else if (asset === 'Network Gear') {
+                outputs.asset_type = 'Network Gear';
+            } else if (asset === 'Printer') {
+                outputs.asset_type = 'Printer';
+            } else if (asset === 'UPS') {
+                outputs.asset_type = 'UPS';
+            }
+        }
+
+        // CONSUMABLE
+        var matchConsumable = emailbody.match(/Consumables:\s*(.+)/i);
+
+        if (matchConsumable && matchConsumable[1]) {
+            outputs.consumable = matchConsumable[1]
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '_');
+        }
+
+        // PRIORITY
+        var matchPriority = emailbody.match(/Priority:\s*(.+)/i);
+
+        if (matchPriority && matchPriority[1]) {
+            outputs.priority = matchPriority[1].trim();
+        } else {
+            outputs.priority = '3';
+        }
+
+        // VIP CHECK
+        if (senderid) {
+
+            var grUser = new GlideRecord('sys_user');
+
+            if (grUser.get(senderid)) {
+
+                if (grUser.getValue('vip') == '1') {
+                    outputs.priority = '1';
+                }
+            }
+        }
+
+        // ASSIGNMENT GROUP
+        var groupName = '';
+
+        if (outputs.asset_type === 'Computer') {
+            groupName = 'Computers';
+        } else if (outputs.asset_type === 'Network Gear') {
+            groupName = 'Network Gear';
+        } else if (outputs.asset_type === 'Printer') {
+            groupName = 'Printers';
+        } else if (outputs.asset_type === 'UPS') {
+            groupName = 'UPS';
+        }
+
+        if (groupName) {
+
+            var grGroup = new GlideRecord('sys_user_group');
+
+            if (grGroup.get('name', groupName)) {
+                outputs.assignment_group = grGroup.getUniqueValue();
+            }
+        }
+
+        return outputs;
+    },
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>120</sys_mod_count>
+        <sys_mod_count>129</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-17 10:14:05</sys_updated_on>
+        <sys_updated_on>2026-09-18 11:01:48</sys_updated_on>
     </sys_script_include>
 </record_update>

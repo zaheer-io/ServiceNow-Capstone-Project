@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity">
+    <oauth_entity action="DELETE">
+        <access>public</access>
+        <access_token_lifespan>1800</access_token_lifespan>
+        <active>true</active>
+        <allow_snc_user_exchange>false</allow_snc_user_exchange>
+        <auth_aig_client>false</auth_aig_client>
+        <auth_cimd_client>false</auth_cimd_client>
+        <auth_code_lifespan>60</auth_code_lifespan>
+        <auth_url/>
+        <bff_cookie_exchange_allowed>false</bff_cookie_exchange_allowed>
+        <bind_token_to_session>false</bind_token_to_session>
+        <certificate_url/>
+        <client_id>bca701ce49764e7f8fe0d0f6206e3b84</client_id>
+        <client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭kUtgLhgH7NjkXzYX2vunVA==gJQwkq-YmJ7XkjhDQv_wSL-0M87hmBbs-AFGGkGudjrXTFILoJxKxb-btBJyYTkZ﷮﷯</client_secret>
+        <client_type/>
+        <client_uuid>12e0954f2fdb87d0a94e2a7a6fa4e33d</client_uuid>
+        <code_challenge_method>S256</code_challenge_method>
+        <comments/>
+        <default_grant_type>password</default_grant_type>
+        <extend_refresh_token_expiry>false</extend_refresh_token_expiry>
+        <id_token_lifespan>86400</id_token_lifespan>
+        <inbound_grant_type>ropc</inbound_grant_type>
+        <jwt_provider/>
+        <login_url/>
+        <logo_url/>
+        <message_signature_lifespan>60</message_signature_lifespan>
+        <mobile_client>false</mobile_client>
+        <name>Instance A OAuth2.0</name>
+        <oauth_api_script/>
+        <only_rest_processor>false</only_rest_processor>
+        <protocol_name/>
+        <public_client>false</public_client>
+        <redirect_url/>
+        <refresh_token_lifespan>8640000</refresh_token_lifespan>
+        <refresh_token_url/>
+        <restricted_binding>false</restricted_binding>
+        <revoke_token_url/>
+        <salt/>
+        <scope_restriction_status>restricted</scope_restriction_status>
+        <send_client_credentials_as>request_body_parameter</send_client_credentials_as>
+        <skip_authorize>false</skip_authorize>
+        <sub_claim>sys_id</sub_claim>
+        <sys_class_name>oauth_entity</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 16:12:40</sys_created_on>
+        <sys_id>52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Instance A OAuth2.0</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_update_name>oauth_entity_52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 16:12:40</sys_updated_on>
+        <token_format>opaque</token_format>
+        <token_url/>
+        <type>client</type>
+        <use_mutual_auth>false</use_mutual_auth>
+        <use_pkce>false</use_pkce>
+        <user/>
+    </oauth_entity>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</application>
+        <file_path/>
+        <instance_id>40673ffb3bb10f90a36804e0b5e45aa3</instance_id>
+        <instance_name>dev427084</instance_name>
+        <name>oauth_entity_52e0954f2fdb87d0a94e2a7a6fa4e33d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity"><oauth_entity action="INSERT_OR_UPDATE"><access>public</access><access_token_lifespan>1800</access_token_lifespan><active>true</active><allow_snc_user_exchange>false</allow_snc_user_exchange><auth_aig_client>false</auth_aig_client><auth_cimd_client>false</auth_cimd_client><auth_code_lifespan>60</auth_code_lifespan><auth_url/><bff_cookie_exchange_allowed>false</bff_cookie_exchange_allowed><bind_token_to_session>false</bind_token_to_session><certificate_url/><client_id>bca701ce49764e7f8fe0d0f6206e3b84</client_id><client_secret>﷞﷟﷒e5215d4f2fdb87d0a94e2a7a6fa4e3f4﷬﷔1﷬﷭kUtgLhgH7NjkXzYX2vunVA==gJQwkq-YmJ7XkjhDQv_wSL-0M87hmBbs-AFGGkGudjrXTFILoJxKxb-btBJyYTkZ﷮﷯</client_secret><client_type/><client_uuid>12e0954f2fdb87d0a94e2a7a6fa4e33d</client_uuid><code_challenge_method>S256</code_challenge_method><comments/><default_grant_type>password</default_grant_type><extend_refresh_token_expiry>false</extend_refresh_token_expiry><id_token_lifespan>86400</id_token_lifespan><inbound_grant_type>ropc</inbound_grant_type><jwt_provider/><login_url/><logo_url/><message_signature_lifespan>60</message_signature_lifespan><mobile_client>false</mobile_client><name>Instance A OAuth2.0</name><oauth_api_script/><only_rest_processor>false</only_rest_processor><protocol_name/><public_client>false</public_client><redirect_url/><refresh_token_lifespan>8640000</refresh_token_lifespan><refresh_token_url/><restricted_binding>false</restricted_binding><revoke_token_url/><salt/><scope_restriction_status>restricted</scope_restriction_status><send_client_credentials_as>request_body_parameter</send_client_credentials_as><skip_authorize>false</skip_authorize><sub_claim>sys_id</sub_claim><sys_class_name>oauth_entity</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-17 16:12:40</sys_created_on><sys_id>52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Instance A OAuth2.0</sys_name><sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package><sys_policy/><sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope><sys_update_name>oauth_entity_52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-17 16:12:40</sys_updated_on><token_format>opaque</token_format><token_url/><type>client</type><use_mutual_auth>false</use_mutual_auth><use_pkce>false</use_pkce><user/></oauth_entity></record_update>]]></payload>
+        <payload_hash>108490708</payload_hash>
+        <record_name>Instance A OAuth2.0</record_name>
+        <reverted_from/>
+        <source>32a6456a2f0b8750a94e2a7a6fa4e33b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 16:12:41</sys_created_on>
+        <sys_id>3d219d4f2fdb87d0a94e2a7a6fa4e313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0b02442c40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 16:12:41</sys_updated_on>
+        <type>Application Registries</type>
+        <update_guid>f9219d4fe5db87d02c93135f295c4b12</update_guid>
+        <update_guid_history>f9219d4fe5db87d02c93135f295c4b12:108490708</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Instance A OAuth2.0">b08068972f570bd0a94e2a7a6fa4e312</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 07:18:39</sys_created_on>
+        <sys_db_object display_value="" name="oauth_entity">oauth_entity</sys_db_object>
+        <sys_id>41154d13d090462494309eb964e1fc29</sys_id>
+        <sys_metadata>52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Instance A OAuth2.0</sys_name>
+        <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
+        <sys_scope_delete display_value="">39c8e39ac9de40a0819a0ce6bc844519</sys_scope_delete>
+        <sys_update_name>oauth_entity_52e0954f2fdb87d0a94e2a7a6fa4e33d</sys_update_name>
+        <sys_update_version display_value="oauth_entity_52e0954f2fdb87d0a94e2a7a6fa4e33d">3d219d4f2fdb87d0a94e2a7a6fa4e313</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-18 07:18:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

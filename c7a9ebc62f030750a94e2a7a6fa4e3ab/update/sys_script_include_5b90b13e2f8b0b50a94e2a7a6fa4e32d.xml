@@ -12,6 +12,7 @@
         <script><![CDATA[var assetRequestUtils = Class.create();
 assetRequestUtils.prototype = {
     initialize: function() {
+		this.endPoint = gs.getProperty('x_2180885_it_ass_0.target_instance');
     },
 
 	// Master funciton for Record Creation
@@ -178,7 +179,9 @@ assetRequestUtils.prototype = {
 			'Create Record'
 		);
 
-		// r.setAuthenticationProfile('oauth2', 'b20991c72f1f87d0a94e2a7a6fa4e319');
+		r.setStringParameterNoEscape('base_url', this.endPoint);
+
+		gs.info('Asset Requst endpoint : ' + this.endPoint);
 
         var payload = {
 			"correlation_id": currentRecord.getValue('number'),
@@ -208,6 +211,10 @@ assetRequestUtils.prototype = {
 		currentRecord.setValue('correlation_id', parsedResponse.result.number);
 		currentRecord.work_notes = notes;
 
+		currentRecord.setWorkflow(false);
+		currentRecord.update();
+
+
         var remoteSysId = parsedResponse.result.sys_id;
 
         if (remoteSysId) {
@@ -227,6 +234,8 @@ assetRequestUtils.prototype = {
 				'Instance-a Outbound Action',
 				'Create Integration Map Record'
 			);
+
+			mapRest.setStringParameterNoEscape('base_url', this.endPoint);
 
 
 			var mapPayload = {
@@ -272,6 +281,8 @@ assetRequestUtils.prototype = {
 			'Update Record'
 		);
 
+		r.setStringParameterNoEscape('base_url', this.endPoint);
+
         r.setStringParameter('target_sys_id', targetSysId);
 
         var payload = {
@@ -304,6 +315,8 @@ assetRequestUtils.prototype = {
             'Retrive Record by Number'
         );
 
+		getReq.setStringParameterNoEscape('base_url', this.endPoint);
+
         getReq.setStringParameter(
             'target_number',
             targetNumber
@@ -321,6 +334,8 @@ assetRequestUtils.prototype = {
             'Delete Record'
         );
 
+		deleteReq.setStringParameterNoEscape('base_url', this.endPoint);
+
         deleteReq.setStringParameter(
             'target_sys_id',
             targetSysId
@@ -336,6 +351,8 @@ assetRequestUtils.prototype = {
             'Instance-a Outbound Action',
             'Create Import Set Record'
         );
+
+		r.setStringParameterNoEscape('base_url', this.endPoint);
 
         var payload = {
 			"u_correlation_id": currentRecord.getValue('number'),
@@ -395,6 +412,8 @@ assetRequestUtils.prototype = {
 			'Instance-a Outbound Action',
 			'Create Scripted Asset Request'
 		);
+
+		r.setStringParameterNoEscape('base_url', this.endPoint);
 
 		r.setRequestHeader("Accept", "application/json");
 		r.setRequestHeader("Content-Type", "application/json");
@@ -502,6 +521,8 @@ assetRequestUtils.prototype = {
 			'Create Scripted RP Request'
 		);
 
+		r.setStringParameterNoEscape('base_url', this.endPoint);
+
 		r.setRequestHeader("Accept", "application/json");
 		r.setRequestHeader("Content-Type", "application/json");
 		r.setRequestBody(jsonBody);
@@ -606,6 +627,8 @@ assetRequestUtils.prototype = {
 				'Instance-a Outbound Action', 
 				'Send Attachment'
 			);
+
+			r.setStringParameterNoEscape('base_url', this.endPoint);
 			
 			r.setRequestHeader("Content-Type", attachmentGr.getValue('content_type'));
 			r.setRequestHeader("Accept", "application/json");
@@ -645,6 +668,8 @@ assetRequestUtils.prototype = {
 					'Create Integration Map Record'
 				);
 
+				mapRest.setStringParameterNoEscape('base_url', this.endPoint);
+
 				var mapPayload = {
 					"local_sys_id": remoteAttachmentSysId, 
 					"remote_sys_id": attachmentGr.getUniqueValue(),
@@ -681,6 +706,8 @@ assetRequestUtils.prototype = {
 				'Delete Attachment'
 			);
 
+			r.setStringParameterNoEscape('base_url', this.endPoint);
+
 			r.setStringParameterNoEscape('sys_id', remoteAttachmentSysId);
 
 			// var response = r.execute();
@@ -701,6 +728,8 @@ assetRequestUtils.prototype = {
 			'Instance-a Outbound Action',
 			'Order Catalog Item'
 		);
+
+		r.setStringParameterNoEscape('base_url', this.endPoint);
 
 		r.setStringParameter('catalog_item_sys_id', catalogItemSysId);
 
@@ -749,6 +778,8 @@ assetRequestUtils.prototype = {
 			'Instance-a Outbound Action', 
 			'Submit Record Producer'
 		);
+
+		r.setStringParameterNoEscape('base_url', this.endPoint);
 		
 		r.setStringParameter('record_producer_sys_id', producerSysId);
 		
@@ -873,13 +904,13 @@ assetRequestUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>138</sys_mod_count>
+        <sys_mod_count>144</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-18 15:30:55</sys_updated_on>
+        <sys_updated_on>2026-09-20 14:08:50</sys_updated_on>
     </sys_script_include>
 </record_update>

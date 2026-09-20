@@ -11,20 +11,20 @@
         <oauth2_profile/>
         <protocol_name/>
         <qualified_name>Instance-a Outbound Action [ Delete Attachment ]</qualified_name>
-        <rest_endpoint>https://dev414274.service-now.com/api/now/attachment/${sys_id}</rest_endpoint>
+        <rest_endpoint>${base_url}/api/now/attachment/${sys_id}</rest_endpoint>
         <rest_message display_value="Instance-a Outbound Action">4932d8892fdfc790a94e2a7a6fa4e3d0</rest_message>
         <sys_class_name>sys_rest_message_fn</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-16 13:11:59</sys_created_on>
         <sys_id>b83ed3622f5fc3d0a94e2a7a6fa4e311</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Delete Attachment</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_rest_message_fn_b83ed3622f5fc3d0a94e2a7a6fa4e311</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-16 15:23:00</sys_updated_on>
+        <sys_updated_on>2026-09-20 09:46:02</sys_updated_on>
         <use_auth_mid_server/>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>

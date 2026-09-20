@@ -53,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8e8aff6a2f1307d0a94e2a7a6fa4e3a4</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Asset Request Delete Attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -61,7 +61,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_8e8aff6a2f1307d0a94e2a7a6fa4e3a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-18 13:21:04</sys_updated_on>
+        <sys_updated_on>2026-09-20 15:55:30</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
     <sysevent_in_email_action action="INSERT_OR_UPDATE">
         <action>record_action</action>
-        <active>true</active>
+        <active>false</active>
         <assignment_operator/>
         <condition_script/>
         <description/>
@@ -16,44 +16,8 @@
         <required_roles/>
         <script><![CDATA[(function runAction(/*GlideRecord*/ current, /*GlideRecord*/ event, /*EmailWrapper*/ email, /*ScopedEmailLogger*/ logger, /*EmailClassifier*/ classifier) {
 
-	var asset = email.body.asset_type;
-
-	var groupName = '';
-	var assetType = '';
-
-	if (asset == 'Computer') {
-        groupName = 'Computers';
-		assetType = 'computer';
-    } else if (asset == 'Network Gear') {
-        groupName = 'Network Gear';
-		assetType = 'netgear';
-    } else if (asset == 'Printer') {
-        groupName = 'Printers';
-		assetType = 'printer';
-    } else if (asset == 'UPS') {
-        groupName = 'UPS';
-		assetType = 'ups';
-    }
-
-	current.type_of_asset = assetType;
-    current.priority = email.body.priority;
-	current.consumables = email.body.consumables.toLowerCase().replace(/\s+/g, '_');
-
-	// assign priority to critical when the user is vip
-	var grUser = new GlideRecord('sys_user');
-
-	if (grUser.get(gs.getUserID())) {
-		if (grUser.getValue('vip') == '1') {
-			current.priority = '1';
-		}
-	}
-
-	// get group name based on asset
-
-	var grGroup = new GlideRecord('sys_user_group');
-	if (grGroup.get('name', groupName)) {
-		current.assignment_group = grGroup.getUniqueValue();
-	}
+	var utils = new assetRequestUtils();
+    utils.assetRecordInboundAction(current, email);
 
 })(current, event, email, logger, classifier);]]></script>
         <stop_processing>false</stop_processing>
@@ -63,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>faf0aa502fdbc390a94e2a7a6fa4e347</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Create Asset Request - Inbound Action</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
@@ -71,7 +35,7 @@
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sysevent_in_email_action_faf0aa502fdbc390a94e2a7a6fa4e347</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-19 07:17:50</sys_updated_on>
+        <sys_updated_on>2026-09-21 06:49:44</sys_updated_on>
         <table>x_2180885_it_ass_0_asset_request_table</table>
         <template>companyDYNAMICd27bf240ef0321002841f7f775c0fbeb^short_descriptionDYNAMICb637bd21ef3221002841f7f775c0fbb6^descriptionDYNAMIC367bf121ef3221002841f7f775c0fbe2^requestorDYNAMIC2fd8e97bef3221002841f7f775c0fbc1^EQ</template>
         <type>new</type>

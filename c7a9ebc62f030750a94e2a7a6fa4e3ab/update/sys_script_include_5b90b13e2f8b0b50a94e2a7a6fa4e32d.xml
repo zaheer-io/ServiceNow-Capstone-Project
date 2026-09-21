@@ -819,6 +819,8 @@ assetRequestUtils.prototype = {
 		return null;
 	},
 
+	// Inbound Flow Action for Submit catalog item and Record Producer
+
 	inboundFlowAction: function(emailbody, senderid) {
 
         var outputs = {};
@@ -828,7 +830,7 @@ assetRequestUtils.prototype = {
 
         if (matchAsset && matchAsset[1]) {
 
-            var asset = matchAsset[1].trim();
+            var asset = matchAsset[1].trim().toLowerCase();
 
             if (asset === 'Computer') {
                 outputs.asset_type = 'Computer';
@@ -844,11 +846,8 @@ assetRequestUtils.prototype = {
         // CONSUMABLE
         var matchConsumable = emailbody.match(/Consumables:\s*(.+)/i);
 
-        if (matchConsumable && matchConsumable[1]) {
-            outputs.consumable = matchConsumable[1]
-                .trim()
-                .toLowerCase()
-                .replace(/\s+/g, '_');
+		if (matchConsumable && matchConsumable[1]) {
+            outputs.consumable = matchConsumable[1].trim().toLowerCase().replace(/\s+/g, '_');
         }
 
         // PRIORITY
@@ -898,19 +897,149 @@ assetRequestUtils.prototype = {
         return outputs;
     },
 
+	// Create Asset Request record using inbound Action
+
+	assetRecordInboundAction: function(current, email) {
+        var asset = email.body.asset_type.toLowerCase();
+
+        var groupName = '';
+        var assetType = '';
+
+        if (asset == 'computer') {
+            groupName = 'Computers';
+            assetType = 'computer';
+        } else if (asset == 'network gear') {
+            groupName = 'Network Gear';
+            assetType = 'netgear';
+        } else if (asset == 'printer') {
+            groupName = 'Printers';
+            assetType = 'printer';
+        } else if (asset == 'ups') {
+            groupName = 'UPS';
+            assetType = 'ups';
+        }
+
+        current.type_of_asset = assetType;
+        current.priority = email.body.priority;
+        current.consumables = email.body.consumables.toLowerCase().replace(/\s+/g, '_');
+
+        // assign priority to critical when the user is vip
+        var grUser = new GlideRecord('sys_user');
+
+        if (grUser.get(gs.getUserID())) {
+            if (grUser.getValue('vip') == '1') {
+                current.priority = '1';
+            }
+        }
+
+        // get group name based on asset
+        var grGroup = new GlideRecord('sys_user_group');
+        if (grGroup.get('name', groupName)) {
+            current.assignment_group = grGroup.getUniqueValue();
+        }
+    },
+
+	// Submit Catalog item using inbound Action
+
+	catalogItemInboundAction: function(event, email, sys_email) {
+        var catalogItemSysId = '7c14aa442f5f4390a94e2a7a6fa4e3d0';
+
+        var cart = new sn_sc.CartJS();
+
+        var item = {
+            'sysparm_id': catalogItemSysId,
+            'sysparm_quantity': '1',
+            'variables': {}
+        };
+
+        var asset = email.body.asset_type.toLowerCase();
+        var groupName = '';
+        var assetType = '';
+
+        if (asset == 'computer') {
+            groupName = 'Computers';
+            assetType = 'computer';
+        } else if (asset == 'network gear') {
+            groupName = 'Network Gear';
+            assetType = 'netgear';
+        } else if (asset == 'printer') {
+            groupName = 'Printers';
+            assetType = 'printer';
+        } else if (asset == 'ups') {
+            groupName = 'UPS';
+            assetType = 'ups';
+        }
+
+        var assignmentGroupSysId = '';
+        var grGroup = new GlideRecord('sys_user_group');
+
+        if (grGroup.get('name', groupName)) {
+            assignmentGroupSysId = grGroup.getUniqueValue();
+        }
+
+        var openedBy = gs.getUserID();
+        var requestor = '';
+        var requestorCompany = '';
+        var grUser = new GlideRecord('sys_user');
+
+        if (grUser.get('email', email.origemail)) {
+            requestor = grUser.getUniqueValue();
+            requestorCompany = grUser.getValue('company') || '';
+        }
+
+        var priority = email.body.priority || '4';
+
+        if (requestor) {
+            if (grUser.getValue('vip') == '1') {
+                priority = '1';
+            }
+        }
+
+        var consumables = '';
+
+        if (email.body.consumables) {
+            consumables = email.body.consumables.toLowerCase().replace(/\s+/g, '_');
+        }
+
+        item.variables.requestor = requestor;
+        item.variables.type_of_asset = assetType;
+        item.variables.consumables = consumables;
+        item.variables.assignment_group = assignmentGroupSysId;
+        item.variables.opened_by = openedBy;
+        item.variables.priority = priority;
+        item.variables.description = email.body_text;
+        item.variables.short_description = email.subject;
+        item.variables.company = requestorCompany;
+        item.variables.status = 'submitted';
+
+        var cartDetails = cart.orderNow(item);
+
+        if (cartDetails && cartDetails.request_id) {
+            var emailRec = new GlideRecord('sys_email');
+
+            if (emailRec.get(sys_email.sys_id)) {
+                emailRec.target_table = 'sc_request';
+                emailRec.instance = cartDetails.request_id;
+                emailRec.update();
+            }
+
+            event.state = "stop_processing";
+        }
+    },
+
     type: 'assetRequestUtils'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-09-04 13:36:14</sys_created_on>
         <sys_id>5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_id>
-        <sys_mod_count>144</sys_mod_count>
+        <sys_mod_count>153</sys_mod_count>
         <sys_name>assetRequestUtils</sys_name>
         <sys_package display_value="IT Asset Management" source="x_2180885_it_ass_0">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT Asset Management">c7a9ebc62f030750a94e2a7a6fa4e3ab</sys_scope>
         <sys_update_name>sys_script_include_5b90b13e2f8b0b50a94e2a7a6fa4e32d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-09-20 14:08:50</sys_updated_on>
+        <sys_updated_on>2026-09-21 06:22:30</sys_updated_on>
     </sys_script_include>
 </record_update>
